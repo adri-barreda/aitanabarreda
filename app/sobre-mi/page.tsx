@@ -49,9 +49,9 @@ const timelineItems = [
 export default function SobreMiPage() {
   return (
     <>
-      {/* ── Hero ── */}
-      <section className="relative min-h-[85svh] bg-fondo overflow-hidden">
-        <div className="grid lg:grid-cols-[1fr_50%] min-h-[85svh]">
+      {/* ── Hero + Historia ── */}
+      <section className="relative bg-fondo overflow-hidden">
+        <div className="grid lg:grid-cols-[1fr_50%]">
           {/* Left — Text */}
           <div className="flex flex-col justify-center px-6 sm:px-10 lg:pl-16 xl:pl-24 2xl:pl-32 py-32 lg:py-20">
             <p className="font-body text-[11px] tracking-[0.3em] uppercase text-texto/40 mb-8">
@@ -63,14 +63,51 @@ export default function SobreMiPage() {
               Aitana
             </h1>
             <div className="w-16 h-px bg-verde mt-8 mb-8" />
-            <p className="font-body text-texto/60 text-base leading-[1.8] max-w-md">
+            <p className="font-body text-texto/60 text-base leading-[1.8] max-w-md mb-10">
               Psicóloga General Sanitaria colegiada en Barcelona. Especializada
               en trauma, regulación emocional y alta sensibilidad.
             </p>
+
+            <div className="space-y-6 font-body text-texto/65 text-base leading-[1.85] max-w-md">
+              <p>
+                Desde pequeña me fascinaba entender por qué las personas
+                sentimos lo que sentimos, por qué a veces nos quedamos
+                atrapadas en patrones que nos hacen daño y, sobre todo, qué
+                podemos hacer para estar mejor. Esa curiosidad me llevó a
+                estudiar psicología.
+              </p>
+              <p>
+                Con los años me fui especializando en{' '}
+                <span className="font-medium text-texto">trauma</span> y{' '}
+                <span className="font-medium text-texto">
+                  regulación emocional
+                </span>
+                , dos áreas que considero fundamentales para entender gran
+                parte del malestar que experimentamos. Descubrí que muchas
+                dificultades del presente tienen sus raíces en experiencias
+                pasadas que no pudimos procesar.
+              </p>
+              <p>
+                Creo que la terapia debe ser un{' '}
+                <span className="font-medium text-texto">
+                  espacio seguro y libre de juicios
+                </span>
+                , donde puedas mostrarte tal como eres. No hay emociones
+                buenas ni malas: todas tienen algo que contarnos.
+              </p>
+              <p>
+                Trabajo desde un{' '}
+                <span className="font-medium text-texto">
+                  enfoque integrador
+                </span>
+                , combinando diferentes corrientes y herramientas según lo que
+                cada persona necesita. Porque no existe una fórmula única.
+              </p>
+            </div>
           </div>
 
-          {/* Right — Photo bleeding off edge */}
-          <div className="relative h-[65vh] lg:h-auto">
+          {/* Right — Photo bleeding off edge, taller */}
+          <div className="relative h-[75vh] lg:h-auto lg:min-h-[110vh]">
             <Image
               src="/images/sobre-mi-hero.jpeg"
               alt="Aitana Barreda, psicóloga, sentada con clipboard y sonrisa natural"
@@ -80,70 +117,6 @@ export default function SobreMiPage() {
               className="object-cover object-top"
             />
             <div className="hidden lg:block absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-fondo to-transparent" />
-          </div>
-        </div>
-      </section>
-
-      {/* ── Historia ── */}
-      <section className="py-24 lg:py-36 bg-fondo">
-        <div className="max-w-6xl mx-auto px-6 sm:px-10">
-          <div className="grid lg:grid-cols-[35%_1fr] gap-10 lg:gap-20 items-start">
-            {/* Left — Photo (narrower column) */}
-            <ScrollReveal className="relative">
-              <div className="absolute top-5 -left-3 lg:-left-6 w-[80%] h-[92%] bg-rosa-light/30" />
-              <Image
-                src="/images/sobre-mi-historia.jpeg"
-                alt="Aitana sentada en el suelo con tablet durante una sesión online"
-                width={440}
-                height={580}
-                className="relative z-10 w-full h-auto object-cover"
-              />
-            </ScrollReveal>
-
-            {/* Right — Narrative text (wider column) */}
-            <ScrollReveal delay={120} className="lg:pt-8">
-              <p className="font-body text-[11px] tracking-[0.3em] uppercase text-texto/40 mb-5">
-                Mi historia
-              </p>
-              <div className="w-16 h-px bg-rosa mb-10" />
-
-              <div className="space-y-6 font-body text-texto/65 text-base leading-[1.85]">
-                <p>
-                  Desde pequeña me fascinaba entender por qué las personas
-                  sentimos lo que sentimos, por qué a veces nos quedamos
-                  atrapadas en patrones que nos hacen daño y, sobre todo, qué
-                  podemos hacer para estar mejor. Esa curiosidad me llevó a
-                  estudiar psicología.
-                </p>
-                <p>
-                  Con los años me fui especializando en{' '}
-                  <span className="font-medium text-texto">trauma</span> y{' '}
-                  <span className="font-medium text-texto">
-                    regulación emocional
-                  </span>
-                  , dos áreas que considero fundamentales para entender gran
-                  parte del malestar que experimentamos. Descubrí que muchas
-                  dificultades del presente tienen sus raíces en experiencias
-                  pasadas que no pudimos procesar.
-                </p>
-                <p>
-                  Creo que la terapia debe ser un{' '}
-                  <span className="font-medium text-texto">
-                    espacio seguro y libre de juicios
-                  </span>
-                  , donde puedas mostrarte tal como eres. No hay emociones
-                  buenas ni malas: todas tienen algo que contarnos.
-                </p>
-                <p>
-                  Trabajo desde un{' '}
-                  <span className="font-medium text-texto">
-                    enfoque integrador
-                  </span>
-                  , combinando diferentes corrientes y herramientas según lo que
-                  cada persona necesita. Porque no existe una fórmula única.
-                </p>
-              </div>
-            </ScrollReveal>
           </div>
         </div>
       </section>
