@@ -122,34 +122,14 @@ export default function SobreMiPage() {
       </section>
 
       {/* ── Photo Strip ── */}
-      <div className="grid grid-cols-3 h-72 lg:h-96">
-        <div className="relative overflow-hidden">
-          <Image
-            src="/images/escribiendo-espaldas.jpeg"
-            alt="Aitana escribiendo de espaldas"
-            fill
-            sizes="33vw"
-            className="object-cover"
-          />
-        </div>
-        <div className="relative overflow-hidden">
-          <Image
-            src="/images/sobre-mi-formacion.jpeg"
-            alt="Aitana escribiendo concentrada"
-            fill
-            sizes="33vw"
-            className="object-cover"
-          />
-        </div>
-        <div className="relative overflow-hidden">
-          <Image
-            src="/images/retrato-cercano.jpeg"
-            alt="Retrato cercano de Aitana"
-            fill
-            sizes="33vw"
-            className="object-cover"
-          />
-        </div>
+      <div className="relative h-56 sm:h-72 lg:h-96 overflow-hidden">
+        <Image
+          src="/images/monstera.jpeg"
+          alt="Monstera en la consulta"
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
+        />
       </div>
 
       {/* ── Formación ── */}
