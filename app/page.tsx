@@ -125,6 +125,44 @@ function CtaFinal() {
   )
 }
 
+const testimonios = [
+  'Estoy contentísima con Aitana, me está ayudando un montón.',
+  "M'està anant superbé i m'estic sentint molt còmode, moltes gràcies.",
+  "Estic molt contenta amb l'Aitana! M'està ajudant molt i noto molta diferència des de que vaig començar.",
+  'Estoy muy muy contento, Aitana es una gran profesional.',
+  'Estoy muy contenta con Aitana, es muy maja y hace desde el primer momento que te sientas muy cómoda y puedas abrirte.',
+  'Estoy muy a gusto y muy agradecida por el trato recibido desde el día que llegué hasta ahora. Aitana es una profesional maravillosa y estoy haciendo grandes progresos. Muchas gracias por todo.',
+]
+
+function Testimonios() {
+  return (
+    <section className="py-24 lg:py-36 bg-verde-light/10">
+      <div className="max-w-6xl mx-auto px-6 sm:px-10">
+        <ScrollReveal>
+          <p className="font-body text-[11px] tracking-[0.3em] uppercase text-texto/40 mb-5">
+            Testimonios
+          </p>
+          <h2 className="font-heading text-4xl sm:text-5xl lg:text-[3.5rem] text-texto font-light leading-[1.1] mb-16 lg:mb-20">
+            Lo que dicen de mí
+          </h2>
+        </ScrollReveal>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {testimonios.map((text, i) => (
+            <ScrollReveal key={i} delay={i * 80}>
+              <blockquote className="border-l-2 border-rosa/40 pl-6 py-2">
+                <p className="font-body text-texto/65 text-[15px] leading-[1.8] italic">
+                  &ldquo;{text}&rdquo;
+                </p>
+              </blockquote>
+            </ScrollReveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 export default function HomePage() {
   return (
     <>
@@ -133,6 +171,7 @@ export default function HomePage() {
       <BeneficiosList />
       <TextureDivider />
       <ProblemasGrid />
+      <Testimonios />
       <CtaFinal />
     </>
   )

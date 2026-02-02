@@ -84,45 +84,53 @@ export default function SobreMiPage() {
       {/* ── Formación ── */}
       <section className="py-24 lg:py-36 bg-fondo">
         <div className="max-w-6xl mx-auto px-6 sm:px-10">
-          <ScrollReveal>
-            <p className="font-body text-[11px] tracking-[0.3em] uppercase text-texto/40 mb-5">
-              Formación
-            </p>
-            <h2 className="font-heading text-4xl sm:text-5xl lg:text-[3.5rem] text-texto font-light leading-[1.1] mb-6">
-              Formación y experiencia
-            </h2>
-            <p className="font-body text-texto/55 text-base leading-[1.75] max-w-2xl mb-10">
-              Cuando terminé la carrera, como les ocurre a muchas personas en
-              esta profesión, sentía que necesitaba más herramientas para poder
-              acompañar de verdad. A eso se suma que soy una persona curiosa y
-              con muchas ganas de aprender, así que la formación continua se
-              convirtió en una parte esencial de mi manera de trabajar.
-            </p>
-            <p className="font-body text-texto/55 text-base leading-[1.75] max-w-2xl mb-16 lg:mb-20">
-              A lo largo de los años me he formado en distintos enfoques que
-              hoy sostienen mi práctica clínica:
-            </p>
-          </ScrollReveal>
-
-          <div className="grid lg:grid-cols-[1fr_38%] gap-12 lg:gap-20">
-            {/* Left — Timeline */}
+          <div className="grid lg:grid-cols-[1fr_35%] gap-12 lg:gap-20 items-start">
             <div>
-              <div className="relative ml-3 border-l border-verde/30 pl-10">
+              <ScrollReveal>
+                <p className="font-body text-[11px] tracking-[0.3em] uppercase text-texto/40 mb-5">
+                  Formación
+                </p>
+                <h2 className="font-heading text-4xl sm:text-5xl lg:text-[3.5rem] text-texto font-light leading-[1.1] mb-6">
+                  Formación y experiencia
+                </h2>
+                <div className="w-16 h-px bg-verde mb-10" />
+                <p className="font-body text-texto/55 text-base leading-[1.75] mb-6">
+                  Cuando terminé la carrera, como les ocurre a muchas personas en
+                  esta profesión, sentía que necesitaba más herramientas para poder
+                  acompañar de verdad. A eso se suma que soy una persona curiosa y
+                  con muchas ganas de aprender, así que la formación continua se
+                  convirtió en una parte esencial de mi manera de trabajar.
+                </p>
+                <p className="font-body text-texto/55 text-base leading-[1.75] mb-10">
+                  A lo largo de los años me he formado en distintos enfoques que
+                  hoy sostienen mi práctica clínica:
+                </p>
+              </ScrollReveal>
+
+              <ul className="space-y-4 mb-10">
                 {timelineItems.map((item, i) => (
-                  <ScrollReveal key={i} delay={i * 80}>
-                    <div className="group relative pb-10 last:pb-0">
-                      <span className="absolute -left-[calc(2.5rem+3px)] top-1.5 h-[7px] w-[7px] rounded-full border border-verde bg-fondo transition-colors duration-300 group-hover:bg-verde" />
-                      <h3 className="font-heading text-lg lg:text-xl font-medium text-texto leading-snug">
+                  <ScrollReveal key={i} delay={i * 60}>
+                    <li className="flex items-baseline gap-4">
+                      <span className="w-1.5 h-1.5 rounded-full bg-verde/50 shrink-0 mt-1.5" />
+                      <span className="font-heading text-lg font-medium text-texto">
                         {item.title}
-                      </h3>
-                    </div>
+                      </span>
+                    </li>
                   </ScrollReveal>
                 ))}
-              </div>
+              </ul>
+
+              <ScrollReveal>
+                <p className="font-body text-texto/55 text-base leading-[1.75]">
+                  Esta es la formación que considero más relevante, aunque el
+                  aprendizaje es constante y seguro que alguna se queda en el
+                  camino. Para mí, seguir formándome no es una obligación, sino una
+                  forma de cuidar el trabajo que hago y a las personas que acompaño.
+                </p>
+              </ScrollReveal>
             </div>
 
-            {/* Right — Accent image */}
-            <ScrollReveal delay={200} className="hidden lg:block">
+            <ScrollReveal delay={150} className="hidden lg:block">
               <div className="sticky top-32">
                 <Image
                   src="/images/manos-escribiendo.jpeg"
@@ -133,48 +141,6 @@ export default function SobreMiPage() {
                 />
               </div>
             </ScrollReveal>
-          </div>
-
-          <ScrollReveal>
-            <p className="font-body text-texto/55 text-base leading-[1.75] max-w-2xl mt-12">
-              Esta es la formación que considero más relevante, aunque el
-              aprendizaje es constante y seguro que alguna se queda en el
-              camino. Para mí, seguir formándome no es una obligación, sino una
-              forma de cuidar el trabajo que hago y a las personas que acompaño.
-            </p>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ── Testimonios ── */}
-      <section className="py-24 lg:py-36 bg-verde-light/10">
-        <div className="max-w-6xl mx-auto px-6 sm:px-10">
-          <ScrollReveal>
-            <p className="font-body text-[11px] tracking-[0.3em] uppercase text-texto/40 mb-5">
-              Testimonios
-            </p>
-            <h2 className="font-heading text-4xl sm:text-5xl lg:text-[3.5rem] text-texto font-light leading-[1.1] mb-16 lg:mb-20">
-              Lo que dicen de mí
-            </h2>
-          </ScrollReveal>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              'Estoy contentísima con Aitana, me está ayudando un montón.',
-              "M'està anant superbé i m'estic sentint molt còmode, moltes gràcies.",
-              "Estic molt contenta amb l'Aitana! M'està ajudant molt i noto molta diferència des de que vaig començar.",
-              'Estoy muy muy contento, Aitana es una gran profesional.',
-              'Estoy muy contenta con Aitana, es muy maja y hace desde el primer momento que te sientas muy cómoda y puedas abrirte.',
-              'Estoy muy a gusto y muy agradecida por el trato recibido desde el día que llegué hasta ahora. Aitana es una profesional maravillosa y estoy haciendo grandes progresos. Muchas gracias por todo.',
-            ].map((text, i) => (
-              <ScrollReveal key={i} delay={i * 80}>
-                <blockquote className="border-l-2 border-rosa/40 pl-6 py-2">
-                  <p className="font-body text-texto/65 text-[15px] leading-[1.8] italic">
-                    &ldquo;{text}&rdquo;
-                  </p>
-                </blockquote>
-              </ScrollReveal>
-            ))}
           </div>
         </div>
       </section>
