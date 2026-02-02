@@ -38,6 +38,11 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'es_ES',
     siteName: 'Aitana Barreda Psicología',
+    images: [{ url: '/images/retrato-profesional.jpeg', width: 1200, height: 630, alt: 'Aitana Barreda - Psicóloga en Barcelona' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/images/retrato-profesional.jpeg'],
   },
 }
 
