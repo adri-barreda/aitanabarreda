@@ -37,10 +37,10 @@ export default function ServiciosPage() {
       <section className="pb-24 lg:pb-36 bg-fondo">
         <div className="max-w-6xl mx-auto px-6 sm:px-10">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
-            {/* Presencial — horizontal photo */}
+            {/* Presencial */}
             <ScrollReveal>
               <div className="group">
-                <div className="relative aspect-[16/10] overflow-hidden">
+                <div className="relative aspect-[3/4] overflow-hidden">
                   <Image
                     src="/images/escribiendo-espaldas.jpeg"
                     alt="Aitana escribiendo en clipboard durante sesión presencial"
@@ -76,8 +76,8 @@ export default function ServiciosPage() {
               </div>
             </ScrollReveal>
 
-            {/* Online — portrait photo, offset down for asymmetry */}
-            <ScrollReveal delay={150} className="md:mt-16">
+            {/* Online */}
+            <ScrollReveal delay={150}>
               <div className="group">
                 <div className="relative aspect-[3/4] overflow-hidden">
                   <Image
