@@ -63,45 +63,30 @@ export default function SobreMiPage() {
               Aitana
             </h1>
             <div className="w-16 h-px bg-verde mt-8 mb-8" />
-            <p className="font-body text-texto/60 text-base leading-[1.8] max-w-md mb-10">
-              Psicóloga General Sanitaria colegiada en Barcelona. Especializada
-              en trauma, regulación emocional y alta sensibilidad.
-            </p>
-
             <div className="space-y-6 font-body text-texto/65 text-base leading-[1.85] max-w-md">
               <p>
-                Desde pequeña me fascinaba entender por qué las personas
-                sentimos lo que sentimos, por qué a veces nos quedamos
-                atrapadas en patrones que nos hacen daño y, sobre todo, qué
-                podemos hacer para estar mejor. Esa curiosidad me llevó a
-                estudiar psicología.
+                Soy psicóloga y una persona empática, amable y cercana. Me
+                gusta crear espacios en los que las personas se sientan
+                cómodas, escuchadas y seguras desde el primer momento, porque
+                sé lo vulnerable que se siente una al otro lado.
               </p>
               <p>
-                Con los años me fui especializando en{' '}
-                <span className="font-medium text-texto">trauma</span> y{' '}
-                <span className="font-medium text-texto">
-                  regulación emocional
-                </span>
-                , dos áreas que considero fundamentales para entender gran
-                parte del malestar que experimentamos. Descubrí que muchas
-                dificultades del presente tienen sus raíces en experiencias
-                pasadas que no pudimos procesar.
+                Soy de Castellón, aunque hace años me mudé a Barcelona para
+                estudiar aquello que realmente me gustaba. La vida hizo que me
+                quedara aquí y, con el tiempo, este lugar también se convirtió
+                en mi hogar.
               </p>
               <p>
-                Creo que la terapia debe ser un{' '}
-                <span className="font-medium text-texto">
-                  espacio seguro y libre de juicios
-                </span>
-                , donde puedas mostrarte tal como eres. No hay emociones
-                buenas ni malas: todas tienen algo que contarnos.
+                Vengo de una familia de psicólogos y, desde pequeña, la
+                psicología ha formado parte de mi vida. Recuerdo quedarme en
+                la sala de espera de la consulta de mi madre mientras ella
+                trabajaba; ahí nació mi curiosidad por entender a las personas
+                y su mundo emocional.
               </p>
               <p>
-                Trabajo desde un{' '}
-                <span className="font-medium text-texto">
-                  enfoque integrador
-                </span>
-                , combinando diferentes corrientes y herramientas según lo que
-                cada persona necesita. Porque no existe una fórmula única.
+                Hoy acompaño procesos terapéuticos desde una mirada sensible y
+                respetuosa, ayudando a comprender el malestar y a tratarse con
+                más amabilidad.
               </p>
             </div>
           </div>
@@ -126,12 +111,18 @@ export default function SobreMiPage() {
         <div className="max-w-6xl mx-auto px-6 sm:px-10">
           <ScrollReveal>
             <p className="font-body text-[11px] tracking-[0.3em] uppercase text-texto/40 mb-5">
-              Trayectoria
+              Formación
             </p>
             <h2 className="font-heading text-4xl sm:text-5xl lg:text-[3.5rem] text-texto font-light leading-[1.1] mb-6">
               Formación y experiencia
             </h2>
-            <div className="w-16 h-px bg-verde mb-16 lg:mb-20" />
+            <p className="font-body text-texto/55 text-base leading-[1.75] max-w-2xl mb-16 lg:mb-20">
+              Cuando terminé la carrera, como les ocurre a muchas personas en
+              esta profesión, sentía que necesitaba más herramientas para poder
+              acompañar de verdad. A eso se suma que soy una persona curiosa y
+              con muchas ganas de aprender, así que la formación continua se
+              convirtió en una parte esencial de mi manera de trabajar.
+            </p>
           </ScrollReveal>
 
           <div className="grid lg:grid-cols-[1fr_38%] gap-12 lg:gap-20">
