@@ -115,6 +115,36 @@ export default function ServiciosPage() {
               </div>
             </ScrollReveal>
           </div>
+
+          {/* Tipos de terapia */}
+          <ScrollReveal className="mt-16 lg:mt-24">
+            <div className="grid sm:grid-cols-3 gap-8 lg:gap-12">
+              <div className="border-t border-texto/10 pt-6">
+                <h3 className="font-heading text-xl lg:text-2xl font-medium text-texto mb-2">
+                  Individual
+                </h3>
+                <p className="font-body text-texto/55 text-[14px] leading-[1.75]">
+                  Un espacio solo para ti, donde trabajar a tu ritmo lo que necesites.
+                </p>
+              </div>
+              <div className="border-t border-texto/10 pt-6">
+                <h3 className="font-heading text-xl lg:text-2xl font-medium text-texto mb-2">
+                  De pareja
+                </h3>
+                <p className="font-body text-texto/55 text-[14px] leading-[1.75]">
+                  Para mejorar la comunicación, resolver conflictos y fortalecer el vínculo.
+                </p>
+              </div>
+              <div className="border-t border-texto/10 pt-6">
+                <h3 className="font-heading text-xl lg:text-2xl font-medium text-texto mb-2">
+                  Familiar
+                </h3>
+                <p className="font-body text-texto/55 text-[14px] leading-[1.75]">
+                  Para abordar dinámicas familiares y construir relaciones más sanas.
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
