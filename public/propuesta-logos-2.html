@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta de Identidad Visual II — Aitana Barreda</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+  :root {
+    --bg: #0a0a0a;
+    --text: #e8e4df;
+    --text-dim: #8a857f;
+    --text-faint: #4a4743;
+    --rosa: #E8B4B8;
+    --rosa-light: #F2D7D9;
+    --verde: #8FB996;
+    --verde-light: #B8D4C8;
+    --fondo: #FAFAF8;
+    --texto: #2D2D2D;
+  }
+
+  html { scroll-behavior: smooth }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0) }
+  .reveal-delay-1 { transition-delay: 0.1s }
+  .reveal-delay-2 { transition-delay: 0.2s }
+  .reveal-delay-3 { transition-delay: 0.3s }
+  .reveal-delay-4 { transition-delay: 0.4s }
+
+  h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif }
+
+  .label {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    font-weight: 400;
+  }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 40px }
+  @media (max-width: 640px) { .container { padding: 0 24px } }
+
+  /* ── Back link ── */
+  .back-link {
+    position: fixed;
+    top: 32px;
+    left: 40px;
+    z-index: 100;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--text-faint);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s;
+  }
+  .back-link:hover { color: var(--text) }
+  .back-link::before { content: '←'; font-size: 14px }
+  @media (max-width: 640px) { .back-link { left: 24px; top: 24px } }
+
+  /* ── Header ── */
+  header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: -8%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(143,185,150,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: 15%;
+    right: -5%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(232,180,184,0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .header-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(100px, 18vw, 240px);
+    font-weight: 300;
+    color: rgba(143,185,150,0.035);
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  header h1 {
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 24px;
+  }
+  header h1 em { font-style: italic; color: var(--verde) }
+
+  .intro {
+    font-size: 15px;
+    color: var(--text-dim);
+    max-width: 520px;
+    line-height: 1.85;
+    margin-top: 32px;
+  }
+
+  .divider { width: 48px; height: 1px; background: var(--verde); margin: 32px 0 }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 48px;
+    left: 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-faint);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .scroll-hint::before { content: ''; width: 24px; height: 1px; background: var(--text-faint) }
+
+  /* ── Proposals ── */
+  .proposal {
+    padding: 120px 0;
+    position: relative;
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+  @media (max-width: 640px) { .proposal { padding: 80px 0 } }
+
+  .proposal-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(100px, 15vw, 200px);
+    font-weight: 300;
+    color: rgba(255,255,255,0.025);
+    position: absolute;
+    right: 40px;
+    top: 80px;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .proposal-header { margin-bottom: 64px }
+  .proposal-title {
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 300;
+    color: var(--text);
+    margin-top: 12px;
+    line-height: 1.2;
+  }
+  .proposal-rationale {
+    font-size: 14px;
+    color: var(--text-dim);
+    max-width: 480px;
+    line-height: 1.85;
+    margin-top: 20px;
+  }
+
+  .logo-showcase { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin: 48px 0 }
+  @media (max-width: 768px) { .logo-showcase { grid-template-columns: 1fr } }
+
+  .logo-panel {
+    padding: 64px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 220px;
+    position: relative;
+  }
+  .logo-panel.dark { background: #141414 }
+  .logo-panel.light { background: var(--fondo) }
+
+  .panel-label {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.3;
+  }
+  .logo-panel.dark .panel-label { color: #fff }
+  .logo-panel.light .panel-label { color: #000 }
+
+  .navbar-mockup {
+    background: var(--fondo);
+    border: 1px solid rgba(0,0,0,0.06);
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 32px 0;
+    max-width: 700px;
+  }
+  .navbar-links { display: flex; gap: 24px; font-size: 12px; color: rgba(45,45,45,0.5); font-weight: 400 }
+  .navbar-cta {
+    font-size: 11px;
+    background: var(--verde);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+
+  .extras-row { display: flex; gap: 48px; flex-wrap: wrap; align-items: flex-start; margin-top: 48px }
+  .extra-block h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+  .favicon-row { display: flex; gap: 12px; align-items: center }
+  .favicon {
+    width: 32px; height: 32px; border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 400;
+    overflow: hidden;
+  }
+  .favicon.dark-bg { background: var(--texto); color: var(--fondo) }
+  .favicon.light-bg { background: var(--fondo); color: var(--texto); border: 1px solid rgba(0,0,0,0.08) }
+  .favicon.rosa-bg { background: var(--rosa); color: #fff }
+  .favicon.verde-bg { background: var(--verde); color: #fff }
+
+  .swatch-row { display: flex; gap: 8px }
+  .swatch { width: 32px; height: 32px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.08) }
+
+  .best-for {
+    font-size: 13px; color: var(--text-dim); font-style: italic;
+    padding: 16px 0; border-top: 1px solid rgba(255,255,255,0.05);
+    margin-top: 24px; max-width: 400px;
+  }
+  .best-for strong { color: var(--verde); font-weight: 400; font-style: normal }
+
+  /* ══════════════════════════════════════
+     LOGO STYLES — 5 new proposals
+     ══════════════════════════════════════ */
+
+  /* ── 06. Stacked Architecture ── */
+  .logo-stack {
+    text-align: center;
+    line-height: 1;
+  }
+  .logo-stack .big {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 52px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    display: block;
+  }
+  .logo-stack .small {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 4px;
+  }
+  .logo-panel.dark .logo-stack .big { color: var(--fondo) }
+  .logo-panel.dark .logo-stack .small { color: var(--text-dim) }
+  .logo-panel.light .logo-stack .big { color: var(--texto) }
+  .logo-panel.light .logo-stack .small { color: rgba(45,45,45,0.45) }
+
+  /* ── 07. Watercolor Mark ── */
+  .logo-water {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .logo-water svg { width: 48px; height: 48px; flex-shrink: 0 }
+  .logo-water .wordmark { line-height: 1.1 }
+  .logo-water .wordmark .top {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 22px;
+    letter-spacing: 0.03em;
+  }
+  .logo-water .wordmark .bottom {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px; font-weight: 300;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    opacity: 0.45; margin-top: 3px; display: block;
+  }
+  .logo-panel.dark .logo-water .wordmark .top { color: var(--fondo) }
+  .logo-panel.light .logo-water .wordmark .top { color: var(--texto) }
+
+  /* ── 08. Line Portrait ── */
+  .logo-line {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .logo-line svg { width: 44px; height: 52px; flex-shrink: 0 }
+  .logo-line .wordmark { line-height: 1.1 }
+  .logo-line .wordmark .top {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300; font-size: 24px; letter-spacing: 0.02em;
+  }
+  .logo-line .wordmark .bottom {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px; font-weight: 300;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    opacity: 0.45; margin-top: 3px; display: block;
+  }
+  .logo-panel.dark .logo-line .wordmark .top { color: var(--fondo) }
+  .logo-panel.dark .logo-line svg { stroke: var(--rosa-light) }
+  .logo-panel.light .logo-line .wordmark .top { color: var(--texto) }
+  .logo-panel.light .logo-line svg { stroke: var(--rosa) }
+
+  /* ── 09. Window/Door ── */
+  .logo-door {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .logo-door svg { width: 36px; height: 48px; flex-shrink: 0 }
+  .logo-door .wordmark { line-height: 1.1 }
+  .logo-door .wordmark .top {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300; font-size: 18px; letter-spacing: 0.08em;
+  }
+  .logo-door .wordmark .bottom {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px; font-weight: 300;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    opacity: 0.4; margin-top: 3px; display: block;
+  }
+  .logo-panel.dark .logo-door .wordmark .top { color: var(--fondo) }
+  .logo-panel.dark .logo-door svg { stroke: var(--verde-light) }
+  .logo-panel.light .logo-door .wordmark .top { color: var(--texto) }
+  .logo-panel.light .logo-door svg { stroke: var(--texto) }
+
+  /* ── 10. Constellation ── */
+  .logo-const {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .logo-const svg { width: 44px; height: 44px; flex-shrink: 0 }
+  .logo-const .wordmark { line-height: 1.1 }
+  .logo-const .wordmark .top {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400; font-size: 20px; letter-spacing: 0.04em;
+  }
+  .logo-const .wordmark .bottom {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px; font-weight: 300;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    opacity: 0.45; margin-top: 3px; display: block;
+  }
+  .logo-panel.dark .logo-const .wordmark .top { color: var(--fondo) }
+  .logo-panel.light .logo-const .wordmark .top { color: var(--texto) }
+
+  /* ── Next steps ── */
+  .next-steps { padding: 120px 0 160px; border-top: 1px solid rgba(255,255,255,0.04) }
+  .next-steps h2 { font-size: clamp(28px, 3.5vw, 42px); font-weight: 300; margin-bottom: 40px; line-height: 1.2 }
+  .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 48px }
+  @media (max-width: 768px) { .steps-grid { grid-template-columns: 1fr; gap: 32px } }
+  .step { padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06) }
+  .step-num { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; color: var(--verde); opacity: 0.5; margin-bottom: 12px }
+  .step h4 { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 8px }
+  .step p { font-size: 13px; color: var(--text-dim); line-height: 1.7 }
+
+  .page-footer {
+    padding: 48px 0; border-top: 1px solid rgba(255,255,255,0.04);
+    text-align: center; color: var(--text-faint); font-size: 11px; letter-spacing: 0.1em;
+  }
+</style>
+</head>
+<body>
+
+<a href="propuesta-logos.html" class="back-link">Primera propuesta</a>
+
+<!-- ════════════════ HEADER ════════════════ -->
+<header>
+  <div class="header-number">II</div>
+  <div class="container">
+    <div class="reveal">
+      <p class="label">Segunda ronda · Identidad visual</p>
+    </div>
+    <h1 class="reveal reveal-delay-1">
+      Cinco caminos<br><em>nuevos</em>
+    </h1>
+    <div class="divider reveal reveal-delay-2"></div>
+    <p class="intro reveal reveal-delay-3">
+      Más direcciones creativas para explorar. Estas propuestas van desde lo arquitectónico
+      y estructurado hasta lo orgánico y poético — cada una abre una conversación diferente
+      sobre cómo quieres que te perciban. Combínalas con las de la primera ronda o elige
+      la que más resuene contigo.
+    </p>
+  </div>
+  <div class="scroll-hint">Scroll para explorar</div>
+</header>
+
+
+<!-- ════════════════ PROPOSAL 06 ════════════════ -->
+<section class="proposal" id="propuesta-6">
+  <div class="proposal-number">06</div>
+  <div class="container">
+    <div class="proposal-header reveal">
+      <p class="label">Propuesta 06</p>
+      <h2 class="proposal-title">Estructura</h2>
+      <p class="proposal-rationale">
+        Jerarquía tipográfica pura. «AITANA» en Cormorant Garamond ultra-ligera a gran escala,
+        «BARREDA» debajo en Inter medio y muy espaciada. La tensión entre lo grande-delicado y
+        lo pequeño-firme refleja tu forma de trabajar: suavidad con rigor. No necesita símbolo
+        — la arquitectura del texto es la identidad.
+      </p>
+    </div>
+
+    <div class="logo-showcase reveal reveal-delay-1">
+      <div class="logo-panel dark">
+        <span class="panel-label">Fondo oscuro</span>
+        <div class="logo-stack">
+          <span class="big">Aitana</span>
+          <span class="small">Barreda</span>
+        </div>
+      </div>
+      <div class="logo-panel light">
+        <span class="panel-label">Fondo claro</span>
+        <div class="logo-stack">
+          <span class="big">Aitana</span>
+          <span class="small">Barreda</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-2">
+      <p class="label" style="margin-bottom:12px">En la web</p>
+      <div class="navbar-mockup">
+        <div class="logo-stack" style="transform:scale(0.5);transform-origin:left center;text-align:left">
+          <span class="big" style="color:var(--texto);font-size:42px">Aitana</span>
+          <span class="small" style="color:rgba(45,45,45,0.45)">Barreda</span>
+        </div>
+        <div class="navbar-links"><span>Sobre mí</span><span>Servicios</span></div>
+        <div class="navbar-cta">Pide cita</div>
+      </div>
+    </div>
+
+    <div class="extras-row reveal reveal-delay-3">
+      <div class="extra-block">
+        <h4>Favicon</h4>
+        <div class="favicon-row">
+          <div class="favicon dark-bg" style="font-weight:300;font-size:18px;letter-spacing:0.05em">A</div>
+          <div class="favicon light-bg" style="font-weight:300;font-size:18px;letter-spacing:0.05em">A</div>
+          <div class="favicon rosa-bg" style="font-weight:300;font-size:18px;letter-spacing:0.05em">A</div>
+        </div>
+      </div>
+      <div class="extra-block">
+        <h4>Colores</h4>
+        <div class="swatch-row">
+          <div class="swatch" style="background:var(--texto)"></div>
+          <div class="swatch" style="background:var(--fondo);border-color:rgba(0,0,0,0.1)"></div>
+          <div class="swatch" style="background:var(--rosa-light)"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="best-for reveal reveal-delay-4">
+      <strong>Ideal para:</strong> un posicionamiento seguro y contemporáneo. La escala dramática comunica presencia sin necesidad de adornos.
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ PROPOSAL 07 ════════════════ -->
+<section class="proposal" id="propuesta-7">
+  <div class="proposal-number">07</div>
+  <div class="container">
+    <div class="proposal-header reveal">
+      <p class="label">Propuesta 07</p>
+      <h2 class="proposal-title">Alma</h2>
+      <p class="proposal-rationale">
+        Una forma orgánica — como una gota de acuarela, una huella o una piedra suavizada por
+        el agua — con un degradado sutil de rosa a verde. No es perfecta ni simétrica: es humana.
+        Representa lo emocional, lo que no se puede contener en líneas rectas. La imperfección
+        deliberada comunica autenticidad y calidez.
+      </p>
+    </div>
+
+    <div class="logo-showcase reveal reveal-delay-1">
+      <div class="logo-panel dark">
+        <span class="panel-label">Fondo oscuro</span>
+        <div class="logo-water">
+          <svg viewBox="0 0 48 48">
+            <defs>
+              <linearGradient id="wg-d" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="var(--rosa)" stop-opacity="0.8"/>
+                <stop offset="100%" stop-color="var(--verde-light)" stop-opacity="0.6"/>
+              </linearGradient>
+            </defs>
+            <path d="M24 4 C30 6 40 12 42 22 C44 32 36 42 26 44 C16 46 8 40 6 30 C4 20 10 10 18 6 C20 5 22 4 24 4Z" fill="url(#wg-d)" stroke="none"/>
+          </svg>
+          <div class="wordmark">
+            <span class="top">Aitana Barreda</span>
+            <span class="bottom">Psicología</span>
+          </div>
+        </div>
+      </div>
+      <div class="logo-panel light">
+        <span class="panel-label">Fondo claro</span>
+        <div class="logo-water">
+          <svg viewBox="0 0 48 48">
+            <defs>
+              <linearGradient id="wg-l" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="var(--rosa)" stop-opacity="0.7"/>
+                <stop offset="100%" stop-color="var(--verde)" stop-opacity="0.5"/>
+              </linearGradient>
+            </defs>
+            <path d="M24 4 C30 6 40 12 42 22 C44 32 36 42 26 44 C16 46 8 40 6 30 C4 20 10 10 18 6 C20 5 22 4 24 4Z" fill="url(#wg-l)" stroke="none"/>
+          </svg>
+          <div class="wordmark">
+            <span class="top" style="color:var(--texto)">Aitana Barreda</span>
+            <span class="bottom">Psicología</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-2">
+      <p class="label" style="margin-bottom:12px">En la web</p>
+      <div class="navbar-mockup">
+        <div class="logo-water" style="transform:scale(0.7);transform-origin:left center;gap:14px">
+          <svg viewBox="0 0 48 48" style="width:32px;height:32px">
+            <defs><linearGradient id="wg-n" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="var(--rosa)" stop-opacity="0.7"/><stop offset="100%" stop-color="var(--verde)" stop-opacity="0.5"/></linearGradient></defs>
+            <path d="M24 4 C30 6 40 12 42 22 C44 32 36 42 26 44 C16 46 8 40 6 30 C4 20 10 10 18 6 C20 5 22 4 24 4Z" fill="url(#wg-n)"/>
+          </svg>
+          <div class="wordmark">
+            <span class="top" style="font-size:16px;color:var(--texto)">Aitana Barreda</span>
+          </div>
+        </div>
+        <div class="navbar-links"><span>Sobre mí</span><span>Servicios</span></div>
+        <div class="navbar-cta">Pide cita</div>
+      </div>
+    </div>
+
+    <div class="extras-row reveal reveal-delay-3">
+      <div class="extra-block">
+        <h4>Favicon</h4>
+        <div class="favicon-row">
+          <div class="favicon dark-bg" style="padding:4px;border-radius:8px">
+            <svg viewBox="0 0 48 48" style="width:100%;height:100%"><defs><linearGradient id="wf1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="var(--rosa)"/><stop offset="100%" stop-color="var(--verde-light)"/></linearGradient></defs><path d="M24 4 C30 6 40 12 42 22 C44 32 36 42 26 44 C16 46 8 40 6 30 C4 20 10 10 18 6 C20 5 22 4 24 4Z" fill="url(#wf1)"/></svg>
+          </div>
+          <div class="favicon rosa-bg" style="padding:5px;border-radius:8px">
+            <svg viewBox="0 0 48 48" style="width:100%;height:100%"><path d="M24 4 C30 6 40 12 42 22 C44 32 36 42 26 44 C16 46 8 40 6 30 C4 20 10 10 18 6 C20 5 22 4 24 4Z" fill="rgba(255,255,255,0.5)"/></svg>
+          </div>
+          <div class="favicon light-bg" style="padding:4px;border-radius:8px">
+            <svg viewBox="0 0 48 48" style="width:100%;height:100%"><defs><linearGradient id="wf2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="var(--rosa)" stop-opacity="0.8"/><stop offset="100%" stop-color="var(--verde)" stop-opacity="0.6"/></linearGradient></defs><path d="M24 4 C30 6 40 12 42 22 C44 32 36 42 26 44 C16 46 8 40 6 30 C4 20 10 10 18 6 C20 5 22 4 24 4Z" fill="url(#wf2)"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="extra-block">
+        <h4>Colores</h4>
+        <div class="swatch-row">
+          <div class="swatch" style="background:var(--rosa)"></div>
+          <div class="swatch" style="background:var(--verde)"></div>
+          <div class="swatch" style="background:var(--verde-light)"></div>
+          <div class="swatch" style="background:var(--fondo);border-color:rgba(0,0,0,0.1)"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="best-for reveal reveal-delay-4">
+      <strong>Ideal para:</strong> una marca que abraza lo imperfecto y lo emocional. El degradado rosa-verde es inmediatamente reconocible y diferencia de cualquier otra psicóloga.
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ PROPOSAL 08 ════════════════ -->
+<section class="proposal" id="propuesta-8">
+  <div class="proposal-number">08</div>
+  <div class="container">
+    <div class="proposal-header reveal">
+      <p class="label">Propuesta 08</p>
+      <h2 class="proposal-title">Mirada</h2>
+      <p class="proposal-rationale">
+        Un retrato en línea continua — un solo trazo que sugiere un perfil femenino en reposo,
+        como los dibujos de Matisse. La línea no define: evoca. Representa la mirada interior
+        que se trabaja en terapia, la presencia atenta, la escucha. Es arte al servicio de la
+        marca, algo que ninguna otra psicóloga tendrá.
+      </p>
+    </div>
+
+    <div class="logo-showcase reveal reveal-delay-1">
+      <div class="logo-panel dark">
+        <span class="panel-label">Fondo oscuro</span>
+        <div class="logo-line">
+          <svg viewBox="0 0 40 52" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M28 4 C26 8 24 12 22 16 C20 20 18 22 16 24 C14 26 12 27 12 30 C12 33 14 36 16 38 C18 40 22 42 26 40 C30 38 32 34 32 30 C32 26 30 24 28 22"/>
+          </svg>
+          <div class="wordmark">
+            <span class="top">Aitana Barreda</span>
+            <span class="bottom">Psicología</span>
+          </div>
+        </div>
+      </div>
+      <div class="logo-panel light">
+        <span class="panel-label">Fondo claro</span>
+        <div class="logo-line">
+          <svg viewBox="0 0 40 52" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M28 4 C26 8 24 12 22 16 C20 20 18 22 16 24 C14 26 12 27 12 30 C12 33 14 36 16 38 C18 40 22 42 26 40 C30 38 32 34 32 30 C32 26 30 24 28 22"/>
+          </svg>
+          <div class="wordmark">
+            <span class="top">Aitana Barreda</span>
+            <span class="bottom">Psicología</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-2">
+      <p class="label" style="margin-bottom:12px">En la web</p>
+      <div class="navbar-mockup">
+        <div class="logo-line" style="transform:scale(0.7);transform-origin:left center;gap:12px">
+          <svg viewBox="0 0 40 52" fill="none" stroke="var(--rosa)" stroke-width="1.3" stroke-linecap="round" style="width:28px;height:36px">
+            <path d="M28 4 C26 8 24 12 22 16 C20 20 18 22 16 24 C14 26 12 27 12 30 C12 33 14 36 16 38 C18 40 22 42 26 40 C30 38 32 34 32 30 C32 26 30 24 28 22"/>
+          </svg>
+          <div class="wordmark"><span class="top" style="font-size:18px;color:var(--texto)">Aitana Barreda</span></div>
+        </div>
+        <div class="navbar-links"><span>Sobre mí</span><span>Servicios</span></div>
+        <div class="navbar-cta">Pide cita</div>
+      </div>
+    </div>
+
+    <div class="extras-row reveal reveal-delay-3">
+      <div class="extra-block">
+        <h4>Favicon</h4>
+        <div class="favicon-row">
+          <div class="favicon dark-bg" style="padding:4px">
+            <svg viewBox="0 0 40 52" fill="none" stroke="var(--rosa-light)" stroke-width="1.8" stroke-linecap="round" style="width:100%;height:100%"><path d="M28 4 C26 8 24 12 22 16 C20 20 18 22 16 24 C14 26 12 27 12 30 C12 33 14 36 16 38 C18 40 22 42 26 40 C30 38 32 34 32 30 C32 26 30 24 28 22"/></svg>
+          </div>
+          <div class="favicon rosa-bg" style="padding:4px">
+            <svg viewBox="0 0 40 52" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" style="width:100%;height:100%"><path d="M28 4 C26 8 24 12 22 16 C20 20 18 22 16 24 C14 26 12 27 12 30 C12 33 14 36 16 38 C18 40 22 42 26 40 C30 38 32 34 32 30 C32 26 30 24 28 22"/></svg>
+          </div>
+          <div class="favicon light-bg" style="padding:4px">
+            <svg viewBox="0 0 40 52" fill="none" stroke="var(--rosa)" stroke-width="1.8" stroke-linecap="round" style="width:100%;height:100%"><path d="M28 4 C26 8 24 12 22 16 C20 20 18 22 16 24 C14 26 12 27 12 30 C12 33 14 36 16 38 C18 40 22 42 26 40 C30 38 32 34 32 30 C32 26 30 24 28 22"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="extra-block">
+        <h4>Colores</h4>
+        <div class="swatch-row">
+          <div class="swatch" style="background:var(--rosa)"></div>
+          <div class="swatch" style="background:var(--rosa-light)"></div>
+          <div class="swatch" style="background:var(--texto)"></div>
+          <div class="swatch" style="background:var(--fondo);border-color:rgba(0,0,0,0.1)"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="best-for reveal reveal-delay-4">
+      <strong>Ideal para:</strong> destacar entre la competencia con un elemento artístico único. El trazo continuo es elegante, femenino y completamente ownable.
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ PROPOSAL 09 ════════════════ -->
+<section class="proposal" id="propuesta-9">
+  <div class="proposal-number">09</div>
+  <div class="container">
+    <div class="proposal-header reveal">
+      <p class="label">Propuesta 09</p>
+      <h2 class="proposal-title">Umbral</h2>
+      <p class="proposal-rationale">
+        Una puerta con arco — el espacio terapéutico como umbral entre lo conocido y lo nuevo.
+        Entrar en terapia es cruzar un umbral, y este marco arquitectónico mínimo lo representa
+        con elegancia. Inspirado en las puertas de los edificios modernistas de Gràcia, conecta
+        con Barcelona y con la idea de un espacio que invita a entrar.
+      </p>
+    </div>
+
+    <div class="logo-showcase reveal reveal-delay-1">
+      <div class="logo-panel dark">
+        <span class="panel-label">Fondo oscuro</span>
+        <div class="logo-door">
+          <svg viewBox="0 0 30 44" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 44 L4 14 C4 7 10 2 15 2 C20 2 26 7 26 14 L26 44"/>
+          </svg>
+          <div class="wordmark">
+            <span class="top" style="color:var(--fondo)">Aitana Barreda</span>
+            <span class="bottom">Psicología</span>
+          </div>
+        </div>
+      </div>
+      <div class="logo-panel light">
+        <span class="panel-label">Fondo claro</span>
+        <div class="logo-door">
+          <svg viewBox="0 0 30 44" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 44 L4 14 C4 7 10 2 15 2 C20 2 26 7 26 14 L26 44"/>
+          </svg>
+          <div class="wordmark">
+            <span class="top" style="color:var(--texto)">Aitana Barreda</span>
+            <span class="bottom">Psicología</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-2">
+      <p class="label" style="margin-bottom:12px">En la web</p>
+      <div class="navbar-mockup">
+        <div class="logo-door" style="transform:scale(0.7);transform-origin:left center;gap:14px">
+          <svg viewBox="0 0 30 44" fill="none" stroke="var(--texto)" stroke-width="1.3" stroke-linecap="round" style="width:22px;height:32px">
+            <path d="M4 44 L4 14 C4 7 10 2 15 2 C20 2 26 7 26 14 L26 44"/>
+          </svg>
+          <div class="wordmark"><span class="top" style="font-size:15px;color:var(--texto)">Aitana Barreda</span></div>
+        </div>
+        <div class="navbar-links"><span>Sobre mí</span><span>Servicios</span></div>
+        <div class="navbar-cta">Pide cita</div>
+      </div>
+    </div>
+
+    <div class="extras-row reveal reveal-delay-3">
+      <div class="extra-block">
+        <h4>Favicon</h4>
+        <div class="favicon-row">
+          <div class="favicon dark-bg" style="padding:5px 7px">
+            <svg viewBox="0 0 30 44" fill="none" stroke="var(--verde-light)" stroke-width="2" stroke-linecap="round" style="width:100%;height:100%"><path d="M4 44 L4 14 C4 7 10 2 15 2 C20 2 26 7 26 14 L26 44"/></svg>
+          </div>
+          <div class="favicon verde-bg" style="padding:5px 7px">
+            <svg viewBox="0 0 30 44" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" style="width:100%;height:100%"><path d="M4 44 L4 14 C4 7 10 2 15 2 C20 2 26 7 26 14 L26 44"/></svg>
+          </div>
+          <div class="favicon light-bg" style="padding:5px 7px">
+            <svg viewBox="0 0 30 44" fill="none" stroke="var(--texto)" stroke-width="2" stroke-linecap="round" style="width:100%;height:100%"><path d="M4 44 L4 14 C4 7 10 2 15 2 C20 2 26 7 26 14 L26 44"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="extra-block">
+        <h4>Colores</h4>
+        <div class="swatch-row">
+          <div class="swatch" style="background:var(--texto)"></div>
+          <div class="swatch" style="background:var(--verde)"></div>
+          <div class="swatch" style="background:var(--verde-light)"></div>
+          <div class="swatch" style="background:var(--fondo);border-color:rgba(0,0,0,0.1)"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="best-for reveal reveal-delay-4">
+      <strong>Ideal para:</strong> un posicionamiento arquitectónico y barcelonés. El arco evoca tradición modernista y la idea de un espacio que se abre para ti.
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ PROPOSAL 10 ════════════════ -->
+<section class="proposal" id="propuesta-10">
+  <div class="proposal-number">10</div>
+  <div class="container">
+    <div class="proposal-header reveal">
+      <p class="label">Propuesta 10</p>
+      <h2 class="proposal-title">Vínculo</h2>
+      <p class="proposal-rationale">
+        Puntos conectados formando una constelación delicada — como neuronas que se enlazan,
+        como semillas que germinan, como personas que se encuentran. Cada punto es un momento,
+        una sesión, una emoción; y las líneas entre ellos son el trabajo terapéutico que
+        teje conexiones donde antes había fragmentación. Es sutil, moderna y profundamente
+        significativa.
+      </p>
+    </div>
+
+    <div class="logo-showcase reveal reveal-delay-1">
+      <div class="logo-panel dark">
+        <span class="panel-label">Fondo oscuro</span>
+        <div class="logo-const">
+          <svg viewBox="0 0 44 44" fill="none">
+            <!-- Connecting lines -->
+            <line x1="12" y1="10" x2="22" y2="18" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+            <line x1="22" y1="18" x2="34" y2="12" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+            <line x1="22" y1="18" x2="18" y2="30" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+            <line x1="18" y1="30" x2="32" y2="28" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+            <line x1="32" y1="28" x2="34" y2="12" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+            <line x1="18" y1="30" x2="10" y2="36" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+            <line x1="22" y1="18" x2="28" y2="38" stroke="rgba(255,255,255,0.08)" stroke-width="0.8"/>
+            <!-- Dots -->
+            <circle cx="12" cy="10" r="2.5" fill="var(--rosa)"/>
+            <circle cx="22" cy="18" r="3" fill="var(--verde-light)"/>
+            <circle cx="34" cy="12" r="2" fill="var(--rosa-light)"/>
+            <circle cx="18" cy="30" r="2.5" fill="var(--verde)"/>
+            <circle cx="32" cy="28" r="1.8" fill="var(--rosa)"/>
+            <circle cx="10" cy="36" r="2" fill="var(--verde-light)"/>
+            <circle cx="28" cy="38" r="1.5" fill="var(--rosa-light)" opacity="0.7"/>
+          </svg>
+          <div class="wordmark">
+            <span class="top">Aitana Barreda</span>
+            <span class="bottom">Psicología</span>
+          </div>
+        </div>
+      </div>
+      <div class="logo-panel light">
+        <span class="panel-label">Fondo claro</span>
+        <div class="logo-const">
+          <svg viewBox="0 0 44 44" fill="none">
+            <line x1="12" y1="10" x2="22" y2="18" stroke="rgba(45,45,45,0.08)" stroke-width="0.8"/>
+            <line x1="22" y1="18" x2="34" y2="12" stroke="rgba(45,45,45,0.08)" stroke-width="0.8"/>
+            <line x1="22" y1="18" x2="18" y2="30" stroke="rgba(45,45,45,0.08)" stroke-width="0.8"/>
+            <line x1="18" y1="30" x2="32" y2="28" stroke="rgba(45,45,45,0.08)" stroke-width="0.8"/>
+            <line x1="32" y1="28" x2="34" y2="12" stroke="rgba(45,45,45,0.08)" stroke-width="0.8"/>
+            <line x1="18" y1="30" x2="10" y2="36" stroke="rgba(45,45,45,0.08)" stroke-width="0.8"/>
+            <line x1="22" y1="18" x2="28" y2="38" stroke="rgba(45,45,45,0.06)" stroke-width="0.8"/>
+            <circle cx="12" cy="10" r="2.5" fill="var(--rosa)"/>
+            <circle cx="22" cy="18" r="3" fill="var(--verde)"/>
+            <circle cx="34" cy="12" r="2" fill="var(--rosa)"/>
+            <circle cx="18" cy="30" r="2.5" fill="var(--verde)"/>
+            <circle cx="32" cy="28" r="1.8" fill="var(--rosa)"/>
+            <circle cx="10" cy="36" r="2" fill="var(--verde)"/>
+            <circle cx="28" cy="38" r="1.5" fill="var(--rosa)" opacity="0.5"/>
+          </svg>
+          <div class="wordmark">
+            <span class="top" style="color:var(--texto)">Aitana Barreda</span>
+            <span class="bottom">Psicología</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-2">
+      <p class="label" style="margin-bottom:12px">En la web</p>
+      <div class="navbar-mockup">
+        <div class="logo-const" style="transform:scale(0.75);transform-origin:left center;gap:12px">
+          <svg viewBox="0 0 44 44" fill="none" style="width:32px;height:32px">
+            <line x1="12" y1="10" x2="22" y2="18" stroke="rgba(45,45,45,0.08)" stroke-width="0.8"/>
+            <line x1="22" y1="18" x2="34" y2="12" stroke="rgba(45,45,45,0.08)" stroke-width="0.8"/>
+            <line x1="22" y1="18" x2="18" y2="30" stroke="rgba(45,45,45,0.08)" stroke-width="0.8"/>
+            <line x1="18" y1="30" x2="32" y2="28" stroke="rgba(45,45,45,0.08)" stroke-width="0.8"/>
+            <circle cx="12" cy="10" r="2.5" fill="var(--rosa)"/>
+            <circle cx="22" cy="18" r="3" fill="var(--verde)"/>
+            <circle cx="34" cy="12" r="2" fill="var(--rosa)"/>
+            <circle cx="18" cy="30" r="2.5" fill="var(--verde)"/>
+            <circle cx="32" cy="28" r="1.8" fill="var(--rosa)"/>
+          </svg>
+          <div class="wordmark"><span class="top" style="font-size:15px;color:var(--texto)">Aitana Barreda</span></div>
+        </div>
+        <div class="navbar-links"><span>Sobre mí</span><span>Servicios</span></div>
+        <div class="navbar-cta">Pide cita</div>
+      </div>
+    </div>
+
+    <div class="extras-row reveal reveal-delay-3">
+      <div class="extra-block">
+        <h4>Favicon</h4>
+        <div class="favicon-row">
+          <div class="favicon dark-bg" style="padding:4px">
+            <svg viewBox="0 0 44 44" fill="none" style="width:100%;height:100%">
+              <circle cx="12" cy="12" r="4" fill="var(--rosa)"/>
+              <circle cx="28" cy="16" r="3" fill="var(--verde-light)"/>
+              <circle cx="18" cy="30" r="3.5" fill="var(--verde)"/>
+              <circle cx="32" cy="32" r="2.5" fill="var(--rosa-light)"/>
+            </svg>
+          </div>
+          <div class="favicon rosa-bg" style="padding:4px">
+            <svg viewBox="0 0 44 44" fill="none" style="width:100%;height:100%">
+              <circle cx="12" cy="12" r="4" fill="rgba(255,255,255,0.7)"/>
+              <circle cx="28" cy="16" r="3" fill="rgba(255,255,255,0.4)"/>
+              <circle cx="18" cy="30" r="3.5" fill="rgba(255,255,255,0.6)"/>
+              <circle cx="32" cy="32" r="2.5" fill="rgba(255,255,255,0.3)"/>
+            </svg>
+          </div>
+          <div class="favicon light-bg" style="padding:4px">
+            <svg viewBox="0 0 44 44" fill="none" style="width:100%;height:100%">
+              <circle cx="12" cy="12" r="4" fill="var(--rosa)"/>
+              <circle cx="28" cy="16" r="3" fill="var(--verde)"/>
+              <circle cx="18" cy="30" r="3.5" fill="var(--verde)"/>
+              <circle cx="32" cy="32" r="2.5" fill="var(--rosa)"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="extra-block">
+        <h4>Colores</h4>
+        <div class="swatch-row">
+          <div class="swatch" style="background:var(--rosa)"></div>
+          <div class="swatch" style="background:var(--verde)"></div>
+          <div class="swatch" style="background:var(--rosa-light)"></div>
+          <div class="swatch" style="background:var(--verde-light)"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="best-for reveal reveal-delay-4">
+      <strong>Ideal para:</strong> una marca contemporánea y simbólica que cuenta una historia. Los puntos conectados son únicos, memorables y llenos de significado.
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ NEXT STEPS ════════════════ -->
+<section class="next-steps">
+  <div class="container">
+    <div class="reveal">
+      <p class="label">Y ahora...</p>
+      <h2>Próximos pasos</h2>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step reveal reveal-delay-1">
+        <div class="step-num">01</div>
+        <h4>Elige tus favoritas</h4>
+        <p>
+          De las 10 propuestas (5 de la primera ronda + 5 de esta), dime cuáles
+          te resuenan más. Puedes combinar: el símbolo de una con la tipografía de otra.
+        </p>
+      </div>
+      <div class="step reveal reveal-delay-2">
+        <div class="step-num">02</div>
+        <h4>Refinamos juntas</h4>
+        <p>
+          Ajustamos proporciones, colores y detalles. También podemos explorar
+          variaciones de la propuesta elegida hasta que sea perfecta.
+        </p>
+      </div>
+      <div class="step reveal reveal-delay-3">
+        <div class="step-num">03</div>
+        <h4>Entrega final</h4>
+        <p>
+          Logo en SVG, PNG y PDF. Favicon optimizado. Versiones para redes sociales.
+          Guía de uso básica con colores y tipografías. Integración directa en la web.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="page-footer">
+  <div class="container">
+    Segunda ronda · Propuesta preparada para Aitana Barreda · Febrero 2026
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

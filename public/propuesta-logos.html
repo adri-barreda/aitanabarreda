@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta de Identidad Visual — Aitana Barreda</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&family=Italiana&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+  :root {
+    --bg: #0a0a0a;
+    --text: #e8e4df;
+    --text-dim: #8a857f;
+    --text-faint: #4a4743;
+    --rosa: #E8B4B8;
+    --rosa-light: #F2D7D9;
+    --verde: #8FB996;
+    --verde-light: #B8D4C8;
+    --fondo: #FAFAF8;
+    --texto: #2D2D2D;
+    --accent: var(--rosa);
+  }
+
+  html { scroll-behavior: smooth }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Scroll reveal ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s }
+  .reveal-delay-2 { transition-delay: 0.2s }
+  .reveal-delay-3 { transition-delay: 0.3s }
+  .reveal-delay-4 { transition-delay: 0.4s }
+
+  /* ── Typography ── */
+  h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif }
+
+  .label {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    font-weight: 400;
+  }
+
+  /* ── Layout ── */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 0 24px }
+  }
+
+  /* ── Header ── */
+  header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    top: 15%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(232,180,184,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: 10%;
+    left: -5%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(143,185,150,0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .header-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(120px, 20vw, 280px);
+    font-weight: 300;
+    color: rgba(232,180,184,0.04);
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  header h1 {
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 24px;
+  }
+
+  header h1 em {
+    font-style: italic;
+    color: var(--rosa);
+  }
+
+  .intro {
+    font-size: 15px;
+    color: var(--text-dim);
+    max-width: 520px;
+    line-height: 1.85;
+    margin-top: 32px;
+  }
+
+  .divider {
+    width: 48px;
+    height: 1px;
+    background: var(--rosa);
+    margin: 32px 0;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 48px;
+    left: 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-faint);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .scroll-hint::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--text-faint);
+  }
+
+  /* ── Proposal section ── */
+  .proposal {
+    padding: 120px 0;
+    position: relative;
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+
+  @media (max-width: 640px) {
+    .proposal { padding: 80px 0 }
+  }
+
+  .proposal-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(100px, 15vw, 200px);
+    font-weight: 300;
+    color: rgba(255,255,255,0.025);
+    position: absolute;
+    right: 40px;
+    top: 80px;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .proposal-header {
+    margin-bottom: 64px;
+  }
+
+  .proposal-title {
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 300;
+    color: var(--text);
+    margin-top: 12px;
+    line-height: 1.2;
+  }
+
+  .proposal-rationale {
+    font-size: 14px;
+    color: var(--text-dim);
+    max-width: 480px;
+    line-height: 1.85;
+    margin-top: 20px;
+  }
+
+  /* ── Logo showcase ── */
+  .logo-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin: 48px 0;
+  }
+
+  @media (max-width: 768px) {
+    .logo-showcase { grid-template-columns: 1fr }
+  }
+
+  .logo-panel {
+    padding: 64px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 220px;
+    position: relative;
+  }
+
+  .logo-panel.dark {
+    background: #141414;
+  }
+
+  .logo-panel.light {
+    background: var(--fondo);
+  }
+
+  .panel-label {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.3;
+  }
+
+  .logo-panel.dark .panel-label { color: #fff }
+  .logo-panel.light .panel-label { color: #000 }
+
+  /* ── Navbar mockup ── */
+  .navbar-mockup {
+    background: var(--fondo);
+    border: 1px solid rgba(0,0,0,0.06);
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 32px 0;
+    max-width: 700px;
+  }
+
+  .navbar-links {
+    display: flex;
+    gap: 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: rgba(45,45,45,0.5);
+    font-weight: 400;
+  }
+
+  .navbar-cta {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    background: var(--verde);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+
+  /* ── Favicon preview ── */
+  .extras-row {
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-top: 48px;
+  }
+
+  .extra-block h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+
+  .favicon-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .favicon {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .favicon.dark-bg { background: var(--texto); color: var(--fondo) }
+  .favicon.light-bg { background: var(--fondo); color: var(--texto); border: 1px solid rgba(0,0,0,0.08) }
+  .favicon.rosa-bg { background: var(--rosa); color: #fff }
+  .favicon.verde-bg { background: var(--verde); color: #fff }
+
+  /* ── Color swatches ── */
+  .swatch-row {
+    display: flex;
+    gap: 8px;
+  }
+
+  .swatch {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .best-for {
+    font-size: 13px;
+    color: var(--text-dim);
+    font-style: italic;
+    padding: 16px 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    margin-top: 24px;
+    max-width: 400px;
+  }
+
+  .best-for strong {
+    color: var(--rosa);
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  /* ══════════════════════════════════════
+     LOGO STYLES — each proposal unique
+     ══════════════════════════════════════ */
+
+  /* ── 1. Typographic Minimal ── */
+  .logo-typo {
+    text-align: center;
+    line-height: 1;
+  }
+  .logo-typo .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 32px;
+    letter-spacing: 0.02em;
+  }
+  .logo-typo .surname {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 10px;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    margin-top: 6px;
+    display: block;
+  }
+  .logo-panel.dark .logo-typo .name { color: var(--fondo) }
+  .logo-panel.dark .logo-typo .surname { color: rgba(250,250,248,0.45) }
+  .logo-panel.light .logo-typo .name { color: var(--texto) }
+  .logo-panel.light .logo-typo .surname { color: rgba(45,45,45,0.4) }
+
+  /* ── 2. Monogram ── */
+  .logo-mono {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .logo-mono .mark {
+    width: 56px;
+    height: 56px;
+    border: 1.5px solid;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+  }
+  .logo-mono .wordmark {
+    line-height: 1.1;
+  }
+  .logo-mono .wordmark .top {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 0.04em;
+  }
+  .logo-mono .wordmark .bottom {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-top: 2px;
+    display: block;
+  }
+  .logo-panel.dark .logo-mono .mark { border-color: var(--rosa); color: var(--rosa) }
+  .logo-panel.dark .logo-mono .wordmark .top { color: var(--fondo) }
+  .logo-panel.light .logo-mono .mark { border-color: var(--texto); color: var(--texto) }
+  .logo-panel.light .logo-mono .wordmark .top { color: var(--texto) }
+
+  /* ── 3. Symbol + Type ── */
+  .logo-symbol {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .logo-symbol svg {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+  }
+  .logo-symbol .wordmark {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 24px;
+    letter-spacing: 0.02em;
+    line-height: 1;
+  }
+  .logo-panel.dark .logo-symbol .wordmark { color: var(--fondo) }
+  .logo-panel.dark .logo-symbol svg { stroke: var(--verde-light) }
+  .logo-panel.light .logo-symbol .wordmark { color: var(--texto) }
+  .logo-panel.light .logo-symbol svg { stroke: var(--verde) }
+
+  /* ── 4. Handwritten ── */
+  .logo-hand {
+    text-align: center;
+    line-height: 1;
+  }
+  .logo-hand .script {
+    font-family: 'Italiana', serif;
+    font-size: 38px;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+  }
+  .logo-hand .sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    margin-top: 8px;
+    display: block;
+    opacity: 0.45;
+  }
+  .logo-panel.dark .logo-hand .script { color: var(--fondo) }
+  .logo-panel.light .logo-hand .script { color: var(--texto) }
+
+  /* ── 5. Geometric ── */
+  .logo-geo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .logo-geo svg {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+  }
+  .logo-geo .wordmark {
+    line-height: 1.1;
+  }
+  .logo-geo .wordmark .top {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    letter-spacing: 0.12em;
+  }
+  .logo-geo .wordmark .bottom {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    opacity: 0.4;
+    margin-top: 3px;
+    display: block;
+  }
+  .logo-panel.dark .logo-geo .wordmark .top { color: var(--fondo) }
+  .logo-panel.light .logo-geo .wordmark .top { color: var(--texto) }
+
+  /* ── Next steps ── */
+  .next-steps {
+    padding: 120px 0 160px;
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .next-steps h2 {
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 300;
+    margin-bottom: 40px;
+    line-height: 1.2;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 48px;
+  }
+
+  @media (max-width: 768px) {
+    .steps-grid { grid-template-columns: 1fr; gap: 32px }
+  }
+
+  .step {
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--rosa);
+    opacity: 0.5;
+    margin-bottom: 12px;
+  }
+
+  .step h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .step p {
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.7;
+  }
+
+  /* ── Footer ── */
+  .page-footer {
+    padding: 48px 0;
+    border-top: 1px solid rgba(255,255,255,0.04);
+    text-align: center;
+    color: var(--text-faint);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════ HEADER ════════════════ -->
+<header>
+  <div class="header-number">AB</div>
+  <div class="container">
+    <div class="reveal">
+      <p class="label">Propuesta de identidad visual</p>
+    </div>
+    <h1 class="reveal reveal-delay-1">
+      Aitana<br><em>Barreda</em>
+    </h1>
+    <div class="divider reveal reveal-delay-2"></div>
+    <p class="intro reveal reveal-delay-3">
+      Cinco propuestas de identidad visual para tu práctica de psicología en Barcelona.
+      Cada una responde a un posicionamiento diferente — desde lo editorial y minimalista
+      hasta lo orgánico y personal. El objetivo es encontrar la que mejor represente
+      quién eres y cómo quieres que te perciban tus pacientes.
+    </p>
+  </div>
+  <div class="scroll-hint">Scroll para explorar</div>
+</header>
+
+
+<!-- ════════════════ PROPOSAL 1 ════════════════ -->
+<section class="proposal" id="propuesta-1">
+  <div class="proposal-number">01</div>
+  <div class="container">
+    <div class="proposal-header reveal">
+      <p class="label">Propuesta 01</p>
+      <h2 class="proposal-title">Esencia</h2>
+      <p class="proposal-rationale">
+        Solo tu nombre, nada más. La confianza de dejar que la tipografía hable por sí sola.
+        «Aitana» en Cormorant Garamond light transmite calidez y elegancia, mientras que
+        «Barreda» en versalitas Inter crea la estructura profesional. Es el enfoque que usan
+        marcas como Céline o Aesop — la identidad nace de la proporción y el espacio.
+      </p>
+    </div>
+
+    <div class="logo-showcase reveal reveal-delay-1">
+      <div class="logo-panel dark">
+        <span class="panel-label">Fondo oscuro</span>
+        <div class="logo-typo">
+          <span class="name">Aitana</span>
+          <span class="surname">Barreda</span>
+        </div>
+      </div>
+      <div class="logo-panel light">
+        <span class="panel-label">Fondo claro</span>
+        <div class="logo-typo">
+          <span class="name">Aitana</span>
+          <span class="surname">Barreda</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar mockup -->
+    <div class="reveal reveal-delay-2">
+      <p class="label" style="margin-bottom:12px">En la web</p>
+      <div class="navbar-mockup">
+        <div class="logo-typo" style="transform:scale(0.65);transform-origin:left center">
+          <span class="name" style="color:var(--texto)">Aitana</span>
+          <span class="surname" style="color:rgba(45,45,45,0.4)">Barreda</span>
+        </div>
+        <div class="navbar-links">
+          <span>Sobre mí</span>
+          <span>Servicios</span>
+        </div>
+        <div class="navbar-cta">Pide cita</div>
+      </div>
+    </div>
+
+    <div class="extras-row reveal reveal-delay-3">
+      <div class="extra-block">
+        <h4>Favicon</h4>
+        <div class="favicon-row">
+          <div class="favicon dark-bg" style="font-size:14px;font-weight:300">A</div>
+          <div class="favicon light-bg" style="font-size:14px;font-weight:300">A</div>
+          <div class="favicon rosa-bg" style="font-size:14px;font-weight:300">A</div>
+        </div>
+      </div>
+      <div class="extra-block">
+        <h4>Colores</h4>
+        <div class="swatch-row">
+          <div class="swatch" style="background:var(--texto)"></div>
+          <div class="swatch" style="background:var(--rosa)"></div>
+          <div class="swatch" style="background:var(--fondo);border-color:rgba(0,0,0,0.1)"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="best-for reveal reveal-delay-4">
+      <strong>Ideal para:</strong> un posicionamiento editorial y sofisticado, donde la profesionalidad se transmite a través de la contención y la elegancia tipográfica.
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ PROPOSAL 2 ════════════════ -->
+<section class="proposal" id="propuesta-2">
+  <div class="proposal-number">02</div>
+  <div class="container">
+    <div class="proposal-header reveal">
+      <p class="label">Propuesta 02</p>
+      <h2 class="proposal-title">Espejo</h2>
+      <p class="proposal-rationale">
+        Un monograma «AB» dentro de un círculo fino — como un sello personal, un espacio contenido.
+        El círculo evoca el setting terapéutico: un espacio delimitado, seguro, donde todo cabe.
+        Funciona perfectamente como avatar de Instagram, favicon, y marca de agua en documentos.
+      </p>
+    </div>
+
+    <div class="logo-showcase reveal reveal-delay-1">
+      <div class="logo-panel dark">
+        <span class="panel-label">Fondo oscuro</span>
+        <div class="logo-mono">
+          <div class="mark">AB</div>
+          <div class="wordmark">
+            <span class="top">Aitana Barreda</span>
+            <span class="bottom">Psicología</span>
+          </div>
+        </div>
+      </div>
+      <div class="logo-panel light">
+        <span class="panel-label">Fondo claro</span>
+        <div class="logo-mono">
+          <div class="mark">AB</div>
+          <div class="wordmark">
+            <span class="top">Aitana Barreda</span>
+            <span class="bottom">Psicología</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-2">
+      <p class="label" style="margin-bottom:12px">En la web</p>
+      <div class="navbar-mockup">
+        <div class="logo-mono" style="transform:scale(0.7);transform-origin:left center;gap:14px">
+          <div class="mark" style="width:36px;height:36px;font-size:14px;border-color:var(--texto);color:var(--texto)">AB</div>
+          <div class="wordmark">
+            <span class="top" style="font-size:14px;color:var(--texto)">Aitana Barreda</span>
+          </div>
+        </div>
+        <div class="navbar-links">
+          <span>Sobre mí</span>
+          <span>Servicios</span>
+        </div>
+        <div class="navbar-cta">Pide cita</div>
+      </div>
+    </div>
+
+    <div class="extras-row reveal reveal-delay-3">
+      <div class="extra-block">
+        <h4>Favicon</h4>
+        <div class="favicon-row">
+          <div class="favicon dark-bg" style="border-radius:50%;font-size:12px;letter-spacing:0.05em">AB</div>
+          <div class="favicon rosa-bg" style="border-radius:50%;font-size:12px;letter-spacing:0.05em">AB</div>
+          <div class="favicon verde-bg" style="border-radius:50%;font-size:12px;letter-spacing:0.05em">AB</div>
+        </div>
+      </div>
+      <div class="extra-block">
+        <h4>Colores</h4>
+        <div class="swatch-row">
+          <div class="swatch" style="background:var(--texto)"></div>
+          <div class="swatch" style="background:var(--rosa)"></div>
+          <div class="swatch" style="background:var(--verde)"></div>
+          <div class="swatch" style="background:var(--fondo);border-color:rgba(0,0,0,0.1)"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="best-for reveal reveal-delay-4">
+      <strong>Ideal para:</strong> versatilidad máxima en redes sociales, documentos y web. El monograma funciona como avatar reconocible a cualquier tamaño.
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ PROPOSAL 3 ════════════════ -->
+<section class="proposal" id="propuesta-3">
+  <div class="proposal-number">03</div>
+  <div class="container">
+    <div class="proposal-header reveal">
+      <p class="label">Propuesta 03</p>
+      <h2 class="proposal-title">Brote</h2>
+      <p class="proposal-rationale">
+        Una hoja estilizada en trazo fino — orgánica pero precisa — que evoca crecimiento,
+        naturaleza y el proceso terapéutico como algo vivo. El símbolo conecta directamente
+        con las plantas de tu consulta (la monstera, los tonos verdes) y con la idea de que
+        la terapia es un espacio donde algo nuevo puede crecer.
+      </p>
+    </div>
+
+    <div class="logo-showcase reveal reveal-delay-1">
+      <div class="logo-panel dark">
+        <span class="panel-label">Fondo oscuro</span>
+        <div class="logo-symbol">
+          <svg viewBox="0 0 36 36" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 32 C18 32 18 20 18 14 C18 8 12 3 5 3 C5 3 12 6 14 12 C15.5 16 18 20 18 20"/>
+            <path d="M18 20 C18 20 20.5 16 22 12 C24 6 31 3 31 3 C24 3 18 8 18 14"/>
+          </svg>
+          <span class="wordmark">Aitana Barreda</span>
+        </div>
+      </div>
+      <div class="logo-panel light">
+        <span class="panel-label">Fondo claro</span>
+        <div class="logo-symbol">
+          <svg viewBox="0 0 36 36" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 32 C18 32 18 20 18 14 C18 8 12 3 5 3 C5 3 12 6 14 12 C15.5 16 18 20 18 20"/>
+            <path d="M18 20 C18 20 20.5 16 22 12 C24 6 31 3 31 3 C24 3 18 8 18 14"/>
+          </svg>
+          <span class="wordmark">Aitana Barreda</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-2">
+      <p class="label" style="margin-bottom:12px">En la web</p>
+      <div class="navbar-mockup">
+        <div class="logo-symbol" style="transform:scale(0.75);transform-origin:left center;gap:10px">
+          <svg viewBox="0 0 36 36" fill="none" stroke="var(--verde)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="width:28px;height:28px">
+            <path d="M18 32 C18 32 18 20 18 14 C18 8 12 3 5 3 C5 3 12 6 14 12 C15.5 16 18 20 18 20"/>
+            <path d="M18 20 C18 20 20.5 16 22 12 C24 6 31 3 31 3 C24 3 18 8 18 14"/>
+          </svg>
+          <span class="wordmark" style="font-size:18px;color:var(--texto)">Aitana Barreda</span>
+        </div>
+        <div class="navbar-links">
+          <span>Sobre mí</span>
+          <span>Servicios</span>
+        </div>
+        <div class="navbar-cta">Pide cita</div>
+      </div>
+    </div>
+
+    <div class="extras-row reveal reveal-delay-3">
+      <div class="extra-block">
+        <h4>Favicon</h4>
+        <div class="favicon-row">
+          <div class="favicon dark-bg" style="padding:6px">
+            <svg viewBox="0 0 36 36" fill="none" stroke="var(--verde-light)" stroke-width="1.5" stroke-linecap="round" style="width:100%;height:100%">
+              <path d="M18 32 C18 32 18 20 18 14 C18 8 12 3 5 3 C5 3 12 6 14 12 C15.5 16 18 20 18 20"/>
+              <path d="M18 20 C18 20 20.5 16 22 12 C24 6 31 3 31 3 C24 3 18 8 18 14"/>
+            </svg>
+          </div>
+          <div class="favicon verde-bg" style="padding:6px">
+            <svg viewBox="0 0 36 36" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" style="width:100%;height:100%">
+              <path d="M18 32 C18 32 18 20 18 14 C18 8 12 3 5 3 C5 3 12 6 14 12 C15.5 16 18 20 18 20"/>
+              <path d="M18 20 C18 20 20.5 16 22 12 C24 6 31 3 31 3 C24 3 18 8 18 14"/>
+            </svg>
+          </div>
+          <div class="favicon light-bg" style="padding:6px">
+            <svg viewBox="0 0 36 36" fill="none" stroke="var(--verde)" stroke-width="1.5" stroke-linecap="round" style="width:100%;height:100%">
+              <path d="M18 32 C18 32 18 20 18 14 C18 8 12 3 5 3 C5 3 12 6 14 12 C15.5 16 18 20 18 20"/>
+              <path d="M18 20 C18 20 20.5 16 22 12 C24 6 31 3 31 3 C24 3 18 8 18 14"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="extra-block">
+        <h4>Colores</h4>
+        <div class="swatch-row">
+          <div class="swatch" style="background:var(--verde)"></div>
+          <div class="swatch" style="background:var(--verde-light)"></div>
+          <div class="swatch" style="background:var(--texto)"></div>
+          <div class="swatch" style="background:var(--fondo);border-color:rgba(0,0,0,0.1)"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="best-for reveal reveal-delay-4">
+      <strong>Ideal para:</strong> transmitir calidez orgánica y conexión con la naturaleza. Refuerza la identidad verde de la consulta y el concepto de crecimiento personal.
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ PROPOSAL 4 ════════════════ -->
+<section class="proposal" id="propuesta-4">
+  <div class="proposal-number">04</div>
+  <div class="container">
+    <div class="proposal-header reveal">
+      <p class="label">Propuesta 04</p>
+      <h2 class="proposal-title">Latido</h2>
+      <p class="proposal-rationale">
+        Tu nombre escrito con la cadencia de una firma personal. «Aitana» en Italiana — una
+        tipografía que tiene la fluidez de lo escrito a mano sin perder la elegancia — junto
+        a «Barreda Psicología» en Inter estructurada. El contraste entre lo personal y lo
+        profesional refleja exactamente tu forma de trabajar: cercana pero rigurosa.
+      </p>
+    </div>
+
+    <div class="logo-showcase reveal reveal-delay-1">
+      <div class="logo-panel dark">
+        <span class="panel-label">Fondo oscuro</span>
+        <div class="logo-hand">
+          <span class="script">Aitana</span>
+          <span class="sub">Barreda Psicología</span>
+        </div>
+      </div>
+      <div class="logo-panel light">
+        <span class="panel-label">Fondo claro</span>
+        <div class="logo-hand">
+          <span class="script">Aitana</span>
+          <span class="sub">Barreda Psicología</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-2">
+      <p class="label" style="margin-bottom:12px">En la web</p>
+      <div class="navbar-mockup">
+        <div class="logo-hand" style="transform:scale(0.65);transform-origin:left center;text-align:left">
+          <span class="script" style="color:var(--texto);font-size:30px">Aitana</span>
+          <span class="sub" style="color:rgba(45,45,45,0.4)">Barreda Psicología</span>
+        </div>
+        <div class="navbar-links">
+          <span>Sobre mí</span>
+          <span>Servicios</span>
+        </div>
+        <div class="navbar-cta">Pide cita</div>
+      </div>
+    </div>
+
+    <div class="extras-row reveal reveal-delay-3">
+      <div class="extra-block">
+        <h4>Favicon</h4>
+        <div class="favicon-row">
+          <div class="favicon dark-bg" style="font-family:'Italiana',serif;font-size:18px">A</div>
+          <div class="favicon rosa-bg" style="font-family:'Italiana',serif;font-size:18px">A</div>
+          <div class="favicon light-bg" style="font-family:'Italiana',serif;font-size:18px">A</div>
+        </div>
+      </div>
+      <div class="extra-block">
+        <h4>Colores</h4>
+        <div class="swatch-row">
+          <div class="swatch" style="background:var(--texto)"></div>
+          <div class="swatch" style="background:var(--rosa)"></div>
+          <div class="swatch" style="background:var(--rosa-light)"></div>
+          <div class="swatch" style="background:var(--fondo);border-color:rgba(0,0,0,0.1)"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="best-for reveal reveal-delay-4">
+      <strong>Ideal para:</strong> un posicionamiento cálido y personal, donde la cercanía y la empatía son el primer mensaje que recibe la paciente.
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ PROPOSAL 5 ════════════════ -->
+<section class="proposal" id="propuesta-5">
+  <div class="proposal-number">05</div>
+  <div class="container">
+    <div class="proposal-header reveal">
+      <p class="label">Propuesta 05</p>
+      <h2 class="proposal-title">Refugio</h2>
+      <p class="proposal-rationale">
+        Dos arcos que se encuentran formando un espacio contenido — como dos manos que
+        acogen, como el marco de una puerta abierta. Es una marca abstracta que sugiere
+        abrazo, contención y espacio seguro sin ser literal. Funciona como icono de app,
+        avatar de redes, y es inmediatamente reconocible a cualquier escala.
+      </p>
+    </div>
+
+    <div class="logo-showcase reveal reveal-delay-1">
+      <div class="logo-panel dark">
+        <span class="panel-label">Fondo oscuro</span>
+        <div class="logo-geo">
+          <svg viewBox="0 0 44 44" fill="none">
+            <path d="M10 34 C10 20 16 10 22 10 C28 10 34 20 34 34" stroke="var(--rosa)" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+            <path d="M16 34 C16 24 19 16 22 16 C25 16 28 24 28 34" stroke="var(--verde-light)" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+          </svg>
+          <div class="wordmark">
+            <span class="top" style="color:var(--fondo)">Aitana Barreda</span>
+            <span class="bottom">Psicología</span>
+          </div>
+        </div>
+      </div>
+      <div class="logo-panel light">
+        <span class="panel-label">Fondo claro</span>
+        <div class="logo-geo">
+          <svg viewBox="0 0 44 44" fill="none">
+            <path d="M10 34 C10 20 16 10 22 10 C28 10 34 20 34 34" stroke="var(--rosa)" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+            <path d="M16 34 C16 24 19 16 22 16 C25 16 28 24 28 34" stroke="var(--verde)" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+          </svg>
+          <div class="wordmark">
+            <span class="top" style="color:var(--texto)">Aitana Barreda</span>
+            <span class="bottom">Psicología</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-2">
+      <p class="label" style="margin-bottom:12px">En la web</p>
+      <div class="navbar-mockup">
+        <div class="logo-geo" style="transform:scale(0.75);transform-origin:left center;gap:12px">
+          <svg viewBox="0 0 44 44" fill="none" style="width:32px;height:32px">
+            <path d="M10 34 C10 20 16 10 22 10 C28 10 34 20 34 34" stroke="var(--rosa)" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M16 34 C16 24 19 16 22 16 C25 16 28 24 28 34" stroke="var(--verde)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <div class="wordmark">
+            <span class="top" style="font-size:14px;color:var(--texto)">Aitana Barreda</span>
+          </div>
+        </div>
+        <div class="navbar-links">
+          <span>Sobre mí</span>
+          <span>Servicios</span>
+        </div>
+        <div class="navbar-cta">Pide cita</div>
+      </div>
+    </div>
+
+    <div class="extras-row reveal reveal-delay-3">
+      <div class="extra-block">
+        <h4>Favicon</h4>
+        <div class="favicon-row">
+          <div class="favicon dark-bg" style="padding:5px">
+            <svg viewBox="0 0 44 44" fill="none" style="width:100%;height:100%">
+              <path d="M10 34 C10 20 16 10 22 10 C28 10 34 20 34 34" stroke="var(--rosa)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M16 34 C16 24 19 16 22 16 C25 16 28 24 28 34" stroke="var(--verde-light)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="favicon rosa-bg" style="padding:5px">
+            <svg viewBox="0 0 44 44" fill="none" style="width:100%;height:100%">
+              <path d="M10 34 C10 20 16 10 22 10 C28 10 34 20 34 34" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+              <path d="M16 34 C16 24 19 16 22 16 C25 16 28 24 28 34" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="favicon light-bg" style="padding:5px">
+            <svg viewBox="0 0 44 44" fill="none" style="width:100%;height:100%">
+              <path d="M10 34 C10 20 16 10 22 10 C28 10 34 20 34 34" stroke="var(--rosa)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M16 34 C16 24 19 16 22 16 C25 16 28 24 28 34" stroke="var(--verde)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="extra-block">
+        <h4>Colores</h4>
+        <div class="swatch-row">
+          <div class="swatch" style="background:var(--rosa)"></div>
+          <div class="swatch" style="background:var(--verde)"></div>
+          <div class="swatch" style="background:var(--texto)"></div>
+          <div class="swatch" style="background:var(--fondo);border-color:rgba(0,0,0,0.1)"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="best-for reveal reveal-delay-4">
+      <strong>Ideal para:</strong> una marca moderna y memorable con un símbolo propio. Los dos arcos en rosa y verde integran toda la paleta en un icono instantáneamente reconocible.
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ NEXT STEPS ════════════════ -->
+<section style="text-align:center;padding:4rem 2rem 2rem">
+  <div class="reveal">
+    <p class="label">¿Quieres ver más?</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:300;color:var(--text);margin:1rem 0 1.5rem">Segunda ronda de propuestas</h2>
+    <a href="propuesta-logos-2.html" style="display:inline-block;padding:1rem 2.5rem;border:1px solid var(--rosa);color:var(--rosa);font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;transition:all 0.3s">Ver propuestas 06 — 10 →</a>
+  </div>
+</section>
+
+<section class="next-steps">
+  <div class="container">
+    <div class="reveal">
+      <p class="label">Y ahora...</p>
+      <h2>Próximos pasos</h2>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step reveal reveal-delay-1">
+        <div class="step-num">01</div>
+        <h4>Elige tu favorita</h4>
+        <p>
+          No tiene que ser una decisión definitiva — dime cuál o cuáles te resuenan
+          más y por qué. También puedes combinar elementos: la tipografía de una
+          con el símbolo de otra.
+        </p>
+      </div>
+      <div class="step reveal reveal-delay-2">
+        <div class="step-num">02</div>
+        <h4>Refinamos juntas</h4>
+        <p>
+          Ajustamos proporciones, colores y detalles hasta que sientas que te
+          representa al 100%. Haremos 2-3 rondas de refinamiento.
+        </p>
+      </div>
+      <div class="step reveal reveal-delay-3">
+        <div class="step-num">03</div>
+        <h4>Implementación</h4>
+        <p>
+          Integramos el logo en la web, generamos el favicon, los formatos para
+          redes sociales, y preparamos los archivos finales (SVG, PNG, PDF).
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="page-footer">
+  <div class="container">
+    Propuesta preparada para Aitana Barreda · Febrero 2026
+  </div>
+</footer>
+
+<script>
+// Intersection Observer for scroll reveals
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
