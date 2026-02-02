@@ -13,13 +13,12 @@ export default function Hero() {
           </p>
 
           <h1 className="font-heading text-[2.5rem] sm:text-5xl lg:text-[3.4rem] xl:text-[3.8rem] leading-[1.08] text-texto font-light tracking-[-0.01em]">
-            Entender lo que
+            Devolverte el
             <br className="hidden sm:block" />
-            {' '}te ocurre es el
+            {' '}control sobre
             <br className="hidden sm:block" />
-            {' '}primer paso para
-            <br />
-            <span className="italic font-normal text-verde">respetarte</span>
+            {' '}tu{' '}
+            <span className="italic font-normal text-verde">vida</span>
           </h1>
 
           <div className="mt-10 flex items-center gap-6">
