@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta de Identidad Visual III — Aitana Barreda</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+  :root {
+    --bg: #0a0a0a;
+    --text: #e8e4df;
+    --text-dim: #8a857f;
+    --text-faint: #4a4743;
+    --rosa: #E8B4B8;
+    --rosa-light: #F2D7D9;
+    --verde: #8FB996;
+    --verde-light: #B8D4C8;
+    --fondo: #FAFAF8;
+    --texto: #2D2D2D;
+    --accent: var(--rosa);
+  }
+
+  html { scroll-behavior: smooth }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Scroll reveal ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s }
+  .reveal-delay-2 { transition-delay: 0.2s }
+  .reveal-delay-3 { transition-delay: 0.3s }
+  .reveal-delay-4 { transition-delay: 0.4s }
+
+  /* ── Typography ── */
+  h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif }
+
+  .label {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    font-weight: 400;
+  }
+
+  /* ── Layout ── */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 0 24px }
+  }
+
+  /* ── Back links ── */
+  .back-links {
+    padding: 32px 40px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .back-links a {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--text-faint);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: color 0.3s;
+  }
+
+  .back-links a:hover { color: var(--rosa) }
+
+  /* ── Header ── */
+  header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: -5%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(143,185,150,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: 15%;
+    left: -8%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(232,180,184,0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .header-mountain {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 60%;
+    max-width: 700px;
+    opacity: 0.03;
+    pointer-events: none;
+  }
+
+  header h1 {
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 24px;
+  }
+
+  header h1 em {
+    font-style: italic;
+    color: var(--verde);
+  }
+
+  .intro {
+    font-size: 15px;
+    color: var(--text-dim);
+    max-width: 540px;
+    line-height: 1.85;
+    margin-top: 32px;
+  }
+
+  .divider {
+    width: 48px;
+    height: 1px;
+    background: var(--verde);
+    margin: 32px 0;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 48px;
+    left: 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-faint);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .scroll-hint::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--text-faint);
+  }
+
+  /* ── Proposal section ── */
+  .proposal {
+    padding: 120px 0;
+    position: relative;
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+
+  @media (max-width: 640px) {
+    .proposal { padding: 80px 0 }
+  }
+
+  .proposal-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(100px, 15vw, 200px);
+    font-weight: 300;
+    color: rgba(255,255,255,0.025);
+    position: absolute;
+    right: 40px;
+    top: 80px;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .proposal-header { margin-bottom: 64px }
+
+  .proposal-title {
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 300;
+    color: var(--text);
+    margin-top: 12px;
+    line-height: 1.2;
+  }
+
+  .proposal-rationale {
+    font-size: 14px;
+    color: var(--text-dim);
+    max-width: 500px;
+    line-height: 1.85;
+    margin-top: 20px;
+  }
+
+  /* ── Logo showcase ── */
+  .logo-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin: 48px 0;
+  }
+
+  @media (max-width: 768px) {
+    .logo-showcase { grid-template-columns: 1fr }
+  }
+
+  .logo-panel {
+    padding: 64px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 240px;
+    position: relative;
+  }
+
+  .logo-panel.dark { background: #141414 }
+  .logo-panel.light { background: var(--fondo) }
+
+  .panel-label {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.3;
+  }
+
+  .logo-panel.dark .panel-label { color: #fff }
+  .logo-panel.light .panel-label { color: #000 }
+
+  /* ── Navbar mockup ── */
+  .navbar-mockup {
+    background: var(--fondo);
+    border: 1px solid rgba(0,0,0,0.06);
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 32px 0;
+    max-width: 700px;
+  }
+
+  .navbar-links {
+    display: flex;
+    gap: 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: rgba(45,45,45,0.5);
+    font-weight: 400;
+  }
+
+  .navbar-cta {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    background: var(--verde);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+
+  /* ── Favicon preview ── */
+  .extras-row {
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-top: 48px;
+  }
+
+  .extra-block h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+
+  .favicon-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .favicon {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .favicon.dark-bg { background: var(--texto); color: var(--fondo) }
+  .favicon.light-bg { background: var(--fondo); color: var(--texto); border: 1px solid rgba(0,0,0,0.08) }
+  .favicon.rosa-bg { background: var(--rosa); color: #fff }
+  .favicon.verde-bg { background: var(--verde); color: #fff }
+
+  .swatch-row { display: flex; gap: 8px }
+
+  .swatch {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .best-for {
+    font-size: 13px;
+    color: var(--text-dim);
+    font-style: italic;
+    padding: 16px 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    margin-top: 24px;
+    max-width: 400px;
+  }
+
+  .best-for strong {
+    color: var(--verde);
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  /* ══════════════════════════════════════
+     MOUNTAIN LOGO STYLES
+     ══════════════════════════════════════ */
+
+  /* Shared mountain logo layout */
+  .logo-mountain {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .logo-mountain svg { flex-shrink: 0 }
+
+  .logo-mountain .wordmark {
+    line-height: 1.1;
+  }
+
+  .logo-mountain .wordmark .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 22px;
+    letter-spacing: 0.03em;
+    display: block;
+  }
+
+  .logo-mountain .wordmark .sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    opacity: 0.45;
+    margin-top: 3px;
+    display: block;
+  }
+
+  .logo-panel.dark .logo-mountain .wordmark .name { color: var(--fondo) }
+  .logo-panel.light .logo-mountain .wordmark .name { color: var(--texto) }
+
+  /* Centered variant */
+  .logo-mountain-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    text-align: center;
+  }
+
+  .logo-mountain-center svg { flex-shrink: 0 }
+
+  .logo-mountain-center .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 26px;
+    letter-spacing: 0.05em;
+    display: block;
+  }
+
+  .logo-mountain-center .sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0.4;
+    margin-top: 2px;
+    display: block;
+  }
+
+  .logo-panel.dark .logo-mountain-center .name { color: var(--fondo) }
+  .logo-panel.light .logo-mountain-center .name { color: var(--texto) }
+
+  /* ── Next steps ── */
+  .next-steps {
+    padding: 120px 0 160px;
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .next-steps h2 {
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 300;
+    margin-bottom: 40px;
+    line-height: 1.2;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 48px;
+  }
+
+  @media (max-width: 768px) {
+    .steps-grid { grid-template-columns: 1fr; gap: 32px }
+  }
+
+  .step {
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--verde);
+    opacity: 0.5;
+    margin-bottom: 12px;
+  }
+
+  .step h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .step p {
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.7;
+  }
+
+  .page-footer {
+    padding: 48px 0;
+    border-top: 1px solid rgba(255,255,255,0.04);
+    text-align: center;
+    color: var(--text-faint);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+  }
+
+  /* ── SVG line draw animation ── */
+  @keyframes draw {
+    to { stroke-dashoffset: 0 }
+  }
+
+  .mountain-hero-line {
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: draw 3s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards;
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════ BACK LINKS ════════════════ -->
+<div class="back-links">
+  <a href="propuesta-logos.html">&larr; Primera propuesta</a>
+  <a href="propuesta-logos-2.html">&larr; Segunda propuesta</a>
+</div>
+
+<!-- ════════════════ HEADER ════════════════ -->
+<header>
+  <!-- Decorative mountain silhouette -->
+  <svg class="header-mountain" viewBox="0 0 800 400" fill="none">
+    <path d="M0 400 L120 280 C150 250 180 200 220 160 C260 120 290 100 320 80 C350 60 370 50 400 80 C430 110 450 150 480 200 C510 250 540 280 580 240 C620 200 650 140 700 180 C750 220 780 300 800 400 Z" fill="rgba(143,185,150,0.3)"/>
+  </svg>
+  <div class="container">
+    <div class="reveal">
+      <p class="label">Propuesta de identidad visual &middot; Tercera ronda</p>
+    </div>
+    <h1 class="reveal reveal-delay-1">
+      La <em>montaña</em><br>de Aitana
+    </h1>
+    <div class="divider reveal reveal-delay-2"></div>
+    <p class="intro reveal reveal-delay-3">
+      El nombre Aitana tiene raíces que conectan con la montaña, la cumbre, lo elevado.
+      Esta tercera ronda explora cinco variaciones de un mismo concepto: la montaña como
+      línea, como trazo, como metáfora del camino terapéutico. Cada una interpreta la
+      montaña de forma diferente, pero todas comparten la misma idea: el viaje hacia
+      arriba empieza con un primer paso.
+    </p>
+    <!-- Animated mountain line -->
+    <svg viewBox="0 0 300 60" fill="none" style="width:200px;margin-top:40px;display:block" class="reveal reveal-delay-4">
+      <path class="mountain-hero-line" d="M10 50 C40 50 60 45 90 30 C110 20 130 8 150 8 C170 8 185 18 200 30 C220 45 240 50 270 50" stroke="var(--verde)" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+    </svg>
+  </div>
+  <div class="scroll-hint">Scroll para explorar</div>
+</header>
+
+
+<!-- ════════════════ PROPOSAL 11: CUMBRE ════════════════ -->
+<section class="proposal" id="propuesta-11">
+  <div class="proposal-number">11</div>
+  <div class="container">
+    <div class="proposal-header reveal">
+      <p class="label">Propuesta 11</p>
+      <h2 class="proposal-title">Cumbre</h2>
+      <p class="proposal-rationale">
+        Un solo trazo ascendente que dibuja un pico de montaña. La línea sube con
+        determinación y baja con suavidad, como el proceso terapéutico: el esfuerzo
+        de mirar hacia arriba y la calma que viene después. Es el logo más minimalista
+        de la serie, donde un único gesto lo dice todo. «Aitana» como nombre propio
+        y como cumbre.
+      </p>
+    </div>
+
+    <div class="logo-showcase reveal reveal-delay-1">
+      <div class="logo-panel dark">
+        <span class="panel-label">Fondo oscuro</span>
+        <div class="logo-mountain">
+          <svg width="56" height="40" viewBox="0 0 56 40" fill="none">
+            <path d="M2 36 C8 36 14 32 20 24 C24 18 26 12 28 6 C30 12 32 18 36 24 C42 32 48 36 54 36" stroke="var(--verde-light)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="wordmark">
+            <span class="name">Aitana Barreda</span>
+            <span class="sub">Psicología</span>
+          </div>
+        </div>
+      </div>
+      <div class="logo-panel light">
+        <span class="panel-label">Fondo claro</span>
+        <div class="logo-mountain">
+          <svg width="56" height="40" viewBox="0 0 56 40" fill="none">
+            <path d="M2 36 C8 36 14 32 20 24 C24 18 26 12 28 6 C30 12 32 18 36 24 C42 32 48 36 54 36" stroke="var(--verde)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="wordmark">
+            <span class="name" style="color:var(--texto)">Aitana Barreda</span>
+            <span class="sub">Psicología</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-2">
+      <p class="label" style="margin-bottom:12px">En la web</p>
+      <div class="navbar-mockup">
+        <div class="logo-mountain" style="transform:scale(0.75);transform-origin:left center;gap:12px">
+          <svg width="40" height="28" viewBox="0 0 56 40" fill="none">
+            <path d="M2 36 C8 36 14 32 20 24 C24 18 26 12 28 6 C30 12 32 18 36 24 C42 32 48 36 54 36" stroke="var(--verde)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <div class="wordmark">
+            <span class="name" style="font-size:17px;color:var(--texto)">Aitana Barreda</span>
+          </div>
+        </div>
+        <div class="navbar-links">
+          <span>Sobre mí</span>
+          <span>Servicios</span>
+        </div>
+        <div class="navbar-cta">Pide cita</div>
+      </div>
+    </div>
+
+    <div class="extras-row reveal reveal-delay-3">
+      <div class="extra-block">
+        <h4>Favicon</h4>
+        <div class="favicon-row">
+          <div class="favicon dark-bg" style="padding:5px">
+            <svg viewBox="0 0 56 40" fill="none" style="width:100%;height:100%">
+              <path d="M2 36 C8 36 14 32 20 24 C24 18 26 12 28 6 C30 12 32 18 36 24 C42 32 48 36 54 36" stroke="var(--verde-light)" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="favicon verde-bg" style="padding:5px">
+            <svg viewBox="0 0 56 40" fill="none" style="width:100%;height:100%">
+              <path d="M2 36 C8 36 14 32 20 24 C24 18 26 12 28 6 C30 12 32 18 36 24 C42 32 48 36 54 36" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="favicon light-bg" style="padding:5px">
+            <svg viewBox="0 0 56 40" fill="none" style="width:100%;height:100%">
+              <path d="M2 36 C8 36 14 32 20 24 C24 18 26 12 28 6 C30 12 32 18 36 24 C42 32 48 36 54 36" stroke="var(--verde)" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="extra-block">
+        <h4>Colores</h4>
+        <div class="swatch-row">
+          <div class="swatch" style="background:var(--verde)"></div>
+          <div class="swatch" style="background:var(--texto)"></div>
+          <div class="swatch" style="background:var(--fondo);border-color:rgba(0,0,0,0.1)"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="best-for reveal reveal-delay-4">
+      <strong>Ideal para:</strong> un posicionamiento minimalista y elegante donde un solo gesto transmite toda la identidad. La montaña como firma personal.
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ PROPOSAL 12: SIERRA ════════════════ -->
+<section class="proposal" id="propuesta-12">
+  <div class="proposal-number">12</div>
+  <div class="container">
+    <div class="proposal-header reveal">
+      <p class="label">Propuesta 12</p>
+      <h2 class="proposal-title">Sierra</h2>
+      <p class="proposal-rationale">
+        Una cordillera dibujada como un solo trazo continuo: tres picos de diferentes
+        alturas que suben y bajan como un ritmo respiratorio. La línea fluye sin
+        interrupciones, como una respiración consciente o un latido. Representa que
+        el proceso terapéutico tiene altibajos naturales, y que todos forman parte
+        del paisaje. Es más panorámica y dinámica que Cumbre.
+      </p>
+    </div>
+
+    <div class="logo-showcase reveal reveal-delay-1">
+      <div class="logo-panel dark">
+        <span class="panel-label">Fondo oscuro</span>
+        <div class="logo-mountain-center">
+          <svg width="140" height="44" viewBox="0 0 140 44" fill="none">
+            <path d="M4 38 C12 38 18 34 24 28 C28 24 31 18 34 14 C37 18 40 24 44 28 C48 32 52 36 58 36 C64 36 68 30 72 22 C75 16 77 10 80 6 C83 10 85 16 88 22 C92 30 96 36 102 36 C108 36 112 32 116 28 C120 24 123 20 126 18 C129 20 132 26 136 38" stroke="var(--verde-light)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div>
+            <span class="name" style="color:var(--fondo)">Aitana Barreda</span>
+            <span class="sub">Psicología</span>
+          </div>
+        </div>
+      </div>
+      <div class="logo-panel light">
+        <span class="panel-label">Fondo claro</span>
+        <div class="logo-mountain-center">
+          <svg width="140" height="44" viewBox="0 0 140 44" fill="none">
+            <path d="M4 38 C12 38 18 34 24 28 C28 24 31 18 34 14 C37 18 40 24 44 28 C48 32 52 36 58 36 C64 36 68 30 72 22 C75 16 77 10 80 6 C83 10 85 16 88 22 C92 30 96 36 102 36 C108 36 112 32 116 28 C120 24 123 20 126 18 C129 20 132 26 136 38" stroke="var(--verde)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div>
+            <span class="name" style="color:var(--texto)">Aitana Barreda</span>
+            <span class="sub">Psicología</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-2">
+      <p class="label" style="margin-bottom:12px">En la web</p>
+      <div class="navbar-mockup">
+        <div style="display:flex;align-items:center;gap:10px;transform:scale(0.8);transform-origin:left center">
+          <svg width="80" height="26" viewBox="0 0 140 44" fill="none">
+            <path d="M4 38 C12 38 18 34 24 28 C28 24 31 18 34 14 C37 18 40 24 44 28 C48 32 52 36 58 36 C64 36 68 30 72 22 C75 16 77 10 80 6 C83 10 85 16 88 22 C92 30 96 36 102 36 C108 36 112 32 116 28 C120 24 123 20 126 18 C129 20 132 26 136 38" stroke="var(--verde)" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <span style="font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--texto);font-weight:400">Aitana Barreda</span>
+        </div>
+        <div class="navbar-links">
+          <span>Sobre mí</span>
+          <span>Servicios</span>
+        </div>
+        <div class="navbar-cta">Pide cita</div>
+      </div>
+    </div>
+
+    <div class="extras-row reveal reveal-delay-3">
+      <div class="extra-block">
+        <h4>Favicon</h4>
+        <div class="favicon-row">
+          <div class="favicon dark-bg" style="padding:4px">
+            <svg viewBox="0 0 140 44" fill="none" style="width:100%;height:100%">
+              <path d="M4 38 C12 38 18 34 24 28 C28 24 31 18 34 14 C37 18 40 24 44 28 C48 32 52 36 58 36 C64 36 68 30 72 22 C75 16 77 10 80 6 C83 10 85 16 88 22 C92 30 96 36 102 36 C108 36 112 32 116 28 C120 24 123 20 126 18 C129 20 132 26 136 38" stroke="var(--verde-light)" stroke-width="3.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="favicon verde-bg" style="padding:4px">
+            <svg viewBox="0 0 140 44" fill="none" style="width:100%;height:100%">
+              <path d="M4 38 C12 38 18 34 24 28 C28 24 31 18 34 14 C37 18 40 24 44 28 C48 32 52 36 58 36 C64 36 68 30 72 22 C75 16 77 10 80 6 C83 10 85 16 88 22 C92 30 96 36 102 36 C108 36 112 32 116 28 C120 24 123 20 126 18 C129 20 132 26 136 38" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="favicon light-bg" style="padding:4px">
+            <svg viewBox="0 0 140 44" fill="none" style="width:100%;height:100%">
+              <path d="M4 38 C12 38 18 34 24 28 C28 24 31 18 34 14 C37 18 40 24 44 28 C48 32 52 36 58 36 C64 36 68 30 72 22 C75 16 77 10 80 6 C83 10 85 16 88 22 C92 30 96 36 102 36 C108 36 112 32 116 28 C120 24 123 20 126 18 C129 20 132 26 136 38" stroke="var(--verde)" stroke-width="3.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="extra-block">
+        <h4>Colores</h4>
+        <div class="swatch-row">
+          <div class="swatch" style="background:var(--verde)"></div>
+          <div class="swatch" style="background:var(--verde-light)"></div>
+          <div class="swatch" style="background:var(--texto)"></div>
+          <div class="swatch" style="background:var(--fondo);border-color:rgba(0,0,0,0.1)"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="best-for reveal reveal-delay-4">
+      <strong>Ideal para:</strong> un logo con presencia horizontal que funciona como separador visual en la web. Evoca ritmo, respiración y la naturalidad del proceso terapéutico.
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ PROPOSAL 13: REFUGIO ════════════════ -->
+<section class="proposal" id="propuesta-13">
+  <div class="proposal-number">13</div>
+  <div class="container">
+    <div class="proposal-header reveal">
+      <p class="label">Propuesta 13</p>
+      <h2 class="proposal-title">Refugio</h2>
+      <p class="proposal-rationale">
+        La montaña como cobijo. El pico se convierte en un techo protector, y las
+        laderas se curvan ligeramente hacia dentro en la base, como brazos que
+        envuelven. Debajo de la montaña, el nombre queda contenido, protegido.
+        Es la montaña como espacio terapéutico: un lugar donde resguardarse del
+        ruido exterior para poder escucharte por dentro.
+      </p>
+    </div>
+
+    <div class="logo-showcase reveal reveal-delay-1">
+      <div class="logo-panel dark">
+        <span class="panel-label">Fondo oscuro</span>
+        <div class="logo-mountain-center">
+          <svg width="72" height="52" viewBox="0 0 72 52" fill="none">
+            <path d="M8 46 C12 40 18 30 24 22 C28 16 32 10 36 6 C40 10 44 16 48 22 C54 30 60 40 64 46" stroke="var(--verde-light)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8 46 C14 44 22 43 36 43 C50 43 58 44 64 46" stroke="var(--verde-light)" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+          </svg>
+          <div>
+            <span class="name" style="color:var(--fondo);font-size:22px;letter-spacing:0.06em">Aitana Barreda</span>
+            <span class="sub">Psicología</span>
+          </div>
+        </div>
+      </div>
+      <div class="logo-panel light">
+        <span class="panel-label">Fondo claro</span>
+        <div class="logo-mountain-center">
+          <svg width="72" height="52" viewBox="0 0 72 52" fill="none">
+            <path d="M8 46 C12 40 18 30 24 22 C28 16 32 10 36 6 C40 10 44 16 48 22 C54 30 60 40 64 46" stroke="var(--verde)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8 46 C14 44 22 43 36 43 C50 43 58 44 64 46" stroke="var(--verde)" stroke-width="1.2" stroke-linecap="round" opacity="0.3"/>
+          </svg>
+          <div>
+            <span class="name" style="color:var(--texto);font-size:22px;letter-spacing:0.06em">Aitana Barreda</span>
+            <span class="sub">Psicología</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-2">
+      <p class="label" style="margin-bottom:12px">En la web</p>
+      <div class="navbar-mockup">
+        <div style="display:flex;align-items:center;gap:10px;transform:scale(0.8);transform-origin:left center">
+          <svg width="36" height="26" viewBox="0 0 72 52" fill="none">
+            <path d="M8 46 C12 40 18 30 24 22 C28 16 32 10 36 6 C40 10 44 16 48 22 C54 30 60 40 64 46" stroke="var(--verde)" stroke-width="2" stroke-linecap="round"/>
+            <path d="M8 46 C14 44 22 43 36 43 C50 43 58 44 64 46" stroke="var(--verde)" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+          </svg>
+          <span style="font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--texto);font-weight:400;letter-spacing:0.04em">Aitana Barreda</span>
+        </div>
+        <div class="navbar-links">
+          <span>Sobre mí</span>
+          <span>Servicios</span>
+        </div>
+        <div class="navbar-cta">Pide cita</div>
+      </div>
+    </div>
+
+    <div class="extras-row reveal reveal-delay-3">
+      <div class="extra-block">
+        <h4>Favicon</h4>
+        <div class="favicon-row">
+          <div class="favicon dark-bg" style="padding:4px">
+            <svg viewBox="0 0 72 52" fill="none" style="width:100%;height:100%">
+              <path d="M8 46 C12 40 18 30 24 22 C28 16 32 10 36 6 C40 10 44 16 48 22 C54 30 60 40 64 46" stroke="var(--verde-light)" stroke-width="3" stroke-linecap="round"/>
+              <path d="M8 46 C14 44 22 43 36 43 C50 43 58 44 64 46" stroke="var(--verde-light)" stroke-width="3" stroke-linecap="round" opacity="0.4"/>
+            </svg>
+          </div>
+          <div class="favicon verde-bg" style="padding:4px">
+            <svg viewBox="0 0 72 52" fill="none" style="width:100%;height:100%">
+              <path d="M8 46 C12 40 18 30 24 22 C28 16 32 10 36 6 C40 10 44 16 48 22 C54 30 60 40 64 46" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+              <path d="M8 46 C14 44 22 43 36 43 C50 43 58 44 64 46" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity="0.4"/>
+            </svg>
+          </div>
+          <div class="favicon rosa-bg" style="padding:4px">
+            <svg viewBox="0 0 72 52" fill="none" style="width:100%;height:100%">
+              <path d="M8 46 C12 40 18 30 24 22 C28 16 32 10 36 6 C40 10 44 16 48 22 C54 30 60 40 64 46" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+              <path d="M8 46 C14 44 22 43 36 43 C50 43 58 44 64 46" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity="0.4"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="extra-block">
+        <h4>Colores</h4>
+        <div class="swatch-row">
+          <div class="swatch" style="background:var(--verde)"></div>
+          <div class="swatch" style="background:var(--rosa)"></div>
+          <div class="swatch" style="background:var(--texto)"></div>
+          <div class="swatch" style="background:var(--fondo);border-color:rgba(0,0,0,0.1)"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="best-for reveal reveal-delay-4">
+      <strong>Ideal para:</strong> transmitir la terapia como refugio y espacio de contención. La montaña protectora conecta con la sensación de seguridad que ofreces.
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ PROPOSAL 14: SENDERO ════════════════ -->
+<section class="proposal" id="propuesta-14">
+  <div class="proposal-number">14</div>
+  <div class="container">
+    <div class="proposal-header reveal">
+      <p class="label">Propuesta 14</p>
+      <h2 class="proposal-title">Sendero</h2>
+      <p class="proposal-rationale">
+        La montaña con un camino que sube por su ladera. La silueta es sólida y
+        geométrica, y sobre ella serpentea una línea más fina y discontinua: el
+        sendero. No sube en línea recta sino que zigzaguea, porque sanar no es
+        un proceso lineal. Es una metáfora visual del acompañamiento terapéutico:
+        hay un destino, pero el camino tiene sus propias curvas.
+      </p>
+    </div>
+
+    <div class="logo-showcase reveal reveal-delay-1">
+      <div class="logo-panel dark">
+        <span class="panel-label">Fondo oscuro</span>
+        <div class="logo-mountain">
+          <svg width="56" height="48" viewBox="0 0 56 48" fill="none">
+            <!-- Mountain outline -->
+            <path d="M4 44 C10 38 16 28 22 20 C25 15 27 10 28 6 C29 10 31 15 34 20 C40 28 46 38 52 44" stroke="var(--verde-light)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Winding path -->
+            <path d="M28 12 C26 16 22 18 24 22 C26 24 30 23 32 26 C34 29 28 31 26 34 C24 37 28 40 32 42" stroke="var(--rosa)" stroke-width="0.8" stroke-linecap="round" stroke-dasharray="3 2"/>
+          </svg>
+          <div class="wordmark">
+            <span class="name" style="color:var(--fondo)">Aitana Barreda</span>
+            <span class="sub">Psicología</span>
+          </div>
+        </div>
+      </div>
+      <div class="logo-panel light">
+        <span class="panel-label">Fondo claro</span>
+        <div class="logo-mountain">
+          <svg width="56" height="48" viewBox="0 0 56 48" fill="none">
+            <path d="M4 44 C10 38 16 28 22 20 C25 15 27 10 28 6 C29 10 31 15 34 20 C40 28 46 38 52 44" stroke="var(--verde)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M28 12 C26 16 22 18 24 22 C26 24 30 23 32 26 C34 29 28 31 26 34 C24 37 28 40 32 42" stroke="var(--rosa)" stroke-width="0.8" stroke-linecap="round" stroke-dasharray="3 2"/>
+          </svg>
+          <div class="wordmark">
+            <span class="name" style="color:var(--texto)">Aitana Barreda</span>
+            <span class="sub">Psicología</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-2">
+      <p class="label" style="margin-bottom:12px">En la web</p>
+      <div class="navbar-mockup">
+        <div class="logo-mountain" style="transform:scale(0.75);transform-origin:left center;gap:10px">
+          <svg width="36" height="30" viewBox="0 0 56 48" fill="none">
+            <path d="M4 44 C10 38 16 28 22 20 C25 15 27 10 28 6 C29 10 31 15 34 20 C40 28 46 38 52 44" stroke="var(--verde)" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M28 12 C26 16 22 18 24 22 C26 24 30 23 32 26 C34 29 28 31 26 34 C24 37 28 40 32 42" stroke="var(--rosa)" stroke-width="1" stroke-linecap="round" stroke-dasharray="3 2"/>
+          </svg>
+          <div class="wordmark">
+            <span class="name" style="font-size:16px;color:var(--texto)">Aitana Barreda</span>
+          </div>
+        </div>
+        <div class="navbar-links">
+          <span>Sobre mí</span>
+          <span>Servicios</span>
+        </div>
+        <div class="navbar-cta">Pide cita</div>
+      </div>
+    </div>
+
+    <div class="extras-row reveal reveal-delay-3">
+      <div class="extra-block">
+        <h4>Favicon</h4>
+        <div class="favicon-row">
+          <div class="favicon dark-bg" style="padding:4px">
+            <svg viewBox="0 0 56 48" fill="none" style="width:100%;height:100%">
+              <path d="M4 44 C10 38 16 28 22 20 C25 15 27 10 28 6 C29 10 31 15 34 20 C40 28 46 38 52 44" stroke="var(--verde-light)" stroke-width="3" stroke-linecap="round"/>
+              <path d="M28 12 C26 16 22 18 24 22 C26 24 30 23 32 26 C34 29 28 31 26 34 C24 37 28 40 32 42" stroke="var(--rosa)" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 3"/>
+            </svg>
+          </div>
+          <div class="favicon verde-bg" style="padding:4px">
+            <svg viewBox="0 0 56 48" fill="none" style="width:100%;height:100%">
+              <path d="M4 44 C10 38 16 28 22 20 C25 15 27 10 28 6 C29 10 31 15 34 20 C40 28 46 38 52 44" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+              <path d="M28 12 C26 16 22 18 24 22 C26 24 30 23 32 26 C34 29 28 31 26 34 C24 37 28 40 32 42" stroke="var(--rosa-light)" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 3"/>
+            </svg>
+          </div>
+          <div class="favicon light-bg" style="padding:4px">
+            <svg viewBox="0 0 56 48" fill="none" style="width:100%;height:100%">
+              <path d="M4 44 C10 38 16 28 22 20 C25 15 27 10 28 6 C29 10 31 15 34 20 C40 28 46 38 52 44" stroke="var(--verde)" stroke-width="3" stroke-linecap="round"/>
+              <path d="M28 12 C26 16 22 18 24 22 C26 24 30 23 32 26 C34 29 28 31 26 34 C24 37 28 40 32 42" stroke="var(--rosa)" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 3"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="extra-block">
+        <h4>Colores</h4>
+        <div class="swatch-row">
+          <div class="swatch" style="background:var(--verde)"></div>
+          <div class="swatch" style="background:var(--rosa)"></div>
+          <div class="swatch" style="background:var(--texto)"></div>
+          <div class="swatch" style="background:var(--fondo);border-color:rgba(0,0,0,0.1)"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="best-for reveal reveal-delay-4">
+      <strong>Ideal para:</strong> comunicar que la terapia es un proceso, un camino. La combinación de verde (montaña) y rosa (sendero) integra toda la paleta en un símbolo con narrativa.
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ PROPOSAL 15: ALBA ════════════════ -->
+<section class="proposal" id="propuesta-15">
+  <div class="proposal-number">15</div>
+  <div class="container">
+    <div class="proposal-header reveal">
+      <p class="label">Propuesta 15</p>
+      <h2 class="proposal-title">Alba</h2>
+      <p class="proposal-rationale">
+        Un pico de montaña con un semicírculo emergiendo por detrás: el amanecer.
+        La montaña es verde, el sol es rosa. Juntos crean un icono equilibrado que
+        habla de nuevos comienzos, de la luz que aparece después de la oscuridad.
+        Es la propuesta más completa visualmente: contiene símbolo, color y
+        significado en una composición armónica. El alba como promesa de que
+        las cosas pueden ser diferentes.
+      </p>
+    </div>
+
+    <div class="logo-showcase reveal reveal-delay-1">
+      <div class="logo-panel dark">
+        <span class="panel-label">Fondo oscuro</span>
+        <div class="logo-mountain">
+          <svg width="60" height="48" viewBox="0 0 60 48" fill="none">
+            <!-- Sun semicircle behind mountain -->
+            <circle cx="30" cy="22" r="14" fill="none" stroke="var(--rosa)" stroke-width="1" opacity="0.5"/>
+            <path d="M16 22 A14 14 0 0 1 44 22" fill="rgba(232,180,184,0.08)" stroke="none"/>
+            <!-- Mountain -->
+            <path d="M6 44 C12 38 18 28 24 20 C27 15 29 10 30 6 C31 10 33 15 36 20 C42 28 48 38 54 44" stroke="var(--verde-light)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="wordmark">
+            <span class="name" style="color:var(--fondo)">Aitana Barreda</span>
+            <span class="sub">Psicología</span>
+          </div>
+        </div>
+      </div>
+      <div class="logo-panel light">
+        <span class="panel-label">Fondo claro</span>
+        <div class="logo-mountain">
+          <svg width="60" height="48" viewBox="0 0 60 48" fill="none">
+            <circle cx="30" cy="22" r="14" fill="none" stroke="var(--rosa)" stroke-width="1" opacity="0.4"/>
+            <path d="M16 22 A14 14 0 0 1 44 22" fill="rgba(232,180,184,0.08)" stroke="none"/>
+            <path d="M6 44 C12 38 18 28 24 20 C27 15 29 10 30 6 C31 10 33 15 36 20 C42 28 48 38 54 44" stroke="var(--verde)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="wordmark">
+            <span class="name" style="color:var(--texto)">Aitana Barreda</span>
+            <span class="sub">Psicología</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-2">
+      <p class="label" style="margin-bottom:12px">En la web</p>
+      <div class="navbar-mockup">
+        <div class="logo-mountain" style="transform:scale(0.75);transform-origin:left center;gap:12px">
+          <svg width="40" height="32" viewBox="0 0 60 48" fill="none">
+            <circle cx="30" cy="22" r="14" fill="none" stroke="var(--rosa)" stroke-width="1.5" opacity="0.4"/>
+            <path d="M6 44 C12 38 18 28 24 20 C27 15 29 10 30 6 C31 10 33 15 36 20 C42 28 48 38 54 44" stroke="var(--verde)" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <div class="wordmark">
+            <span class="name" style="font-size:16px;color:var(--texto)">Aitana Barreda</span>
+          </div>
+        </div>
+        <div class="navbar-links">
+          <span>Sobre mí</span>
+          <span>Servicios</span>
+        </div>
+        <div class="navbar-cta">Pide cita</div>
+      </div>
+    </div>
+
+    <div class="extras-row reveal reveal-delay-3">
+      <div class="extra-block">
+        <h4>Favicon</h4>
+        <div class="favicon-row">
+          <div class="favicon dark-bg" style="padding:3px">
+            <svg viewBox="0 0 60 48" fill="none" style="width:100%;height:100%">
+              <circle cx="30" cy="22" r="14" fill="none" stroke="var(--rosa)" stroke-width="2" opacity="0.5"/>
+              <path d="M6 44 C12 38 18 28 24 20 C27 15 29 10 30 6 C31 10 33 15 36 20 C42 28 48 38 54 44" stroke="var(--verde-light)" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="favicon rosa-bg" style="padding:3px">
+            <svg viewBox="0 0 60 48" fill="none" style="width:100%;height:100%">
+              <circle cx="30" cy="22" r="14" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+              <path d="M6 44 C12 38 18 28 24 20 C27 15 29 10 30 6 C31 10 33 15 36 20 C42 28 48 38 54 44" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="favicon light-bg" style="padding:3px">
+            <svg viewBox="0 0 60 48" fill="none" style="width:100%;height:100%">
+              <circle cx="30" cy="22" r="14" fill="none" stroke="var(--rosa)" stroke-width="2" opacity="0.4"/>
+              <path d="M6 44 C12 38 18 28 24 20 C27 15 29 10 30 6 C31 10 33 15 36 20 C42 28 48 38 54 44" stroke="var(--verde)" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="extra-block">
+        <h4>Colores</h4>
+        <div class="swatch-row">
+          <div class="swatch" style="background:var(--verde)"></div>
+          <div class="swatch" style="background:var(--rosa)"></div>
+          <div class="swatch" style="background:var(--texto)"></div>
+          <div class="swatch" style="background:var(--fondo);border-color:rgba(0,0,0,0.1)"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="best-for reveal reveal-delay-4">
+      <strong>Ideal para:</strong> un logo memorable y completo que combina toda la paleta de marca. El amanecer detrás de la montaña transmite esperanza, renovación y el comienzo de algo nuevo.
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ NEXT STEPS ════════════════ -->
+<section class="next-steps">
+  <div class="container">
+    <div class="reveal">
+      <p class="label">Y ahora...</p>
+      <h2>Próximos pasos</h2>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step reveal reveal-delay-1">
+        <div class="step-num">01</div>
+        <h4>Elige tu variación</h4>
+        <p>
+          Cada montaña cuenta una historia diferente. ¿Cuál sientes que te
+          representa más? También puedes combinar elementos: el pico de una
+          con la tipografía de otra.
+        </p>
+      </div>
+      <div class="step reveal reveal-delay-2">
+        <div class="step-num">02</div>
+        <h4>Refinamos el trazo</h4>
+        <p>
+          Ajustamos grosor de línea, proporciones, posición respecto al nombre
+          y variaciones de color hasta que el logo sea perfecto.
+        </p>
+      </div>
+      <div class="step reveal reveal-delay-3">
+        <div class="step-num">03</div>
+        <h4>Implementación</h4>
+        <p>
+          Integramos el logo en la web, generamos el favicon, los formatos para
+          redes sociales, y preparamos los archivos finales (SVG, PNG, PDF).
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="page-footer">
+  <div class="container">
+    Propuesta preparada para Aitana Barreda · Febrero 2026
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
