@@ -130,7 +130,7 @@ export default function SobreMiPage() {
               </ScrollReveal>
             </div>
 
-            <ScrollReveal delay={150} className="hidden lg:block">
+            <ScrollReveal delay={150} className="hidden lg:block lg:mt-48">
               <div className="sticky top-32">
                 <Image
                   src="/images/manos-escribiendo.jpeg"
