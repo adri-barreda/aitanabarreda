@@ -62,12 +62,12 @@ export default function Footer() {
                 +34 681 32 85 52
               </a>
               <a
-                href="https://instagram.com/aitanabarredapsico"
+                href="https://www.instagram.com/ansioliti_ka/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-body text-[13px] text-fondo/60 hover:text-fondo transition-colors duration-200"
               >
-                @aitanabarredapsico
+                @ansioliti_ka
               </a>
               <p className="font-body text-[13px] text-fondo/40">
                 Barcelona
