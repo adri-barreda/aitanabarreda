@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     'Servicios de terapia psicológica presencial en Barcelona y online. Descubre las modalidades de acompañamiento terapéutico y reserva tu primera sesión.',
   openGraph: {
-    images: [{ url: '/images/consulta-presencial.jpeg', width: 1200, height: 630, alt: 'Consulta de psicología en Barcelona' }],
+    images: [{ url: '/images/og.png', width: 1200, height: 630, alt: 'Aitana Barreda - Psicóloga en Barcelona' }],
   },
 }
 

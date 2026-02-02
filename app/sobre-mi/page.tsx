@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     'Conoce a Aitana Barreda, psicóloga General Sanitaria en Barcelona especializada en trauma, regulación emocional y crecimiento personal. Terapia integradora en un espacio seguro y libre de juicios.',
   openGraph: {
-    images: [{ url: '/images/sobre-mi-hero.jpeg', width: 1200, height: 630, alt: 'Aitana Barreda - Sobre mí' }],
+    images: [{ url: '/images/og.png', width: 1200, height: 630, alt: 'Aitana Barreda - Psicóloga en Barcelona' }],
   },
 }
 
