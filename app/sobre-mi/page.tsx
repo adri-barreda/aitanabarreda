@@ -127,12 +127,12 @@ export default function SobreMiPage() {
                   pasadas que no pudimos procesar.
                 </p>
                 <p>
-                  Creo firmemente que la terapia debe ser un{' '}
+                  Creo que la terapia debe ser un{' '}
                   <span className="font-medium text-texto">
                     espacio seguro y libre de juicios
                   </span>
                   , donde puedas mostrarte tal como eres. No hay emociones
-                  buenas ni malas — todas tienen algo que contarnos.
+                  buenas ni malas: todas tienen algo que contarnos.
                 </p>
                 <p>
                   Trabajo desde un{' '}

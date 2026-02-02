@@ -43,7 +43,7 @@ export default function ServiciosPage() {
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <Image
                     src="/images/consulta-presencial.jpeg"
-                    alt="Consulta de terapia presencial en Barcelona — butaca, planta y luz natural"
+                    alt="Consulta de terapia presencial en Barcelona, butaca, planta y luz natural"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
