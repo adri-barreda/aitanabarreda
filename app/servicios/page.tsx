@@ -151,65 +151,55 @@ export default function ServiciosPage() {
       {/* ── Espacio ── */}
       <section className="py-24 lg:py-36 bg-verde-light/10 overflow-hidden">
         <div className="max-w-6xl mx-auto px-6 sm:px-10">
-          <div className="grid lg:grid-cols-[1fr_40%] gap-10 lg:gap-16 items-start">
-            {/* Left — text + dominant landscape image */}
-            <div>
-              <ScrollReveal>
-                <p className="font-body text-[11px] tracking-[0.3em] uppercase text-texto/40 mb-5">
-                  La consulta
-                </p>
-                <h2 className="font-heading text-4xl sm:text-5xl lg:text-[3.5rem] text-texto font-light leading-[1.1] mb-6">
-                  Un espacio pensado para ti
-                </h2>
-                <p className="font-body text-texto/55 text-base leading-[1.75] max-w-xl mb-12">
-                  Mi consulta es un lugar cálido, luminoso y seguro donde cada
-                  detalle está pensado para que puedas sentirte cómoda y libre.
-                </p>
-              </ScrollReveal>
+          <ScrollReveal>
+            <p className="font-body text-[11px] tracking-[0.3em] uppercase text-texto/40 mb-5">
+              La consulta
+            </p>
+            <h2 className="font-heading text-4xl sm:text-5xl lg:text-[3.5rem] text-texto font-light leading-[1.1] mb-6">
+              Un espacio pensado para ti
+            </h2>
+            <p className="font-body text-texto/55 text-base leading-[1.75] max-w-xl mb-12">
+              Mi consulta es un lugar cálido, luminoso y seguro donde cada
+              detalle está pensado para que puedas sentirte cómoda y libre.
+            </p>
+          </ScrollReveal>
 
-              {/* Hero image — wide landscape */}
-              <ScrollReveal>
-                <div className="relative aspect-[16/10] overflow-hidden">
+          <ScrollReveal>
+            <div className="grid lg:grid-cols-2 gap-3 lg:gap-4 lg:h-[70vh]">
+              {/* Left — two landscape images stacked */}
+              <div className="flex flex-col gap-3 lg:gap-4">
+                <div className="relative flex-1 aspect-[16/10] lg:aspect-auto overflow-hidden">
                   <Image
                     src="/images/espacio-cojines.jpeg"
                     alt="Cojines de colores en el suelo, espacio acogedor"
                     fill
-                    sizes="(max-width: 1024px) 100vw, 60vw"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"
                   />
                 </div>
-              </ScrollReveal>
-
-              {/* Small accent below — butaca */}
-              <ScrollReveal delay={150}>
-                <div className="relative aspect-[16/9] overflow-hidden mt-4 lg:mt-5 lg:w-[65%]">
+                <div className="relative flex-1 aspect-[16/10] lg:aspect-auto overflow-hidden">
                   <Image
                     src="/images/consulta-butaca.jpeg"
                     alt="Butaca con cojín y monstera en la consulta"
                     fill
-                    sizes="(max-width: 1024px) 100vw, 35vw"
-                    className="object-cover"
-                  />
-                </div>
-              </ScrollReveal>
-            </div>
-
-            {/* Right — portrait image with color block offset */}
-            <ScrollReveal delay={200} className="lg:mt-32">
-              <div className="relative">
-                <div className="absolute -top-5 -right-5 lg:-top-7 lg:-right-7 w-[60%] h-[40%] bg-rosa-light/35" />
-                <div className="relative aspect-[3/4] overflow-hidden">
-                  <Image
-                    src="/images/cojines-detalle.jpeg"
-                    alt="Detalle de cojines teal y terracota"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"
                   />
                 </div>
               </div>
-            </ScrollReveal>
-          </div>
+
+              {/* Right — portrait image matching total height */}
+              <div className="relative aspect-[3/4] lg:aspect-auto overflow-hidden">
+                <Image
+                  src="/images/cojines-detalle.jpeg"
+                  alt="Detalle de cojines teal y terracota"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
