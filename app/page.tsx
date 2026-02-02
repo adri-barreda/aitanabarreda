@@ -15,21 +15,11 @@ function Presentacion() {
             <div className="absolute top-6 -left-4 lg:-left-8 w-[85%] h-[90%] bg-verde-light/25" />
             <div className="relative">
               <Image
-                src="/images/hero.jpeg"
-                alt="Aitana Barreda en consulta, sentada en butaca con clipboard"
+                src="/images/retrato-profesional-2.jpeg"
+                alt="Aitana Barreda sonriendo en la consulta"
                 width={540}
-                height={700}
+                height={810}
                 className="w-full h-auto object-cover relative z-10"
-              />
-            </div>
-            {/* Small accent photo overlapping bottom-right */}
-            <div className="absolute -bottom-6 -right-4 lg:-right-10 w-28 h-36 lg:w-36 lg:h-44 z-20">
-              <Image
-                src="/images/manos-escribiendo.jpeg"
-                alt="Detalle de manos escribiendo notas"
-                fill
-                sizes="160px"
-                className="object-cover"
               />
             </div>
           </ScrollReveal>
