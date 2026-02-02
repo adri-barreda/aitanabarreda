@@ -130,9 +130,9 @@ export default function HomePage() {
     <>
       <Hero />
       <Presentacion />
-      <ProblemasGrid />
-      <TextureDivider />
       <BeneficiosList />
+      <TextureDivider />
+      <ProblemasGrid />
       <CtaFinal />
     </>
   )
