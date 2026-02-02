@@ -121,17 +121,6 @@ export default function SobreMiPage() {
         </div>
       </section>
 
-      {/* ── Photo Strip ── */}
-      <div className="relative h-56 sm:h-72 lg:h-96 overflow-hidden">
-        <Image
-          src="/images/monstera.jpeg"
-          alt="Monstera en la consulta"
-          fill
-          sizes="100vw"
-          className="object-cover object-center"
-        />
-      </div>
-
       {/* ── Formación ── */}
       <section className="py-24 lg:py-36 bg-fondo">
         <div className="max-w-6xl mx-auto px-6 sm:px-10">
@@ -174,8 +163,8 @@ export default function SobreMiPage() {
             <ScrollReveal delay={200} className="hidden lg:block">
               <div className="sticky top-32">
                 <Image
-                  src="/images/monstera.jpeg"
-                  alt="Monstera en la consulta"
+                  src="/images/manos-escribiendo.jpeg"
+                  alt="Detalle de manos escribiendo en clipboard"
                   width={460}
                   height={620}
                   className="w-full h-auto object-cover"
