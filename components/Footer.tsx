@@ -88,6 +88,18 @@ export default function Footer() {
             Aviso legal
           </Link>
         </div>
+
+        {/* Créditos PsaicoTools */}
+        <div className="mt-6 text-center">
+          <a
+            href="https://www.psaicotools.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-body text-[11px] text-fondo/25 hover:text-fondo/50 transition-colors duration-200"
+          >
+            hecho con ❤️ por PsaicoTools
+          </a>
+        </div>
       </div>
     </footer>
   )
