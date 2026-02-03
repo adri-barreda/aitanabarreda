@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta de Identidad Visual V — Aitana Barreda</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+  :root {
+    --bg: #0a0a0a;
+    --text: #e8e4df;
+    --text-dim: #8a857f;
+    --text-faint: #4a4743;
+    --rosa: #E8B4B8;
+    --rosa-light: #F2D7D9;
+    --verde: #8FB996;
+    --verde-light: #B8D4C8;
+    --fondo: #FAFAF8;
+    --texto: #2D2D2D;
+    --accent: var(--rosa);
+  }
+
+  html { scroll-behavior: smooth }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Scroll reveal ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s }
+  .reveal-delay-2 { transition-delay: 0.2s }
+  .reveal-delay-3 { transition-delay: 0.3s }
+  .reveal-delay-4 { transition-delay: 0.4s }
+
+  /* ── Typography ── */
+  h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif }
+
+  .label {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    font-weight: 400;
+  }
+
+  /* ── Layout ── */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 0 24px }
+  }
+
+  /* ── Back links ── */
+  .back-links {
+    padding: 32px 40px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .back-links a {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--text-faint);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: color 0.3s;
+  }
+
+  .back-links a:hover { color: var(--rosa) }
+
+  /* ── Header ── */
+  header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: -5%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(232,180,184,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: 15%;
+    left: -8%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(143,185,150,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .header-illustration {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 340px;
+    opacity: 0.06;
+    pointer-events: none;
+  }
+
+  @media (max-width: 900px) {
+    .header-illustration { display: none }
+  }
+
+  header h1 {
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 24px;
+  }
+
+  header h1 em {
+    font-style: italic;
+    color: var(--rosa);
+  }
+
+  header h1 strong {
+    font-weight: 400;
+    color: var(--verde);
+  }
+
+  .intro {
+    font-size: 15px;
+    color: var(--text-dim);
+    max-width: 540px;
+    line-height: 1.85;
+    margin-top: 32px;
+  }
+
+  .divider {
+    width: 48px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--verde), var(--rosa));
+    margin: 32px 0;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 48px;
+    left: 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-faint);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .scroll-hint::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--text-faint);
+  }
+
+  /* ── SVG line draw animation ── */
+  @keyframes draw {
+    to { stroke-dashoffset: 0 }
+  }
+
+  @keyframes fadeInSoft {
+    from { opacity: 0 }
+    to { opacity: 1 }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.5 }
+    50% { opacity: 0.8 }
+  }
+
+  .hero-draw {
+    stroke-dasharray: 800;
+    stroke-dashoffset: 800;
+    animation: draw 4s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+  }
+
+  .hero-draw-2 {
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: draw 3s cubic-bezier(0.22, 1, 0.36, 1) 1.5s forwards;
+  }
+
+  .hero-circle {
+    opacity: 0;
+    animation: fadeInSoft 2s ease 2.5s forwards;
+  }
+
+  .hero-circle-pulse {
+    opacity: 0;
+    animation: fadeInSoft 1.5s ease 3s forwards, pulse 4s ease-in-out 4.5s infinite;
+  }
+
+  .hero-lines {
+    opacity: 0;
+    animation: fadeInSoft 1.5s ease 3.5s forwards;
+  }
+
+  /* ── Proposal section ── */
+  .proposal {
+    padding: 120px 0;
+    position: relative;
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+
+  @media (max-width: 640px) {
+    .proposal { padding: 80px 0 }
+  }
+
+  .proposal-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(100px, 15vw, 200px);
+    font-weight: 300;
+    color: rgba(255,255,255,0.025);
+    position: absolute;
+    right: 40px;
+    top: 80px;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .proposal-header { margin-bottom: 64px }
+
+  .proposal-title {
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 300;
+    color: var(--text);
+    margin-top: 12px;
+    line-height: 1.2;
+  }
+
+  .proposal-rationale {
+    font-size: 14px;
+    color: var(--text-dim);
+    max-width: 500px;
+    line-height: 1.85;
+    margin-top: 20px;
+  }
+
+  /* ── Logo showcase ── */
+  .logo-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin: 48px 0;
+  }
+
+  @media (max-width: 768px) {
+    .logo-showcase { grid-template-columns: 1fr }
+  }
+
+  .logo-panel {
+    padding: 64px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 260px;
+    position: relative;
+  }
+
+  .logo-panel.dark { background: #141414 }
+  .logo-panel.light { background: var(--fondo) }
+
+  .panel-label {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.3;
+  }
+
+  .logo-panel.dark .panel-label { color: #fff }
+  .logo-panel.light .panel-label { color: #000 }
+
+  /* ── Navbar mockup ── */
+  .navbar-mockup {
+    background: var(--fondo);
+    border: 1px solid rgba(0,0,0,0.06);
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 32px 0;
+    max-width: 700px;
+  }
+
+  .navbar-links {
+    display: flex;
+    gap: 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: rgba(45,45,45,0.5);
+    font-weight: 400;
+  }
+
+  .navbar-cta {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    background: var(--verde);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+
+  /* ── Favicon preview ── */
+  .extras-row {
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-top: 48px;
+  }
+
+  .extra-block h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+
+  .favicon-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .favicon {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .favicon.dark-bg { background: var(--texto); color: var(--fondo) }
+  .favicon.light-bg { background: var(--fondo); color: var(--texto); border: 1px solid rgba(0,0,0,0.08) }
+  .favicon.rosa-bg { background: var(--rosa); color: #fff }
+  .favicon.verde-bg { background: var(--verde); color: #fff }
+
+  .swatch-row { display: flex; gap: 8px }
+
+  .swatch {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .best-for {
+    font-size: 13px;
+    color: var(--text-dim);
+    font-style: italic;
+    padding: 16px 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    margin-top: 24px;
+    max-width: 400px;
+  }
+
+  .best-for strong {
+    color: var(--verde);
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  /* ══════════════════════════════════════
+     LOGO STYLES
+     ══════════════════════════════════════ */
+
+  .logo-h {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .logo-h svg { flex-shrink: 0 }
+
+  .logo-h .wordmark { line-height: 1.1 }
+
+  .logo-h .wordmark .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 22px;
+    letter-spacing: 0.03em;
+    display: block;
+  }
+
+  .logo-h .wordmark .sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    opacity: 0.45;
+    margin-top: 3px;
+    display: block;
+  }
+
+  .logo-panel.dark .logo-h .wordmark .name { color: var(--fondo) }
+  .logo-panel.light .logo-h .wordmark .name { color: var(--texto) }
+
+  .logo-v {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .logo-v svg { flex-shrink: 0 }
+
+  .logo-v .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 24px;
+    letter-spacing: 0.06em;
+    display: block;
+  }
+
+  .logo-v .sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0.4;
+    margin-top: 2px;
+    display: block;
+  }
+
+  .logo-panel.dark .logo-v .name { color: var(--fondo) }
+  .logo-panel.light .logo-v .name { color: var(--texto) }
+
+  /* ── Next steps ── */
+  .next-steps {
+    padding: 120px 0 160px;
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .next-steps h2 {
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 300;
+    margin-bottom: 40px;
+    line-height: 1.2;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 48px;
+  }
+
+  @media (max-width: 768px) {
+    .steps-grid { grid-template-columns: 1fr; gap: 32px }
+  }
+
+  .step {
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--verde);
+    opacity: 0.5;
+    margin-bottom: 12px;
+  }
+
+  .step h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .step p {
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.7;
+  }
+
+  .page-footer {
+    padding: 48px 0;
+    border-top: 1px solid rgba(255,255,255,0.04);
+    text-align: center;
+    color: var(--text-faint);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════ BACK LINKS ════════════════ -->
+<div class="back-links">
+  <a href="propuesta-logos.html">&larr; Primera</a>
+  <a href="propuesta-logos-2.html">&larr; Segunda</a>
+  <a href="propuesta-logos-3.html">&larr; Tercera</a>
+  <a href="propuesta-logos-4.html">&larr; Cuarta</a>
+</div>
+
+<!-- ════════════════ HEADER ════════════════ -->
+<header>
+  <!-- Large decorative illustration combining Aliento + Raíz -->
+  <svg class="header-illustration" viewBox="0 0 360 400" fill="none">
+    <!-- Overlapping peaks like Aliento -->
+    <path d="M40 280 C55 270 75 250 95 225 C110 205 122 185 135 165 C145 150 155 138 165 128 C172 122 178 118 182 116 C186 120 192 130 200 145 C210 165 225 195 245 225 C260 250 280 270 305 285 C318 292 330 294 340 290" stroke="rgba(143,185,150,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+    <!-- Second overlapping line -->
+    <path d="M70 285 C90 272 115 248 140 218 C158 195 172 172 186 152 C196 138 205 128 212 122 C218 128 228 145 240 168 C255 198 275 235 300 265 C315 280 328 288 340 288" stroke="rgba(143,185,150,0.25)" stroke-width="1" stroke-linecap="round"/>
+    <!-- Moon circle -->
+    <circle cx="285" cy="95" r="28" stroke="rgba(232,180,184,0.35)" stroke-width="1" fill="none"/>
+    <circle cx="285" cy="95" r="20" stroke="rgba(232,180,184,0.15)" stroke-width="0.6" fill="none"/>
+    <!-- Horizontal lines like Raíz -->
+    <path d="M80 320 Q180 312 280 320" stroke="rgba(143,185,150,0.3)" stroke-width="1" stroke-linecap="round" fill="none"/>
+    <path d="M110 340 Q180 334 250 340" stroke="rgba(143,185,150,0.2)" stroke-width="0.8" stroke-linecap="round" fill="none"/>
+    <path d="M140 358 Q180 354 220 358" stroke="rgba(143,185,150,0.1)" stroke-width="0.6" stroke-linecap="round" fill="none"/>
+  </svg>
+
+  <div class="container">
+    <div class="reveal">
+      <p class="label">Propuesta de identidad visual &middot; Quinta ronda</p>
+    </div>
+    <h1 class="reveal reveal-delay-1">
+      <em>Aliento</em> y <strong>Raíz</strong>,<br>refinados
+    </h1>
+    <div class="divider reveal reveal-delay-2"></div>
+    <p class="intro reveal reveal-delay-3">
+      De todas las propuestas anteriores, dos resonaron especialmente: Aliento, con sus
+      picos solapados que se cruzan como un nudo que respira; y Raíz, con su estructura
+      de sello y sus líneas horizontales que anclan la composición. Esta quinta ronda
+      toma estos dos conceptos y los lleva más lejos: curvas más orgánicas, proporciones
+      más refinadas, y combinaciones que buscan el equilibrio perfecto entre lo artístico
+      y lo funcional.
+    </p>
+    <!-- Animated hero illustration combining both concepts -->
+    <svg viewBox="0 0 340 100" fill="none" style="width:280px;margin-top:40px;display:block" class="reveal reveal-delay-4">
+      <!-- Main overlapping peaks -->
+      <path class="hero-draw" d="M12 75 C22 70 38 58 55 44 C68 33 78 24 88 18 C95 13 100 10 105 9 C110 12 118 22 128 36 C140 54 156 72 178 80 C175 72 168 58 160 46 C152 34 145 24 140 18 C136 13 133 10 130 8 C135 6 142 10 150 18 C162 30 178 52 198 72 C212 84 228 90 248 88 C260 86 272 80 285 72" stroke="var(--verde)" stroke-width="1.3" stroke-linecap="round"/>
+      <!-- Secondary softer line -->
+      <path class="hero-draw-2" d="M35 78 C52 68 72 52 92 38 C106 28 118 22 128 22 C138 24 150 38 165 55 C178 70 195 82 218 85" stroke="var(--rosa)" stroke-width="0.7" stroke-linecap="round" opacity="0.5"/>
+      <!-- Moon -->
+      <circle class="hero-circle" cx="268" cy="22" r="14" stroke="var(--rosa)" stroke-width="0.9" fill="none" opacity="0.6"/>
+      <circle class="hero-circle-pulse" cx="268" cy="22" r="9" stroke="var(--rosa)" stroke-width="0.5" fill="none"/>
+      <!-- Horizontal lines -->
+      <g class="hero-lines">
+        <path d="M50 88 Q170 82 290 88" stroke="var(--verde)" stroke-width="0.8" stroke-linecap="round" fill="none" opacity="0.4"/>
+        <path d="M90 95 Q170 91 250 95" stroke="var(--verde)" stroke-width="0.6" stroke-linecap="round" fill="none" opacity="0.25"/>
+      </g>
+    </svg>
+  </div>
+  <div class="scroll-hint">Scroll para explorar</div>
+</header>
+
+
+<!-- ════════════════ PROPOSAL 21: ALIENTO REFINADO ════════════════ -->
+<section class="proposal" id="propuesta-21">
+  <div class="proposal-number">21</div>
+  <div class="container">
+    <div class="proposal-header reveal">
+      <p class="label">Propuesta 21</p>
+      <h2 class="proposal-title">Aliento Refinado</h2>
+      <p class="proposal-rationale">
+        El concepto de Aliento llevado a su máxima expresión. Las curvas son más fluidas
+        y orgánicas, como si las hubiera dibujado un calígrafo con un pincel fino. Los
+        dos picos se solapan con más gracia, cruzándose en un punto que parece un abrazo.
+        El círculo del sol/luna ahora se integra mejor en la composición, parcialmente
+        oculto detrás del pico más alto — asomando como una promesa. El trazo tiene
+        variación sutil de grosor: más grueso en el centro, adelgazándose en los extremos,
+        como un aliento que se expande y se disuelve.
+      </p>
+    </div>
+
+    <div class="logo-showcase reveal reveal-delay-1">
+      <div class="logo-panel dark">
+        <span class="panel-label">Fondo oscuro</span>
+        <div class="logo-h">
+          <svg width="80" height="56" viewBox="0 0 80 56" fill="none">
+            <!-- Refined overlapping peaks with organic curves -->
+            <path d="M4 48 C8 46 14 42 22 35 C28 30 33 25 38 20 C42 16 45 13 48 11 C50 10 51 9 52 9 C54 11 57 16 62 24 C68 34 76 44 86 50" stroke="var(--verde-light)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray: none"/>
+            <!-- Second overlapping curve - crossing elegantly -->
+            <path d="M76 48 C72 44 66 36 58 28 C52 22 47 17 43 14 C40 12 38 11 36 11 C34 13 30 18 26 26 C20 38 12 48 4 52" stroke="var(--verde-light)" stroke-width="0.8" stroke-linecap="round" opacity="0.45"/>
+            <!-- Moon partially behind peak -->
+            <circle cx="68" cy="14" r="8" stroke="var(--rosa-light)" stroke-width="0.9" fill="none" opacity="0.7"/>
+            <circle cx="68" cy="14" r="5" stroke="var(--rosa-light)" stroke-width="0.5" fill="none" opacity="0.35"/>
+          </svg>
+          <div class="wordmark">
+            <span class="name">Aitana Barreda</span>
+            <span class="sub">Psicología</span>
+          </div>
+        </div>
+      </div>
+      <div class="logo-panel light">
+        <span class="panel-label">Fondo claro</span>
+        <div class="logo-h">
+          <svg width="80" height="56" viewBox="0 0 80 56" fill="none">
+            <path d="M4 48 C8 46 14 42 22 35 C28 30 33 25 38 20 C42 16 45 13 48 11 C50 10 51 9 52 9 C54 11 57 16 62 24 C68 34 76 44 86 50" stroke="var(--verde)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M76 48 C72 44 66 36 58 28 C52 22 47 17 43 14 C40 12 38 11 36 11 C34 13 30 18 26 26 C20 38 12 48 4 52" stroke="var(--verde)" stroke-width="0.8" stroke-linecap="round" opacity="0.35"/>
+            <circle cx="68" cy="14" r="8" stroke="var(--rosa)" stroke-width="0.9" fill="none" opacity="0.6"/>
+            <circle cx="68" cy="14" r="5" stroke="var(--rosa)" stroke-width="0.5" fill="none" opacity="0.25"/>
+          </svg>
+          <div class="wordmark">
+            <span class="name" style="color:var(--texto)">Aitana Barreda</span>
+            <span class="sub">Psicología</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-2">
+      <p class="label" style="margin-bottom:12px">En la web</p>
+      <div class="navbar-mockup">
+        <div class="logo-h" style="transform:scale(0.75);transform-origin:left center;gap:14px">
+          <svg width="56" height="40" viewBox="0 0 80 56" fill="none">
+            <path d="M4 48 C8 46 14 42 22 35 C28 30 33 25 38 20 C42 16 45 13 48 11 C50 10 51 9 52 9 C54 11 57 16 62 24 C68 34 76 44 86 50" stroke="var(--verde)" stroke-width="2" stroke-linecap="round"/>
+            <path d="M76 48 C72 44 66 36 58 28 C52 22 47 17 43 14 C40 12 38 11 36 11 C34 13 30 18 26 26 C20 38 12 48 4 52" stroke="var(--verde)" stroke-width="1.2" stroke-linecap="round" opacity="0.35"/>
+            <circle cx="68" cy="14" r="8" stroke="var(--rosa)" stroke-width="1.2" fill="none" opacity="0.5"/>
+          </svg>
+          <div class="wordmark">
+            <span class="name" style="font-size:17px;color:var(--texto)">Aitana Barreda</span>
+          </div>
+        </div>
+        <div class="navbar-links">
+          <span>Sobre mí</span>
+          <span>Servicios</span>
+        </div>
+        <div class="navbar-cta">Pide cita</div>
+      </div>
+    </div>
+
+    <div class="extras-row reveal reveal-delay-3">
+      <div class="extra-block">
+        <h4>Favicon</h4>
+        <div class="favicon-row">
+          <div class="favicon dark-bg" style="padding:4px">
+            <svg viewBox="0 0 80 56" fill="none" style="width:100%;height:100%">
+              <path d="M4 48 C8 46 14 42 22 35 C28 30 33 25 38 20 C42 16 45 13 48 11 C50 10 51 9 52 9 C54 11 57 16 62 24 C68 34 76 44 86 50" stroke="var(--verde-light)" stroke-width="3.5" stroke-linecap="round"/>
+              <path d="M76 48 C72 44 66 36 58 28 C52 22 47 17 43 14 C40 12 38 11 36 11 C34 13 30 18 26 26 C20 38 12 48 4 52" stroke="var(--verde-light)" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+              <circle cx="68" cy="14" r="8" stroke="var(--rosa-light)" stroke-width="2.5" fill="none"/>
+            </svg>
+          </div>
+          <div class="favicon verde-bg" style="padding:4px">
+            <svg viewBox="0 0 80 56" fill="none" style="width:100%;height:100%">
+              <path d="M4 48 C8 46 14 42 22 35 C28 30 33 25 38 20 C42 16 45 13 48 11 C50 10 51 9 52 9 C54 11 57 16 62 24 C68 34 76 44 86 50" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+              <path d="M76 48 C72 44 66 36 58 28 C52 22 47 17 43 14 C40 12 38 11 36 11 C34 13 30 18 26 26 C20 38 12 48 4 52" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="68" cy="14" r="8" stroke="rgba(255,255,255,0.5)" stroke-width="2.5" fill="none"/>
+            </svg>
+          </div>
+          <div class="favicon light-bg" style="padding:4px">
+            <svg viewBox="0 0 80 56" fill="none" style="width:100%;height:100%">
+              <path d="M4 48 C8 46 14 42 22 35 C28 30 33 25 38 20 C42 16 45 13 48 11 C50 10 51 9 52 9 C54 11 57 16 62 24 C68 34 76 44 86 50" stroke="var(--verde)" stroke-width="3.5" stroke-linecap="round"/>
+              <path d="M76 48 C72 44 66 36 58 28 C52 22 47 17 43 14 C40 12 38 11 36 11 C34 13 30 18 26 26 C20 38 12 48 4 52" stroke="var(--verde)" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+              <circle cx="68" cy="14" r="8" stroke="var(--rosa)" stroke-width="2.5" fill="none"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="extra-block">
+        <h4>Colores</h4>
+        <div class="swatch-row">
+          <div class="swatch" style="background:var(--verde)"></div>
+          <div class="swatch" style="background:var(--rosa)"></div>
+          <div class="swatch" style="background:var(--texto)"></div>
+          <div class="swatch" style="background:var(--fondo);border-color:rgba(0,0,0,0.1)"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="best-for reveal reveal-delay-4">
+      <strong>Ideal para:</strong> quien quiere un logo artístico y memorable. Las curvas solapadas crean profundidad visual, y el doble círculo añade sofisticación. Es Aliento, pero respirando más profundo.
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ PROPOSAL 22: RAÍZ ORGÁNICA ════════════════ -->
+<section class="proposal" id="propuesta-22">
+  <div class="proposal-number">22</div>
+  <div class="container">
+    <div class="proposal-header reveal">
+      <p class="label">Propuesta 22</p>
+      <h2 class="proposal-title">Raíz Orgánica</h2>
+      <p class="proposal-rationale">
+        La estructura de Raíz — picos + líneas horizontales — pero con un tratamiento
+        completamente orgánico. Los picos angulares se han suavizado en curvas fluidas
+        que mantienen la esencia de la «A» de Aitana pero respiran con más naturalidad.
+        Las líneas horizontales se han convertido en ondas sutiles, como el reflejo
+        de las montañas en un lago en calma. El círculo pequeño arriba permanece,
+        pero ahora tiene un segundo anillo concéntrico más tenue. Es Raíz, pero
+        viva, orgánica, respirando.
+      </p>
+    </div>
+
+    <div class="logo-showcase reveal reveal-delay-1">
+      <div class="logo-panel dark">
+        <span class="panel-label">Fondo oscuro</span>
+        <div class="logo-v">
+          <svg width="68" height="64" viewBox="0 0 68 64" fill="none">
+            <!-- Organic curved peaks (softened from angular) -->
+            <path d="M8 38 C12 34 16 28 20 22 C23 18 26 15 28 14 C30 16 33 21 36 14 C38 10 39 8 40 8 C41 8 43 12 46 18 C50 26 55 34 60 38" stroke="var(--verde-light)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Moon with double ring -->
+            <circle cx="34" cy="4" r="3.5" stroke="var(--rosa-light)" stroke-width="0.8" fill="none" opacity="0.8"/>
+            <circle cx="34" cy="4" r="6" stroke="var(--rosa-light)" stroke-width="0.4" fill="none" opacity="0.35"/>
+            <!-- Organic wave lines (not straight) -->
+            <path d="M14 46 Q26 44 34 45 Q42 46 54 44" stroke="var(--verde-light)" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+            <path d="M20 52 Q28 50 34 51 Q40 52 48 50" stroke="var(--verde-light)" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.55"/>
+            <path d="M26 58 Q30 57 34 57 Q38 57 42 56" stroke="var(--verde-light)" stroke-width="0.8" stroke-linecap="round" fill="none" opacity="0.25"/>
+          </svg>
+          <div>
+            <span class="name" style="color:var(--fondo)">Aitana Barreda</span>
+            <span class="sub">Psicología</span>
+          </div>
+        </div>
+      </div>
+      <div class="logo-panel light">
+        <span class="panel-label">Fondo claro</span>
+        <div class="logo-v">
+          <svg width="68" height="64" viewBox="0 0 68 64" fill="none">
+            <path d="M8 38 C12 34 16 28 20 22 C23 18 26 15 28 14 C30 16 33 21 36 14 C38 10 39 8 40 8 C41 8 43 12 46 18 C50 26 55 34 60 38" stroke="var(--verde)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="34" cy="4" r="3.5" stroke="var(--rosa)" stroke-width="0.8" fill="none" opacity="0.7"/>
+            <circle cx="34" cy="4" r="6" stroke="var(--rosa)" stroke-width="0.4" fill="none" opacity="0.25"/>
+            <path d="M14 46 Q26 44 34 45 Q42 46 54 44" stroke="var(--verde)" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+            <path d="M20 52 Q28 50 34 51 Q40 52 48 50" stroke="var(--verde)" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.45"/>
+            <path d="M26 58 Q30 57 34 57 Q38 57 42 56" stroke="var(--verde)" stroke-width="0.8" stroke-linecap="round" fill="none" opacity="0.2"/>
+          </svg>
+          <div>
+            <span class="name" style="color:var(--texto)">Aitana Barreda</span>
+            <span class="sub">Psicología</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-2">
+      <p class="label" style="margin-bottom:12px">En la web</p>
+      <div class="navbar-mockup">
+        <div style="display:flex;align-items:center;gap:12px;transform:scale(0.8);transform-origin:left center">
+          <svg width="40" height="38" viewBox="0 0 68 64" fill="none">
+            <path d="M8 38 C12 34 16 28 20 22 C23 18 26 15 28 14 C30 16 33 21 36 14 C38 10 39 8 40 8 C41 8 43 12 46 18 C50 26 55 34 60 38" stroke="var(--verde)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="34" cy="4" r="3.5" stroke="var(--rosa)" stroke-width="1.2" fill="none" opacity="0.6"/>
+            <path d="M14 46 Q26 44 34 45 Q42 46 54 44" stroke="var(--verde)" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+            <path d="M20 52 Q28 50 34 51 Q40 52 48 50" stroke="var(--verde)" stroke-width="1.4" stroke-linecap="round" fill="none" opacity="0.45"/>
+          </svg>
+          <span style="font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--texto);font-weight:400;letter-spacing:0.04em">Aitana Barreda</span>
+        </div>
+        <div class="navbar-links">
+          <span>Sobre mí</span>
+          <span>Servicios</span>
+        </div>
+        <div class="navbar-cta">Pide cita</div>
+      </div>
+    </div>
+
+    <div class="extras-row reveal reveal-delay-3">
+      <div class="extra-block">
+        <h4>Favicon</h4>
+        <div class="favicon-row">
+          <div class="favicon dark-bg" style="padding:4px">
+            <svg viewBox="0 0 68 64" fill="none" style="width:100%;height:100%">
+              <path d="M8 38 C12 34 16 28 20 22 C23 18 26 15 28 14 C30 16 33 21 36 14 C38 10 39 8 40 8 C41 8 43 12 46 18 C50 26 55 34 60 38" stroke="var(--verde-light)" stroke-width="3.5" stroke-linecap="round"/>
+              <circle cx="34" cy="4" r="3.5" stroke="var(--rosa-light)" stroke-width="2" fill="none"/>
+              <path d="M14 46 Q26 44 34 45 Q42 46 54 44" stroke="var(--verde-light)" stroke-width="3" stroke-linecap="round" fill="none"/>
+              <path d="M20 52 Q28 50 34 51 Q40 52 48 50" stroke="var(--verde-light)" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.5"/>
+            </svg>
+          </div>
+          <div class="favicon rosa-bg" style="padding:4px">
+            <svg viewBox="0 0 68 64" fill="none" style="width:100%;height:100%">
+              <path d="M8 38 C12 34 16 28 20 22 C23 18 26 15 28 14 C30 16 33 21 36 14 C38 10 39 8 40 8 C41 8 43 12 46 18 C50 26 55 34 60 38" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+              <circle cx="34" cy="4" r="3.5" stroke="rgba(255,255,255,0.6)" stroke-width="2" fill="none"/>
+              <path d="M14 46 Q26 44 34 45 Q42 46 54 44" stroke="#fff" stroke-width="3" stroke-linecap="round" fill="none"/>
+              <path d="M20 52 Q28 50 34 51 Q40 52 48 50" stroke="#fff" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.5"/>
+            </svg>
+          </div>
+          <div class="favicon light-bg" style="padding:4px">
+            <svg viewBox="0 0 68 64" fill="none" style="width:100%;height:100%">
+              <path d="M8 38 C12 34 16 28 20 22 C23 18 26 15 28 14 C30 16 33 21 36 14 C38 10 39 8 40 8 C41 8 43 12 46 18 C50 26 55 34 60 38" stroke="var(--verde)" stroke-width="3.5" stroke-linecap="round"/>
+              <circle cx="34" cy="4" r="3.5" stroke="var(--rosa)" stroke-width="2" fill="none"/>
+              <path d="M14 46 Q26 44 34 45 Q42 46 54 44" stroke="var(--verde)" stroke-width="3" stroke-linecap="round" fill="none"/>
+              <path d="M20 52 Q28 50 34 51 Q40 52 48 50" stroke="var(--verde)" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.45"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="extra-block">
+        <h4>Colores</h4>
+        <div class="swatch-row">
+          <div class="swatch" style="background:var(--verde)"></div>
+          <div class="swatch" style="background:var(--rosa)"></div>
+          <div class="swatch" style="background:var(--texto)"></div>
+          <div class="swatch" style="background:var(--fondo);border-color:rgba(0,0,0,0.1)"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="best-for reveal reveal-delay-4">
+      <strong>Ideal para:</strong> quien conectó con Raíz pero quiere algo menos geométrico. Las ondas debajo de la montaña evocan calma, como el reflejo en agua quieta. Un logo que ancla y a la vez fluye.
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ PROPOSAL 23: FUSIÓN ════════════════ -->
+<section class="proposal" id="propuesta-23">
+  <div class="proposal-number">23</div>
+  <div class="container">
+    <div class="proposal-header reveal">
+      <p class="label">Propuesta 23</p>
+      <h2 class="proposal-title">Fusión</h2>
+      <p class="proposal-rationale">
+        Lo mejor de Aliento y lo mejor de Raíz, unidos en una composición equilibrada.
+        Arriba, los picos solapados de Aliento con sus líneas que se cruzan y su círculo
+        flotante. Abajo, las líneas ondulantes de Raíz que anclan la composición y le
+        dan peso visual. Es el logo más completo de esta ronda: tiene profundidad
+        (las líneas cruzadas), tiene altura (los picos), tiene anclaje (las ondas),
+        y tiene luz (el círculo). Todo lo que la marca necesita expresar, en un solo
+        símbolo armonioso.
+      </p>
+    </div>
+
+    <div class="logo-showcase reveal reveal-delay-1">
+      <div class="logo-panel dark">
+        <span class="panel-label">Fondo oscuro</span>
+        <div class="logo-v">
+          <svg width="76" height="68" viewBox="0 0 76 68" fill="none">
+            <!-- Overlapping peaks from Aliento -->
+            <path d="M8 42 C12 40 18 35 25 28 C30 23 34 19 38 16 C40 14 42 13 44 13 C46 15 50 22 56 32 C60 38 66 44 74 48" stroke="var(--verde-light)" stroke-width="1.4" stroke-linecap="round"/>
+            <!-- Second crossing line -->
+            <path d="M68 42 C64 38 58 30 50 22 C44 16 40 13 36 12 C34 14 30 20 24 30 C18 40 12 48 6 52" stroke="var(--verde-light)" stroke-width="0.8" stroke-linecap="round" opacity="0.4"/>
+            <!-- Moon -->
+            <circle cx="62" cy="10" r="6" stroke="var(--rosa-light)" stroke-width="0.9" fill="none" opacity="0.7"/>
+            <!-- Wave lines from Raíz -->
+            <path d="M12 52 Q28 49 38 50 Q48 51 64 48" stroke="var(--verde-light)" stroke-width="1.1" stroke-linecap="round" fill="none" opacity="0.7"/>
+            <path d="M20 58 Q30 56 38 57 Q46 58 56 56" stroke="var(--verde-light)" stroke-width="0.9" stroke-linecap="round" fill="none" opacity="0.4"/>
+            <path d="M28 64 Q34 63 38 63 Q42 63 48 62" stroke="var(--verde-light)" stroke-width="0.7" stroke-linecap="round" fill="none" opacity="0.2"/>
+          </svg>
+          <div>
+            <span class="name" style="color:var(--fondo)">Aitana Barreda</span>
+            <span class="sub">Psicología</span>
+          </div>
+        </div>
+      </div>
+      <div class="logo-panel light">
+        <span class="panel-label">Fondo claro</span>
+        <div class="logo-v">
+          <svg width="76" height="68" viewBox="0 0 76 68" fill="none">
+            <path d="M8 42 C12 40 18 35 25 28 C30 23 34 19 38 16 C40 14 42 13 44 13 C46 15 50 22 56 32 C60 38 66 44 74 48" stroke="var(--verde)" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M68 42 C64 38 58 30 50 22 C44 16 40 13 36 12 C34 14 30 20 24 30 C18 40 12 48 6 52" stroke="var(--verde)" stroke-width="0.8" stroke-linecap="round" opacity="0.3"/>
+            <circle cx="62" cy="10" r="6" stroke="var(--rosa)" stroke-width="0.9" fill="none" opacity="0.6"/>
+            <path d="M12 52 Q28 49 38 50 Q48 51 64 48" stroke="var(--verde)" stroke-width="1.1" stroke-linecap="round" fill="none" opacity="0.6"/>
+            <path d="M20 58 Q30 56 38 57 Q46 58 56 56" stroke="var(--verde)" stroke-width="0.9" stroke-linecap="round" fill="none" opacity="0.3"/>
+            <path d="M28 64 Q34 63 38 63 Q42 63 48 62" stroke="var(--verde)" stroke-width="0.7" stroke-linecap="round" fill="none" opacity="0.15"/>
+          </svg>
+          <div>
+            <span class="name" style="color:var(--texto)">Aitana Barreda</span>
+            <span class="sub">Psicología</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-2">
+      <p class="label" style="margin-bottom:12px">En la web</p>
+      <div class="navbar-mockup">
+        <div style="display:flex;align-items:center;gap:12px;transform:scale(0.75);transform-origin:left center">
+          <svg width="48" height="44" viewBox="0 0 76 68" fill="none">
+            <path d="M8 42 C12 40 18 35 25 28 C30 23 34 19 38 16 C40 14 42 13 44 13 C46 15 50 22 56 32 C60 38 66 44 74 48" stroke="var(--verde)" stroke-width="2" stroke-linecap="round"/>
+            <path d="M68 42 C64 38 58 30 50 22 C44 16 40 13 36 12 C34 14 30 20 24 30 C18 40 12 48 6 52" stroke="var(--verde)" stroke-width="1.2" stroke-linecap="round" opacity="0.3"/>
+            <circle cx="62" cy="10" r="6" stroke="var(--rosa)" stroke-width="1.2" fill="none" opacity="0.5"/>
+            <path d="M12 52 Q28 49 38 50 Q48 51 64 48" stroke="var(--verde)" stroke-width="1.6" stroke-linecap="round" fill="none" opacity="0.5"/>
+            <path d="M20 58 Q30 56 38 57 Q46 58 56 56" stroke="var(--verde)" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.3"/>
+          </svg>
+          <span style="font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--texto);font-weight:400">Aitana Barreda</span>
+        </div>
+        <div class="navbar-links">
+          <span>Sobre mí</span>
+          <span>Servicios</span>
+        </div>
+        <div class="navbar-cta">Pide cita</div>
+      </div>
+    </div>
+
+    <div class="extras-row reveal reveal-delay-3">
+      <div class="extra-block">
+        <h4>Favicon</h4>
+        <div class="favicon-row">
+          <div class="favicon dark-bg" style="padding:3px">
+            <svg viewBox="0 0 76 68" fill="none" style="width:100%;height:100%">
+              <path d="M8 42 C12 40 18 35 25 28 C30 23 34 19 38 16 C40 14 42 13 44 13 C46 15 50 22 56 32 C60 38 66 44 74 48" stroke="var(--verde-light)" stroke-width="3.5" stroke-linecap="round"/>
+              <circle cx="62" cy="10" r="6" stroke="var(--rosa-light)" stroke-width="2.5" fill="none"/>
+              <path d="M12 52 Q28 49 38 50 Q48 51 64 48" stroke="var(--verde-light)" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+            </svg>
+          </div>
+          <div class="favicon verde-bg" style="padding:3px">
+            <svg viewBox="0 0 76 68" fill="none" style="width:100%;height:100%">
+              <path d="M8 42 C12 40 18 35 25 28 C30 23 34 19 38 16 C40 14 42 13 44 13 C46 15 50 22 56 32 C60 38 66 44 74 48" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+              <circle cx="62" cy="10" r="6" stroke="rgba(255,255,255,0.5)" stroke-width="2.5" fill="none"/>
+              <path d="M12 52 Q28 49 38 50 Q48 51 64 48" stroke="#fff" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.5"/>
+            </svg>
+          </div>
+          <div class="favicon light-bg" style="padding:3px">
+            <svg viewBox="0 0 76 68" fill="none" style="width:100%;height:100%">
+              <path d="M8 42 C12 40 18 35 25 28 C30 23 34 19 38 16 C40 14 42 13 44 13 C46 15 50 22 56 32 C60 38 66 44 74 48" stroke="var(--verde)" stroke-width="3.5" stroke-linecap="round"/>
+              <circle cx="62" cy="10" r="6" stroke="var(--rosa)" stroke-width="2.5" fill="none"/>
+              <path d="M12 52 Q28 49 38 50 Q48 51 64 48" stroke="var(--verde)" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.5"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="extra-block">
+        <h4>Colores</h4>
+        <div class="swatch-row">
+          <div class="swatch" style="background:var(--verde)"></div>
+          <div class="swatch" style="background:var(--rosa)"></div>
+          <div class="swatch" style="background:var(--verde-light)"></div>
+          <div class="swatch" style="background:var(--texto)"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="best-for reveal reveal-delay-4">
+      <strong>Ideal para:</strong> quien no puede elegir entre Aliento y Raíz. Este logo tiene todo: las líneas cruzadas que crean profundidad, los picos que elevan, las ondas que anclan, y el círculo que ilumina.
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ PROPOSAL 24: ESENCIA ════════════════ -->
+<section class="proposal" id="propuesta-24">
+  <div class="proposal-number">24</div>
+  <div class="container">
+    <div class="proposal-header reveal">
+      <p class="label">Propuesta 24</p>
+      <h2 class="proposal-title">Esencia</h2>
+      <p class="proposal-rationale">
+        La destilación máxima de ambos conceptos. Un solo pico suave y orgánico — el
+        gesto esencial de Aliento — con una única línea ondulada debajo — la raíz
+        mínima. El círculo pequeño flota arriba, solitario y luminoso. Es el logo
+        más silencioso de la serie: dice todo con el mínimo de trazos. Cada elemento
+        está justificado, cada curva tiene propósito. Para quien cree que menos es
+        más, que la elegancia está en lo que se quita, no en lo que se añade.
+        La esencia de una montaña. La esencia de Aitana.
+      </p>
+    </div>
+
+    <div class="logo-showcase reveal reveal-delay-1">
+      <div class="logo-panel dark">
+        <span class="panel-label">Fondo oscuro</span>
+        <div class="logo-h">
+          <svg width="72" height="52" viewBox="0 0 72 52" fill="none">
+            <!-- Single elegant peak -->
+            <path d="M6 42 C12 38 20 30 28 22 C33 17 37 13 40 10 C43 13 47 17 52 22 C60 30 68 38 74 42" stroke="var(--verde-light)" stroke-width="1.3" stroke-linecap="round"/>
+            <!-- Small moon -->
+            <circle cx="58" cy="8" r="5" stroke="var(--rosa-light)" stroke-width="0.8" fill="none" opacity="0.7"/>
+            <!-- Single wave line -->
+            <path d="M14 48 Q36 44 58 48" stroke="var(--verde-light)" stroke-width="0.9" stroke-linecap="round" fill="none" opacity="0.45"/>
+          </svg>
+          <div class="wordmark">
+            <span class="name">Aitana Barreda</span>
+            <span class="sub">Psicología</span>
+          </div>
+        </div>
+      </div>
+      <div class="logo-panel light">
+        <span class="panel-label">Fondo claro</span>
+        <div class="logo-h">
+          <svg width="72" height="52" viewBox="0 0 72 52" fill="none">
+            <path d="M6 42 C12 38 20 30 28 22 C33 17 37 13 40 10 C43 13 47 17 52 22 C60 30 68 38 74 42" stroke="var(--verde)" stroke-width="1.3" stroke-linecap="round"/>
+            <circle cx="58" cy="8" r="5" stroke="var(--rosa)" stroke-width="0.8" fill="none" opacity="0.6"/>
+            <path d="M14 48 Q36 44 58 48" stroke="var(--verde)" stroke-width="0.9" stroke-linecap="round" fill="none" opacity="0.35"/>
+          </svg>
+          <div class="wordmark">
+            <span class="name" style="color:var(--texto)">Aitana Barreda</span>
+            <span class="sub">Psicología</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-2">
+      <p class="label" style="margin-bottom:12px">En la web</p>
+      <div class="navbar-mockup">
+        <div class="logo-h" style="transform:scale(0.8);transform-origin:left center;gap:14px">
+          <svg width="50" height="36" viewBox="0 0 72 52" fill="none">
+            <path d="M6 42 C12 38 20 30 28 22 C33 17 37 13 40 10 C43 13 47 17 52 22 C60 30 68 38 74 42" stroke="var(--verde)" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="58" cy="8" r="5" stroke="var(--rosa)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M14 48 Q36 44 58 48" stroke="var(--verde)" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.35"/>
+          </svg>
+          <div class="wordmark">
+            <span class="name" style="font-size:17px;color:var(--texto)">Aitana Barreda</span>
+          </div>
+        </div>
+        <div class="navbar-links">
+          <span>Sobre mí</span>
+          <span>Servicios</span>
+        </div>
+        <div class="navbar-cta">Pide cita</div>
+      </div>
+    </div>
+
+    <div class="extras-row reveal reveal-delay-3">
+      <div class="extra-block">
+        <h4>Favicon</h4>
+        <div class="favicon-row">
+          <div class="favicon dark-bg" style="padding:4px">
+            <svg viewBox="0 0 72 52" fill="none" style="width:100%;height:100%">
+              <path d="M6 42 C12 38 20 30 28 22 C33 17 37 13 40 10 C43 13 47 17 52 22 C60 30 68 38 74 42" stroke="var(--verde-light)" stroke-width="3.5" stroke-linecap="round"/>
+              <circle cx="58" cy="8" r="5" stroke="var(--rosa-light)" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+          <div class="favicon rosa-bg" style="padding:4px">
+            <svg viewBox="0 0 72 52" fill="none" style="width:100%;height:100%">
+              <path d="M6 42 C12 38 20 30 28 22 C33 17 37 13 40 10 C43 13 47 17 52 22 C60 30 68 38 74 42" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+              <circle cx="58" cy="8" r="5" stroke="rgba(255,255,255,0.5)" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+          <div class="favicon light-bg" style="padding:4px">
+            <svg viewBox="0 0 72 52" fill="none" style="width:100%;height:100%">
+              <path d="M6 42 C12 38 20 30 28 22 C33 17 37 13 40 10 C43 13 47 17 52 22 C60 30 68 38 74 42" stroke="var(--verde)" stroke-width="3.5" stroke-linecap="round"/>
+              <circle cx="58" cy="8" r="5" stroke="var(--rosa)" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="extra-block">
+        <h4>Colores</h4>
+        <div class="swatch-row">
+          <div class="swatch" style="background:var(--verde)"></div>
+          <div class="swatch" style="background:var(--rosa)"></div>
+          <div class="swatch" style="background:var(--texto)"></div>
+          <div class="swatch" style="background:var(--fondo);border-color:rgba(0,0,0,0.1)"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="best-for reveal reveal-delay-4">
+      <strong>Ideal para:</strong> quien valora la simplicidad extrema. Tres elementos — pico, círculo, onda — que dicen todo lo necesario. El logo más versátil: funciona en cualquier tamaño, en cualquier contexto.
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ PROPOSAL 25: PLENA ════════════════ -->
+<section class="proposal" id="propuesta-25">
+  <div class="proposal-number">25</div>
+  <div class="container">
+    <div class="proposal-header reveal">
+      <p class="label">Propuesta 25</p>
+      <h2 class="proposal-title">Plena</h2>
+      <p class="proposal-rationale">
+        La versión más rica y expresiva de todo el catálogo. Múltiples capas de picos
+        solapados con diferentes niveles de opacidad crean profundidad atmosférica,
+        como montañas vistas a través de la bruma matinal. Debajo, las líneas ondulantes
+        en degradado de opacidad anclan la composición. El círculo tiene un segundo
+        anillo concéntrico que pulsa suavemente. Es el logo que más cuenta: habla de
+        capas, de profundidad, de todo lo que hay debajo de la superficie. Para quien
+        quiere un logo que sea casi una ilustración, una pequeña obra de arte que
+        invite a perderse en sus detalles.
+      </p>
+    </div>
+
+    <div class="logo-showcase reveal reveal-delay-1">
+      <div class="logo-panel dark">
+        <span class="panel-label">Fondo oscuro</span>
+        <div class="logo-v">
+          <svg width="88" height="72" viewBox="0 0 88 72" fill="none">
+            <!-- Background mountain layer (faint) -->
+            <path d="M4 48 C10 44 20 35 32 26 C40 20 46 16 50 14 C54 18 62 28 72 40 C78 46 84 50 90 52" stroke="var(--verde-light)" stroke-width="0.6" stroke-linecap="round" opacity="0.2"/>
+            <!-- Middle mountain layer -->
+            <path d="M12 50 C18 46 28 38 40 28 C48 22 54 17 58 14 C62 18 68 26 76 36 C81 42 86 46 92 48" stroke="var(--verde-light)" stroke-width="0.9" stroke-linecap="round" opacity="0.4"/>
+            <!-- Main mountain layer -->
+            <path d="M8 48 C14 44 24 35 36 25 C44 18 50 13 54 10 C58 14 66 24 78 38 C84 44 90 48 96 50" stroke="var(--verde-light)" stroke-width="1.4" stroke-linecap="round"/>
+            <!-- Crossing overlay line -->
+            <path d="M84 48 C78 42 68 32 56 22 C48 16 42 12 38 11 C34 14 28 22 20 34 C14 44 8 52 2 56" stroke="var(--verde-light)" stroke-width="0.7" stroke-linecap="round" opacity="0.35"/>
+            <!-- Double moon -->
+            <circle cx="72" cy="10" r="7" stroke="var(--rosa-light)" stroke-width="0.9" fill="none" opacity="0.7"/>
+            <circle cx="72" cy="10" r="11" stroke="var(--rosa-light)" stroke-width="0.5" fill="none" opacity="0.3"/>
+            <!-- Multiple wave lines -->
+            <path d="M10 56 Q32 52 44 53 Q56 54 78 50" stroke="var(--verde-light)" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.6"/>
+            <path d="M18 62 Q34 59 44 60 Q54 61 70 58" stroke="var(--verde-light)" stroke-width="0.85" stroke-linecap="round" fill="none" opacity="0.4"/>
+            <path d="M26 68 Q36 66 44 66 Q52 66 62 64" stroke="var(--verde-light)" stroke-width="0.7" stroke-linecap="round" fill="none" opacity="0.2"/>
+          </svg>
+          <div>
+            <span class="name" style="color:var(--fondo)">Aitana Barreda</span>
+            <span class="sub">Psicología</span>
+          </div>
+        </div>
+      </div>
+      <div class="logo-panel light">
+        <span class="panel-label">Fondo claro</span>
+        <div class="logo-v">
+          <svg width="88" height="72" viewBox="0 0 88 72" fill="none">
+            <path d="M4 48 C10 44 20 35 32 26 C40 20 46 16 50 14 C54 18 62 28 72 40 C78 46 84 50 90 52" stroke="var(--verde)" stroke-width="0.6" stroke-linecap="round" opacity="0.15"/>
+            <path d="M12 50 C18 46 28 38 40 28 C48 22 54 17 58 14 C62 18 68 26 76 36 C81 42 86 46 92 48" stroke="var(--verde)" stroke-width="0.9" stroke-linecap="round" opacity="0.3"/>
+            <path d="M8 48 C14 44 24 35 36 25 C44 18 50 13 54 10 C58 14 66 24 78 38 C84 44 90 48 96 50" stroke="var(--verde)" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M84 48 C78 42 68 32 56 22 C48 16 42 12 38 11 C34 14 28 22 20 34 C14 44 8 52 2 56" stroke="var(--verde)" stroke-width="0.7" stroke-linecap="round" opacity="0.25"/>
+            <circle cx="72" cy="10" r="7" stroke="var(--rosa)" stroke-width="0.9" fill="none" opacity="0.6"/>
+            <circle cx="72" cy="10" r="11" stroke="var(--rosa)" stroke-width="0.5" fill="none" opacity="0.2"/>
+            <path d="M10 56 Q32 52 44 53 Q56 54 78 50" stroke="var(--verde)" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.5"/>
+            <path d="M18 62 Q34 59 44 60 Q54 61 70 58" stroke="var(--verde)" stroke-width="0.85" stroke-linecap="round" fill="none" opacity="0.3"/>
+            <path d="M26 68 Q36 66 44 66 Q52 66 62 64" stroke="var(--verde)" stroke-width="0.7" stroke-linecap="round" fill="none" opacity="0.15"/>
+          </svg>
+          <div>
+            <span class="name" style="color:var(--texto)">Aitana Barreda</span>
+            <span class="sub">Psicología</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-2">
+      <p class="label" style="margin-bottom:12px">En la web</p>
+      <div class="navbar-mockup">
+        <div style="display:flex;align-items:center;gap:12px;transform:scale(0.7);transform-origin:left center">
+          <svg width="58" height="48" viewBox="0 0 88 72" fill="none">
+            <path d="M12 50 C18 46 28 38 40 28 C48 22 54 17 58 14 C62 18 68 26 76 36 C81 42 86 46 92 48" stroke="var(--verde)" stroke-width="1.4" stroke-linecap="round" opacity="0.35"/>
+            <path d="M8 48 C14 44 24 35 36 25 C44 18 50 13 54 10 C58 14 66 24 78 38 C84 44 90 48 96 50" stroke="var(--verde)" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="72" cy="10" r="7" stroke="var(--rosa)" stroke-width="1.4" fill="none" opacity="0.5"/>
+            <path d="M10 56 Q32 52 44 53 Q56 54 78 50" stroke="var(--verde)" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.4"/>
+          </svg>
+          <span style="font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--texto);font-weight:400">Aitana Barreda</span>
+        </div>
+        <div class="navbar-links">
+          <span>Sobre mí</span>
+          <span>Servicios</span>
+        </div>
+        <div class="navbar-cta">Pide cita</div>
+      </div>
+    </div>
+
+    <div class="extras-row reveal reveal-delay-3">
+      <div class="extra-block">
+        <h4>Favicon</h4>
+        <div class="favicon-row">
+          <div class="favicon dark-bg" style="padding:3px">
+            <svg viewBox="0 0 88 72" fill="none" style="width:100%;height:100%">
+              <path d="M8 48 C14 44 24 35 36 25 C44 18 50 13 54 10 C58 14 66 24 78 38 C84 44 90 48 96 50" stroke="var(--verde-light)" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="72" cy="10" r="7" stroke="var(--rosa-light)" stroke-width="2.5" fill="none"/>
+              <path d="M10 56 Q32 52 44 53 Q56 54 78 50" stroke="var(--verde-light)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.5"/>
+            </svg>
+          </div>
+          <div class="favicon verde-bg" style="padding:3px">
+            <svg viewBox="0 0 88 72" fill="none" style="width:100%;height:100%">
+              <path d="M8 48 C14 44 24 35 36 25 C44 18 50 13 54 10 C58 14 66 24 78 38 C84 44 90 48 96 50" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="72" cy="10" r="7" stroke="rgba(255,255,255,0.5)" stroke-width="2.5" fill="none"/>
+              <path d="M10 56 Q32 52 44 53 Q56 54 78 50" stroke="#fff" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.4"/>
+            </svg>
+          </div>
+          <div class="favicon light-bg" style="padding:3px">
+            <svg viewBox="0 0 88 72" fill="none" style="width:100%;height:100%">
+              <path d="M8 48 C14 44 24 35 36 25 C44 18 50 13 54 10 C58 14 66 24 78 38 C84 44 90 48 96 50" stroke="var(--verde)" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="72" cy="10" r="7" stroke="var(--rosa)" stroke-width="2.5" fill="none"/>
+              <path d="M10 56 Q32 52 44 53 Q56 54 78 50" stroke="var(--verde)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.4"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="extra-block">
+        <h4>Colores</h4>
+        <div class="swatch-row">
+          <div class="swatch" style="background:var(--verde)"></div>
+          <div class="swatch" style="background:var(--rosa)"></div>
+          <div class="swatch" style="background:var(--verde-light)"></div>
+          <div class="swatch" style="background:var(--texto)"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="best-for reveal reveal-delay-4">
+      <strong>Ideal para:</strong> quien quiere un logo que sea una pequeña obra de arte. Las múltiples capas crean profundidad atmosférica, como montañas vistas entre la niebla. Un logo para contemplar.
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ NEXT STEPS ════════════════ -->
+<section class="next-steps">
+  <div class="container">
+    <div class="reveal">
+      <p class="label">Y ahora...</p>
+      <h2>La elección final</h2>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step reveal reveal-delay-1">
+        <div class="step-num">01</div>
+        <h4>Elige tu favorita</h4>
+        <p>
+          Después de cinco rondas y veinticinco propuestas, tu montaña
+          perfecta está aquí. Quizá es una de estas cinco, quizá es una
+          combinación, quizá es la chispa final que necesitabas.
+        </p>
+      </div>
+      <div class="step reveal reveal-delay-2">
+        <div class="step-num">02</div>
+        <h4>Pulimos juntos</h4>
+        <p>
+          Ajustamos cada curva, cada grosor, cada proporción hasta que
+          el logo sea exactamente lo que imaginaste — o mejor de lo que
+          imaginaste.
+        </p>
+      </div>
+      <div class="step reveal reveal-delay-3">
+        <div class="step-num">03</div>
+        <h4>Lo hacemos real</h4>
+        <p>
+          Integramos el logo en la web, generamos favicon, formatos para
+          redes sociales, y preparamos archivos finales en SVG, PNG y PDF.
+          Tu marca, lista para el mundo.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="page-footer">
+  <div class="container">
+    Propuesta preparada para Aitana Barreda · Febrero 2026
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
