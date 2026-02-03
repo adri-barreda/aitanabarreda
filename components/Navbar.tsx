@@ -26,8 +26,43 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Brand */}
-          <Link href="/" className="group">
-            <h1 className="font-heading text-2xl font-semibold text-texto transition-colors hover:text-verde">
+          <Link href="/" className="group flex items-center gap-3">
+            {/* Logo Aliento */}
+            <svg
+              width="48"
+              height="34"
+              viewBox="0 0 80 56"
+              fill="none"
+              className="transition-transform duration-300 group-hover:scale-105"
+            >
+              <path
+                d="M4 48 C8 46 14 42 22 35 C28 30 33 25 38 20 C42 16 45 13 48 11 C50 10 51 9 52 9 C54 11 57 16 62 24 C68 34 76 44 86 50"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-verde"
+              />
+              <path
+                d="M76 48 C72 44 66 36 58 28 C52 22 47 17 43 14 C40 12 38 11 36 11 C34 13 30 18 26 26 C20 38 12 48 4 52"
+                stroke="currentColor"
+                strokeWidth="1.2"
+                strokeLinecap="round"
+                opacity="0.35"
+                className="text-verde"
+              />
+              <circle
+                cx="68"
+                cy="14"
+                r="8"
+                stroke="currentColor"
+                strokeWidth="1.2"
+                fill="none"
+                opacity="0.6"
+                className="text-rosa"
+              />
+            </svg>
+            <h1 className="font-heading text-2xl font-semibold text-texto transition-colors group-hover:text-verde">
               Aitana Barreda
             </h1>
           </Link>
