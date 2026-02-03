@@ -10,13 +10,33 @@ export default function ContactForm() {
     mensaje: '',
   })
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
-  const handleSubmit = (e: FormEvent) => {
-    // TODO: Connect to Resend API once domain is configured
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
-    setFormData({ nombre: '', email: '', telefono: '', mensaje: '' })
-    setTimeout(() => setSubmitted(false), 4000)
+    setLoading(true)
+    setError('')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+
+      if (!response.ok) {
+        throw new Error('Error al enviar el mensaje')
+      }
+
+      setSubmitted(true)
+      setFormData({ nombre: '', email: '', telefono: '', mensaje: '' })
+      setTimeout(() => setSubmitted(false), 5000)
+    } catch {
+      setError('Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo o contacta por WhatsApp.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   const inputClasses =
@@ -103,6 +123,9 @@ export default function ContactForm() {
       </div>
 
       <div className="pt-2">
+        {error && (
+          <p className="font-body text-red-400 text-sm mb-4">{error}</p>
+        )}
         {submitted ? (
           <p className="font-body text-verde-light text-sm">
             Gracias por tu mensaje. Me pondré en contacto contigo pronto.
@@ -110,24 +133,27 @@ export default function ContactForm() {
         ) : (
           <button
             type="submit"
-            className="inline-flex items-center gap-2 bg-fondo text-texto font-body text-[13px] font-medium tracking-wide px-7 py-3.5 hover:bg-rosa-light transition-colors duration-300"
+            disabled={loading}
+            className="inline-flex items-center gap-2 bg-fondo text-texto font-body text-[13px] font-medium tracking-wide px-7 py-3.5 hover:bg-rosa-light transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Enviar mensaje
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 16 16"
-              fill="none"
-              className="ml-1"
-            >
-              <path
-                d="M3 8h10M9 4l4 4-4 4"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+            {loading ? 'Enviando...' : 'Enviar mensaje'}
+            {!loading && (
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 16 16"
+                fill="none"
+                className="ml-1"
+              >
+                <path
+                  d="M3 8h10M9 4l4 4-4 4"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            )}
           </button>
         )}
       </div>
