@@ -29,34 +29,26 @@ const Navbar = () => {
           <Link href="/" className="group flex items-center gap-3">
             {/* Logo Aliento */}
             <svg
-              width="48"
+              width="52"
               height="34"
-              viewBox="0 0 80 56"
+              viewBox="0 0 72 48"
               fill="none"
               className="transition-transform duration-300 group-hover:scale-105"
             >
               <path
-                d="M4 48 C8 46 14 42 22 35 C28 30 33 25 38 20 C42 16 45 13 48 11 C50 10 51 9 52 9 C54 11 57 16 62 24 C68 34 76 44 86 50"
+                d="M4 42 C7 40 11 36 15 30 C18 25 20 21 23 18 L26 14 L28 16 C30 19 33 24 36 28 C38 31 40 33 42 34 C40 30 37 24 35 20 L32 14 L30 10 L28 7 L30 5 C31 6 33 9 35 12 L38 17 C41 22 44 28 48 33 C52 37 56 40 62 42 C65 43 68 42 70 40"
                 stroke="currentColor"
-                strokeWidth="2"
+                strokeWidth="1.8"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 className="text-verde"
               />
-              <path
-                d="M76 48 C72 44 66 36 58 28 C52 22 47 17 43 14 C40 12 38 11 36 11 C34 13 30 18 26 26 C20 38 12 48 4 52"
-                stroke="currentColor"
-                strokeWidth="1.2"
-                strokeLinecap="round"
-                opacity="0.35"
-                className="text-verde"
-              />
               <circle
-                cx="68"
-                cy="14"
-                r="8"
+                cx="62"
+                cy="10"
+                r="5.5"
                 stroke="currentColor"
-                strokeWidth="1.2"
+                strokeWidth="1.1"
                 fill="none"
                 opacity="0.6"
                 className="text-rosa"
