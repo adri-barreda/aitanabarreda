@@ -4,45 +4,45 @@ import Image from 'next/image'
 import ScrollReveal from '@/components/ScrollReveal'
 
 export const metadata: Metadata = {
-  title: 'Psicóloga Trauma Barcelona | Terapia EMDR en Gràcia',
+  title: 'Psicóloga Relaciones y Pareja Barcelona | Gràcia',
   description:
-    'Psicóloga especializada en trauma en Barcelona. Terapia EMDR para estrés postraumático, experiencias difíciles y heridas emocionales. Consulta en Gràcia.',
+    'Psicóloga especializada en relaciones de pareja en Barcelona. Terapia individual y de pareja para problemas de comunicación, conflictos y dependencia emocional.',
   keywords: [
-    'psicóloga trauma barcelona',
-    'terapia EMDR barcelona',
-    'estrés postraumático barcelona',
-    'psicólogo trauma gràcia',
-    'trauma emocional barcelona',
+    'psicóloga pareja barcelona',
+    'terapia de pareja barcelona',
+    'problemas de relación barcelona',
+    'dependencia emocional psicólogo',
+    'terapia relaciones gràcia',
   ],
   alternates: {
-    canonical: 'https://aitanabarredapsicologia.com/problemas/trauma-barcelona',
+    canonical: 'https://aitanabarredapsicologia.com/terapias/relaciones-pareja-barcelona',
   },
   openGraph: {
-    title: 'Psicóloga Trauma Barcelona | EMDR | Aitana Barreda',
-    description: 'Tratamiento especializado de trauma con EMDR en Barcelona.',
+    title: 'Psicóloga Relaciones y Pareja Barcelona | Aitana Barreda',
+    description: 'Terapia especializada en relaciones de pareja en Barcelona.',
     images: [{ url: '/images/og.png', width: 1200, height: 630 }],
   },
 }
 
 const faqs = [
   {
-    question: '¿Qué es el EMDR y cómo funciona?',
+    question: '¿La terapia es individual o de pareja?',
     answer:
-      'EMDR (Eye Movement Desensitization and Reprocessing) es una terapia que ayuda a procesar recuerdos traumáticos. Mediante estimulación bilateral, el cerebro puede integrar experiencias que quedaron "atascadas", reduciendo su carga emocional.',
+      'Ofrezco ambas modalidades. A veces es útil trabajar primero de forma individual para entender tus patrones relacionales antes de hacer terapia de pareja. Otras veces, la pareja viene junta desde el inicio. Valoramos juntos qué es lo mejor para tu caso.',
   },
   {
-    question: '¿Qué tipo de traumas puedes tratar?',
+    question: '¿Podemos salvar nuestra relación con terapia?',
     answer:
-      'Trabajo con diferentes tipos de trauma: accidentes, pérdidas, experiencias de la infancia, relaciones dañinas, situaciones de abuso o negligencia, y también el llamado "trauma complejo" que se acumula con el tiempo.',
+      'La terapia de pareja puede ayudar mucho, pero requiere compromiso de ambas partes. A veces el objetivo es mejorar la relación; otras veces, es acompañar una separación sana. Lo importante es que ambos estéis dispuestos a trabajar.',
   },
   {
-    question: '¿Es doloroso revivir el trauma en terapia?',
+    question: '¿Qué pasa si mi pareja no quiere venir a terapia?',
     answer:
-      'La terapia de trauma se hace de forma gradual y segura. No te pido que revivas el trauma de forma intensa. Trabajamos a tu ritmo, con técnicas de estabilización, y siempre priorizando tu bienestar emocional.',
+      'Puedes venir solo/a. Trabajar tus patrones de relación, tus necesidades y tus límites puede transformar la dinámica de la pareja, aunque solo venga uno de los dos. Y también te ayuda a ti independientemente del resultado.',
   },
 ]
 
-export default function TraumaBarcelonaPage() {
+export default function RelacionesParejaBarcelonaPage() {
   return (
     <>
       <script
@@ -72,19 +72,19 @@ export default function TraumaBarcelonaPage() {
                 Especialidad
               </p>
               <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-texto font-light leading-[1.08] mb-6">
-                Psicóloga especializada en{' '}
-                <span className="italic">trauma</span> en Barcelona
+                Terapia de{' '}
+                <span className="italic">pareja y relaciones</span> en Barcelona
               </h1>
               <div className="w-16 h-px bg-verde mb-8" />
               <p className="font-body text-texto/65 text-base leading-[1.85] mb-6">
-                El trauma deja huellas en el cuerpo y la mente. Puede manifestarse como
-                flashbacks, pesadillas, hipervigilancia, dificultad para confiar o una
-                sensación constante de amenaza. No tienes que seguir cargando con ese peso.
+                Las relaciones son una de las fuentes más importantes de bienestar...
+                y también de sufrimiento. Problemas de comunicación, conflictos
+                repetitivos, celos, dependencia emocional o la sensación de que
+                &quot;siempre me pasa lo mismo&quot;.
               </p>
               <p className="font-body text-texto/65 text-base leading-[1.85] mb-8">
-                En mi consulta de Gràcia utilizo EMDR y otras técnicas especializadas
-                para ayudarte a procesar lo que viviste y recuperar la sensación de
-                seguridad.
+                En mi consulta de Barcelona te ayudo a entender tus patrones
+                relacionales y a construir vínculos más sanos y satisfactorios.
               </p>
               <Link
                 href="/servicios#contacto"
@@ -99,7 +99,7 @@ export default function TraumaBarcelonaPage() {
             <ScrollReveal delay={100}>
               <Image
                 src="/images/retrato-profesional-2.jpeg"
-                alt="Aitana Barreda, psicóloga especializada en trauma en Barcelona"
+                alt="Aitana Barreda, psicóloga especializada en relaciones de pareja en Barcelona"
                 width={600}
                 height={700}
                 className="w-full h-auto object-cover"
@@ -109,30 +109,30 @@ export default function TraumaBarcelonaPage() {
         </div>
       </section>
 
-      {/* Señales */}
+      {/* Situaciones */}
       <section className="py-20 lg:py-28 bg-rosa-light/15">
         <div className="max-w-4xl mx-auto px-6 sm:px-10">
           <ScrollReveal>
             <h2 className="font-heading text-3xl sm:text-4xl text-texto font-light leading-[1.12] mb-10 text-center">
-              Señales de que podrías estar viviendo con trauma
+              ¿Te identificas con alguna de estas situaciones?
             </h2>
           </ScrollReveal>
           <div className="grid sm:grid-cols-2 gap-6">
             {[
-              'Recuerdos intrusivos o flashbacks de lo que pasó',
-              'Pesadillas recurrentes relacionadas con la experiencia',
-              'Evitas lugares, personas o situaciones que te lo recuerdan',
-              'Te sientes en alerta constante o hipervigilante',
-              'Dificultad para confiar en los demás',
-              'Sensación de desconexión de ti mismo/a o de la realidad',
-              'Reacciones emocionales intensas ante estímulos pequeños',
-              'Culpa o vergüenza relacionada con lo que viviste',
-            ].map((señal, i) => (
+              'Sientes que siempre acabas en el mismo tipo de relación',
+              'Os cuesta comunicaros sin acabar discutiendo',
+              'Hay conflictos que se repiten una y otra vez',
+              'Sientes celos o inseguridad en tu relación',
+              'Te cuesta estar solo/a o tienes miedo al abandono',
+              'Sientes que das más de lo que recibes',
+              'Has perdido la conexión emocional o física con tu pareja',
+              'No sabes si seguir o terminar la relación',
+            ].map((situacion, i) => (
               <ScrollReveal key={i} delay={i * 50}>
                 <div className="flex items-start gap-4 p-5 bg-fondo rounded-sm">
                   <span className="w-2 h-2 rounded-full bg-verde mt-2 shrink-0" />
                   <p className="font-body text-texto/75 text-[15px] leading-relaxed">
-                    {señal}
+                    {situacion}
                   </p>
                 </div>
               </ScrollReveal>
@@ -146,25 +146,25 @@ export default function TraumaBarcelonaPage() {
         <div className="max-w-3xl mx-auto px-6 sm:px-10">
           <ScrollReveal>
             <h2 className="font-heading text-3xl sm:text-4xl text-texto font-light leading-[1.12] mb-8">
-              Terapia EMDR y trabajo con trauma
+              Cómo trabajo las relaciones
             </h2>
             <div className="space-y-6 font-body text-texto/65 text-base leading-[1.85]">
               <p>
-                Estoy formada en EMDR (Nivel I y II), una de las terapias con más
-                evidencia científica para el tratamiento del trauma. Pero la técnica
-                es solo una parte: lo más importante es crear un espacio seguro donde
-                puedas sentirte acompañado/a.
+                Muchos de nuestros patrones en las relaciones vienen de nuestra
+                historia: cómo aprendimos a vincularnos en nuestra familia, qué
+                modelos de relación vimos, qué heridas traemos. Entender esto es
+                el primer paso para poder elegir de forma diferente.
               </p>
               <p>
-                El trabajo con trauma requiere ir a tu ritmo. Primero nos aseguramos de
-                que tienes recursos de estabilización —herramientas para regular tu
-                sistema nervioso— antes de abordar los recuerdos difíciles. No hay prisa.
+                En la terapia de pareja, trabajo con un enfoque sistémico: miro la
+                relación como un sistema donde ambos influyen. No busco culpables,
+                sino entender la dinámica y encontrar formas más sanas de relacionarse.
               </p>
               <p>
-                Mi enfoque es integrativo: combino EMDR con técnicas de regulación
-                emocional, mindfulness y trabajo corporal cuando es necesario. El
-                objetivo es que puedas integrar lo que viviste sin que siga
-                controlando tu presente.
+                Si vienes solo/a, trabajamos tus patrones de apego, tus necesidades,
+                tus límites y la forma en que eliges y te relacionas con tus parejas.
+                El objetivo es que puedas construir relaciones que te nutran en
+                lugar de desgastarte.
               </p>
             </div>
           </ScrollReveal>
@@ -201,11 +201,11 @@ export default function TraumaBarcelonaPage() {
         <div className="max-w-3xl mx-auto px-6 text-center">
           <ScrollReveal>
             <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-light leading-[1.12] mb-6">
-              No tienes que cargar con esto solo/a
+              Las relaciones se pueden trabajar
             </h2>
             <p className="font-body text-fondo/70 text-base mb-10 max-w-lg mx-auto leading-relaxed">
-              El trauma se puede trabajar. Si estás listo/a para dar el paso,
-              estoy aquí para acompañarte.
+              Si sientes que tus relaciones te generan más sufrimiento que
+              bienestar, podemos trabajar para cambiarlo.
             </p>
             <Link
               href="/servicios#contacto"

@@ -30,32 +30,32 @@ const servicios = [
   {
     titulo: 'Ansiedad y estrés',
     descripcion: 'Ataques de pánico, ansiedad generalizada, preocupación excesiva',
-    link: '/problemas/ansiedad-barcelona',
+    link: '/terapias/ansiedad-barcelona',
   },
   {
     titulo: 'Trauma',
     descripcion: 'Experiencias difíciles, TEPT, trauma complejo, EMDR',
-    link: '/problemas/trauma-barcelona',
+    link: '/terapias/trauma-barcelona',
   },
   {
     titulo: 'Depresión',
     descripcion: 'Tristeza persistente, falta de motivación, vacío emocional',
-    link: '/problemas/depresion-barcelona',
+    link: '/terapias/depresion-barcelona',
   },
   {
     titulo: 'Alta sensibilidad',
     descripcion: 'Personas PAS, sobreestimulación, gestión emocional',
-    link: '/problemas/alta-sensibilidad-barcelona',
+    link: '/terapias/alta-sensibilidad-barcelona',
   },
   {
     titulo: 'Autoestima',
     descripcion: 'Inseguridades, autocrítica, construcción de confianza',
-    link: '/problemas/autoestima-barcelona',
+    link: '/terapias/autoestima-barcelona',
   },
   {
     titulo: 'Relaciones de pareja',
     descripcion: 'Comunicación, conflictos, dependencia emocional',
-    link: '/problemas/relaciones-pareja-barcelona',
+    link: '/terapias/relaciones-pareja-barcelona',
   },
 ]
 

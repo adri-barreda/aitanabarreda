@@ -4,45 +4,45 @@ import Image from 'next/image'
 import ScrollReveal from '@/components/ScrollReveal'
 
 export const metadata: Metadata = {
-  title: 'Psicóloga Ansiedad Barcelona | Terapia en Gràcia',
+  title: 'Psicóloga Alta Sensibilidad Barcelona | PAS',
   description:
-    'Psicóloga especializada en ansiedad en Barcelona. Tratamiento de ataques de pánico, ansiedad generalizada y estrés. Consulta en Gràcia. Primera sesión informativa.',
+    'Psicóloga especializada en alta sensibilidad (PAS) en Barcelona. Acompañamiento para personas altamente sensibles. Consulta en Gràcia y terapia online.',
   keywords: [
-    'psicóloga ansiedad barcelona',
-    'terapia ansiedad barcelona',
-    'tratamiento ansiedad gràcia',
-    'psicólogo ataques de pánico barcelona',
-    'ansiedad generalizada barcelona',
+    'psicóloga alta sensibilidad barcelona',
+    'PAS barcelona',
+    'personas altamente sensibles barcelona',
+    'psicólogo PAS gràcia',
+    'alta sensibilidad terapia',
   ],
   alternates: {
-    canonical: 'https://aitanabarredapsicologia.com/problemas/ansiedad-barcelona',
+    canonical: 'https://aitanabarredapsicologia.com/terapias/alta-sensibilidad-barcelona',
   },
   openGraph: {
-    title: 'Psicóloga Ansiedad Barcelona | Aitana Barreda',
-    description: 'Tratamiento especializado de ansiedad en Barcelona. Terapia presencial en Gràcia y online.',
+    title: 'Psicóloga Alta Sensibilidad Barcelona | Aitana Barreda',
+    description: 'Acompañamiento especializado para personas altamente sensibles (PAS) en Barcelona.',
     images: [{ url: '/images/og.png', width: 1200, height: 630 }],
   },
 }
 
 const faqs = [
   {
-    question: '¿Cuántas sesiones necesito para tratar la ansiedad?',
+    question: '¿Qué significa ser una persona altamente sensible (PAS)?',
     answer:
-      'Depende de cada caso y de la intensidad de los síntomas. Generalmente, los primeros cambios se notan entre 4-8 sesiones. Trabajamos juntos para establecer objetivos realistas desde el inicio.',
+      'La alta sensibilidad es un rasgo de personalidad presente en aproximadamente el 20% de la población. Implica un procesamiento más profundo de la información, mayor empatía, sensibilidad a estímulos y una vida emocional intensa. No es un trastorno ni algo que "arreglar".',
   },
   {
-    question: '¿Qué técnicas utilizas para tratar la ansiedad?',
+    question: '¿Cómo sé si soy PAS?',
     answer:
-      'Combino diferentes enfoques según tus necesidades: técnicas de regulación emocional, mindfulness, terapias de tercera generación y, cuando es necesario, EMDR para trabajar experiencias que alimentan la ansiedad.',
+      'Algunas señales son: te afectan mucho los estímulos intensos (ruidos, luces), necesitas tiempo a solas para recargar, captas matices que otros no ven, tienes una vida interior rica, te conmueven el arte o la naturaleza, y te abrumas con facilidad en ambientes caóticos.',
   },
   {
-    question: '¿Puedo hacer terapia para la ansiedad online?',
+    question: '¿En qué consiste la terapia para PAS?',
     answer:
-      'Sí, ofrezco terapia online con la misma efectividad que las sesiones presenciales. Muchas personas encuentran más cómodo trabajar su ansiedad desde la seguridad de su casa.',
+      'No se trata de "curar" la sensibilidad, sino de aprender a gestionarla como una fortaleza. Trabajamos la regulación emocional, establecer límites, manejar la sobreestimulación y desarrollar una relación más amable contigo mismo/a.',
   },
 ]
 
-export default function AnsiedadBarcelonaPage() {
+export default function AltaSensibilidadBarcelonaPage() {
   return (
     <>
       <script
@@ -73,18 +73,18 @@ export default function AnsiedadBarcelonaPage() {
               </p>
               <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-texto font-light leading-[1.08] mb-6">
                 Psicóloga especializada en{' '}
-                <span className="italic">ansiedad</span> en Barcelona
+                <span className="italic">alta sensibilidad</span>
               </h1>
               <div className="w-16 h-px bg-verde mb-8" />
               <p className="font-body text-texto/65 text-base leading-[1.85] mb-6">
-                La ansiedad puede manifestarse de muchas formas: preocupación constante,
-                tensión física, dificultad para dormir, ataques de pánico... Sé lo
-                agotador que puede ser sentir que tu mente no para nunca.
+                Si desde pequeño/a te han dicho que eres &quot;demasiado sensible&quot;, que
+                te tomas las cosas muy a pecho o que piensas demasiado, es posible
+                que seas una persona altamente sensible (PAS).
               </p>
               <p className="font-body text-texto/65 text-base leading-[1.85] mb-8">
-                En mi consulta de Gràcia (Barcelona) te ayudo a entender qué hay detrás
-                de tu ansiedad y a desarrollar herramientas para recuperar la calma y
-                el control sobre tu vida.
+                La alta sensibilidad no es un defecto: es un rasgo que, bien gestionado,
+                puede ser una gran fortaleza. En mi consulta te ayudo a entender tu
+                sensibilidad y a vivir en paz con ella.
               </p>
               <Link
                 href="/servicios#contacto"
@@ -99,7 +99,7 @@ export default function AnsiedadBarcelonaPage() {
             <ScrollReveal delay={100}>
               <Image
                 src="/images/retrato-profesional-2.jpeg"
-                alt="Aitana Barreda, psicóloga especializada en ansiedad en Barcelona"
+                alt="Aitana Barreda, psicóloga especializada en alta sensibilidad en Barcelona"
                 width={600}
                 height={700}
                 className="w-full h-auto object-cover"
@@ -109,30 +109,30 @@ export default function AnsiedadBarcelonaPage() {
         </div>
       </section>
 
-      {/* Síntomas */}
+      {/* Características */}
       <section className="py-20 lg:py-28 bg-rosa-light/15">
         <div className="max-w-4xl mx-auto px-6 sm:px-10">
           <ScrollReveal>
             <h2 className="font-heading text-3xl sm:text-4xl text-texto font-light leading-[1.12] mb-10 text-center">
-              ¿Reconoces alguno de estos síntomas?
+              ¿Te identificas con esto?
             </h2>
           </ScrollReveal>
           <div className="grid sm:grid-cols-2 gap-6">
             {[
-              'Preocupación excesiva y difícil de controlar',
-              'Tensión muscular y dificultad para relajarte',
-              'Problemas para dormir o descansar bien',
-              'Sensación de agobio o de que todo es demasiado',
-              'Ataques de pánico o miedo intenso',
-              'Evitas situaciones por miedo a sentir ansiedad',
-              'Pensamientos acelerados que no paran',
-              'Irritabilidad o cambios de humor',
-            ].map((sintoma, i) => (
+              'Te abrumas con facilidad en ambientes ruidosos o caóticos',
+              'Necesitas tiempo a solas para recargar energía',
+              'Captas detalles y matices que otros pasan por alto',
+              'Te afectan mucho las emociones de los demás',
+              'Tienes una vida interior rica y profunda',
+              'Te conmueven la belleza, el arte o la naturaleza',
+              'Eres muy consciente de los cambios sutiles en tu entorno',
+              'Te cuesta tomar decisiones porque ves todas las perspectivas',
+            ].map((caracteristica, i) => (
               <ScrollReveal key={i} delay={i * 50}>
                 <div className="flex items-start gap-4 p-5 bg-fondo rounded-sm">
                   <span className="w-2 h-2 rounded-full bg-verde mt-2 shrink-0" />
                   <p className="font-body text-texto/75 text-[15px] leading-relaxed">
-                    {sintoma}
+                    {caracteristica}
                   </p>
                 </div>
               </ScrollReveal>
@@ -146,24 +146,25 @@ export default function AnsiedadBarcelonaPage() {
         <div className="max-w-3xl mx-auto px-6 sm:px-10">
           <ScrollReveal>
             <h2 className="font-heading text-3xl sm:text-4xl text-texto font-light leading-[1.12] mb-8">
-              Mi enfoque para tratar la ansiedad
+              Acompañamiento para personas PAS
             </h2>
             <div className="space-y-6 font-body text-texto/65 text-base leading-[1.85]">
               <p>
-                La ansiedad no es tu enemigo: es una señal de que algo necesita atención.
-                En terapia, trabajamos para entender qué hay detrás de tu ansiedad —qué
-                la activa, qué la mantiene— y desarrollar estrategias que funcionen para ti.
+                La terapia con personas altamente sensibles no consiste en &quot;dejar de
+                ser sensible&quot;, porque ni sería posible ni deseable. Se trata de aprender a
+                vivir con tu sensibilidad de una forma que te permita florecer en
+                lugar de sufrir.
               </p>
               <p>
-                Utilizo un enfoque integrador que combina diferentes técnicas según lo
-                que necesites: regulación emocional, técnicas de relajación, mindfulness,
-                trabajo con creencias limitantes y, cuando es útil, EMDR para procesar
-                experiencias pasadas que pueden estar alimentando tu ansiedad.
+                Trabajamos en varias áreas: entender tu sistema nervioso y por qué
+                reaccionas como reaccionas, desarrollar estrategias de regulación
+                emocional, aprender a establecer límites sanos, y transformar la
+                narrativa de &quot;soy demasiado&quot; por una de autocompasión y aceptación.
               </p>
               <p>
-                Mi objetivo no es que dejes de sentir ansiedad por completo (es una
-                emoción normal y útil), sino que aprendas a relacionarte con ella de
-                una forma más sana y que deje de controlar tu vida.
+                Como psicóloga sensible, entiendo de primera mano los desafíos que
+                enfrentas. En mi consulta encontrarás un espacio tranquilo, sin prisas,
+                donde tu sensibilidad es bienvenida y valorada.
               </p>
             </div>
           </ScrollReveal>
@@ -200,11 +201,11 @@ export default function AnsiedadBarcelonaPage() {
         <div className="max-w-3xl mx-auto px-6 text-center">
           <ScrollReveal>
             <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-light leading-[1.12] mb-6">
-              Da el primer paso
+              Tu sensibilidad es un regalo
             </h2>
             <p className="font-body text-fondo/70 text-base mb-10 max-w-lg mx-auto leading-relaxed">
-              Si la ansiedad está afectando tu día a día, no tienes que seguir
-              solo/a. Escríbeme y hablamos.
+              Si quieres aprender a vivir en paz con tu alta sensibilidad,
+              estaré encantada de acompañarte.
             </p>
             <Link
               href="/servicios#contacto"

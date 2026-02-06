@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import Hero from '@/components/Hero'
-import ProblemasGrid from '@/components/ProblemasGrid'
+import TerapiasGrid from '@/components/TerapiasGrid'
 import BeneficiosList from '@/components/BeneficiosList'
 import ScrollReveal from '@/components/ScrollReveal'
 
@@ -170,7 +170,7 @@ export default function HomePage() {
       <Presentacion />
       <BeneficiosList />
       <TextureDivider />
-      <ProblemasGrid />
+      <TerapiasGrid />
       <Testimonios />
       <CtaFinal />
     </>

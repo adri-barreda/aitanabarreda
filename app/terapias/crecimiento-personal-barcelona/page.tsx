@@ -4,45 +4,45 @@ import Image from 'next/image'
 import ScrollReveal from '@/components/ScrollReveal'
 
 export const metadata: Metadata = {
-  title: 'Psicóloga Depresión Barcelona | Terapia en Gràcia',
+  title: 'Psicóloga Crecimiento Personal Barcelona | Gràcia',
   description:
-    'Psicóloga especializada en depresión en Barcelona. Tratamiento de tristeza profunda, apatía y falta de motivación. Consulta en Gràcia y terapia online.',
+    'Psicóloga especializada en crecimiento personal en Barcelona. Autoconocimiento, desarrollo personal y acompañamiento en momentos de cambio. Consulta en Gràcia.',
   keywords: [
-    'psicóloga depresión barcelona',
-    'terapia depresión barcelona',
-    'tratamiento depresión gràcia',
-    'psicólogo tristeza barcelona',
-    'apatía terapia barcelona',
+    'psicóloga crecimiento personal barcelona',
+    'desarrollo personal barcelona',
+    'autoconocimiento psicóloga',
+    'terapia crecimiento personal gràcia',
+    'coaching psicológico barcelona',
   ],
   alternates: {
-    canonical: 'https://aitanabarredapsicologia.com/problemas/depresion-barcelona',
+    canonical: 'https://aitanabarredapsicologia.com/terapias/crecimiento-personal-barcelona',
   },
   openGraph: {
-    title: 'Psicóloga Depresión Barcelona | Aitana Barreda',
-    description: 'Tratamiento especializado de depresión en Barcelona.',
+    title: 'Psicóloga Crecimiento Personal Barcelona | Aitana Barreda',
+    description: 'Acompañamiento en procesos de crecimiento y desarrollo personal.',
     images: [{ url: '/images/og.png', width: 1200, height: 630 }],
   },
 }
 
 const faqs = [
   {
-    question: '¿Cómo sé si tengo depresión o solo estoy triste?',
+    question: '¿Puedo ir al psicólogo aunque no tenga un problema grave?',
     answer:
-      'La tristeza es una emoción normal que viene y va. La depresión es más persistente (semanas o meses), afecta a tu funcionamiento diario e incluye síntomas como pérdida de interés, cambios en el sueño/apetito, dificultad para concentrarte y pensamientos negativos recurrentes.',
+      'Por supuesto. No hace falta estar mal para ir a terapia. Muchas personas vienen porque quieren conocerse mejor, trabajar aspectos de sí mismas que les limitan, o simplemente tener un espacio de reflexión y crecimiento.',
   },
   {
-    question: '¿La terapia funciona para la depresión?',
+    question: '¿Qué diferencia hay entre coaching y terapia?',
     answer:
-      'Sí. La psicoterapia tiene amplia evidencia científica para el tratamiento de la depresión. En muchos casos, la terapia sola es suficiente; en otros, puede combinarse con medicación. Lo importante es pedir ayuda.',
+      'El coaching se enfoca en objetivos concretos y el futuro. La terapia va más allá: explora tu historia, tus patrones emocionales y las raíces de lo que te limita. En mi consulta trabajo desde la psicología, lo que permite un abordaje más profundo y duradero.',
   },
   {
-    question: '¿Cuánto dura el tratamiento de la depresión?',
+    question: '¿Cómo sé si necesito terapia o solo estoy en un momento de cambio?',
     answer:
-      'Depende de cada persona y de la severidad de los síntomas. Generalmente, la mejoría empieza a notarse entre 8-12 sesiones, aunque el trabajo completo puede llevar más tiempo. Vamos a tu ritmo.',
+      'Los momentos de cambio son precisamente buenos momentos para hacer terapia. Tener acompañamiento profesional cuando estás en una encrucijada puede ayudarte a tomar decisiones más alineadas contigo y a transitar el cambio de forma más consciente.',
   },
 ]
 
-export default function DepresionBarcelonaPage() {
+export default function CrecimientoPersonalBarcelonaPage() {
   return (
     <>
       <script
@@ -72,18 +72,17 @@ export default function DepresionBarcelonaPage() {
                 Especialidad
               </p>
               <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-texto font-light leading-[1.08] mb-6">
-                Psicóloga especializada en{' '}
-                <span className="italic">depresión</span> en Barcelona
+                <span className="italic">Crecimiento personal</span> y autoconocimiento
               </h1>
               <div className="w-16 h-px bg-verde mb-8" />
               <p className="font-body text-texto/65 text-base leading-[1.85] mb-6">
-                Cuando la tristeza se queda, todo cuesta más. Levantarte, trabajar,
-                relacionarte... incluso las cosas que antes disfrutabas pierden su
-                brillo. Si llevas tiempo sintiéndote así, no estás solo/a.
+                A veces no hace falta tener un problema concreto para buscar ayuda.
+                Puede que simplemente sientas que hay algo que te frena, que no estás
+                viviendo la vida que quieres, o que quieres conocerte mejor.
               </p>
               <p className="font-body text-texto/65 text-base leading-[1.85] mb-8">
-                En mi consulta de Barcelona te acompaño a entender qué está pasando
-                y a encontrar el camino de vuelta hacia ti.
+                En mi consulta de Barcelona te acompaño en procesos de autoconocimiento
+                y crecimiento: descubrir quién eres, qué quieres y cómo llegar allí.
               </p>
               <Link
                 href="/servicios#contacto"
@@ -98,7 +97,7 @@ export default function DepresionBarcelonaPage() {
             <ScrollReveal delay={100}>
               <Image
                 src="/images/retrato-profesional-2.jpeg"
-                alt="Aitana Barreda, psicóloga especializada en depresión en Barcelona"
+                alt="Aitana Barreda, psicóloga especializada en crecimiento personal en Barcelona"
                 width={600}
                 height={700}
                 className="w-full h-auto object-cover"
@@ -108,30 +107,30 @@ export default function DepresionBarcelonaPage() {
         </div>
       </section>
 
-      {/* Síntomas */}
+      {/* Motivaciones */}
       <section className="py-20 lg:py-28 bg-rosa-light/15">
         <div className="max-w-4xl mx-auto px-6 sm:px-10">
           <ScrollReveal>
             <h2 className="font-heading text-3xl sm:text-4xl text-texto font-light leading-[1.12] mb-10 text-center">
-              Señales de que podrías estar pasando por una depresión
+              ¿Por qué venir a terapia de crecimiento personal?
             </h2>
           </ScrollReveal>
           <div className="grid sm:grid-cols-2 gap-6">
             {[
-              'Tristeza persistente que no se va',
-              'Has perdido interés en cosas que antes disfrutabas',
-              'Cambios en el sueño: duermes mucho o muy poco',
-              'Cambios en el apetito o el peso',
-              'Te sientes agotado/a aunque no hagas mucho',
-              'Dificultad para concentrarte o tomar decisiones',
-              'Pensamientos de culpa o inutilidad',
-              'Sensación de vacío o desesperanza',
-            ].map((sintoma, i) => (
+              'Quieres conocerte mejor y entender por qué haces lo que haces',
+              'Sientes que hay patrones que se repiten en tu vida',
+              'Estás en un momento de cambio o encrucijada vital',
+              'Quieres trabajar aspectos de ti que te limitan',
+              'Buscas más claridad sobre qué quieres en la vida',
+              'Quieres mejorar tu relación contigo mismo/a',
+              'Sientes que no estás viviendo alineado/a con tus valores',
+              'Simplemente quieres un espacio de reflexión y crecimiento',
+            ].map((motivo, i) => (
               <ScrollReveal key={i} delay={i * 50}>
                 <div className="flex items-start gap-4 p-5 bg-fondo rounded-sm">
                   <span className="w-2 h-2 rounded-full bg-verde mt-2 shrink-0" />
                   <p className="font-body text-texto/75 text-[15px] leading-relaxed">
-                    {sintoma}
+                    {motivo}
                   </p>
                 </div>
               </ScrollReveal>
@@ -145,24 +144,24 @@ export default function DepresionBarcelonaPage() {
         <div className="max-w-3xl mx-auto px-6 sm:px-10">
           <ScrollReveal>
             <h2 className="font-heading text-3xl sm:text-4xl text-texto font-light leading-[1.12] mb-8">
-              Mi enfoque para trabajar la depresión
+              Un espacio para ti
             </h2>
             <div className="space-y-6 font-body text-texto/65 text-base leading-[1.85]">
               <p>
-                La depresión no es &quot;estar triste&quot; ni &quot;falta de voluntad&quot;. Es una
-                condición real que afecta a tu cuerpo, tus pensamientos y tu forma
-                de relacionarte con el mundo. Y tiene tratamiento.
+                El trabajo de crecimiento personal en terapia va más allá de
+                &quot;mejorar&quot; o &quot;ser más productivo&quot;. Se trata de conocerte en
+                profundidad: tus necesidades, tus miedos, tus deseos, tu forma de
+                relacionarte con el mundo.
               </p>
               <p>
-                En terapia trabajamos para entender qué te ha llevado hasta aquí,
-                identificar los patrones de pensamiento que mantienen la depresión,
-                y construir poco a poco actividades y conexiones que te devuelvan
-                la energía y el sentido.
+                A veces descubrimos que lo que creíamos que queríamos no era realmente
+                nuestro, sino expectativas de otros. Otras veces encontramos recursos
+                que no sabíamos que teníamos. El proceso es único para cada persona.
               </p>
               <p>
-                No voy a pedirte que &quot;le pongas ganas&quot; ni que &quot;pienses en positivo&quot;.
-                Voy a acompañarte a tu ritmo, con paciencia y sin juicio, porque sé
-                que cuando estás en ese lugar oscuro, cualquier paso es un logro.
+                Mi rol es acompañarte con curiosidad y sin juicio, hacerte las preguntas
+                que quizás no te has hecho, y ofrecerte una mirada externa que te
+                ayude a ver lo que desde dentro cuesta ver.
               </p>
             </div>
           </ScrollReveal>
@@ -199,11 +198,11 @@ export default function DepresionBarcelonaPage() {
         <div className="max-w-3xl mx-auto px-6 text-center">
           <ScrollReveal>
             <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-light leading-[1.12] mb-6">
-              Pedir ayuda es el primer paso
+              Invierte en ti
             </h2>
             <p className="font-body text-fondo/70 text-base mb-10 max-w-lg mx-auto leading-relaxed">
-              Si te reconoces en lo que has leído, no esperes más. La depresión
-              tiene tratamiento y se puede salir.
+              Si sientes que es momento de dedicarte tiempo y atención,
+              estaré encantada de acompañarte en el proceso.
             </p>
             <Link
               href="/servicios#contacto"

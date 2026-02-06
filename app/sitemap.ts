@@ -44,8 +44,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  // Páginas de problemas específicos
-  const problemas = [
+  // Páginas de terapias específicas
+  const terapias = [
     'ansiedad-barcelona',
     'trauma-barcelona',
     'alta-sensibilidad-barcelona',
@@ -56,12 +56,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'crecimiento-personal-barcelona',
   ]
 
-  const problemaPages: MetadataRoute.Sitemap = problemas.map((slug) => ({
-    url: `${baseUrl}/problemas/${slug}`,
+  const terapiaPages: MetadataRoute.Sitemap = terapias.map((slug) => ({
+    url: `${baseUrl}/terapias/${slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly',
     priority: 0.8,
   }))
 
-  return [...staticPages, ...problemaPages]
+  return [...staticPages, ...terapiaPages]
 }

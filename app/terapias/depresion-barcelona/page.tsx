@@ -4,45 +4,45 @@ import Image from 'next/image'
 import ScrollReveal from '@/components/ScrollReveal'
 
 export const metadata: Metadata = {
-  title: 'Psicóloga Autoestima Barcelona | Terapia en Gràcia',
+  title: 'Psicóloga Depresión Barcelona | Terapia en Gràcia',
   description:
-    'Psicóloga especializada en autoestima en Barcelona. Trabajo con inseguridad, autocrítica y problemas de autoimagen. Consulta en Gràcia y terapia online.',
+    'Psicóloga especializada en depresión en Barcelona. Tratamiento de tristeza profunda, apatía y falta de motivación. Consulta en Gràcia y terapia online.',
   keywords: [
-    'psicóloga autoestima barcelona',
-    'terapia autoestima barcelona',
-    'inseguridad psicólogo barcelona',
-    'autoestima baja terapia',
-    'autocrítica psicóloga gràcia',
+    'psicóloga depresión barcelona',
+    'terapia depresión barcelona',
+    'tratamiento depresión gràcia',
+    'psicólogo tristeza barcelona',
+    'apatía terapia barcelona',
   ],
   alternates: {
-    canonical: 'https://aitanabarredapsicologia.com/problemas/autoestima-barcelona',
+    canonical: 'https://aitanabarredapsicologia.com/terapias/depresion-barcelona',
   },
   openGraph: {
-    title: 'Psicóloga Autoestima Barcelona | Aitana Barreda',
-    description: 'Trabajo especializado en autoestima e inseguridad en Barcelona.',
+    title: 'Psicóloga Depresión Barcelona | Aitana Barreda',
+    description: 'Tratamiento especializado de depresión en Barcelona.',
     images: [{ url: '/images/og.png', width: 1200, height: 630 }],
   },
 }
 
 const faqs = [
   {
-    question: '¿Se puede mejorar la autoestima en terapia?',
+    question: '¿Cómo sé si tengo depresión o solo estoy triste?',
     answer:
-      'Absolutamente. La autoestima no es algo fijo con lo que nacemos; se construye a lo largo de nuestra vida. En terapia trabajamos para identificar de dónde vienen tus creencias negativas sobre ti y construir una relación más amable contigo mismo/a.',
+      'La tristeza es una emoción normal que viene y va. La depresión es más persistente (semanas o meses), afecta a tu funcionamiento diario e incluye síntomas como pérdida de interés, cambios en el sueño/apetito, dificultad para concentrarte y pensamientos negativos recurrentes.',
   },
   {
-    question: '¿Cuánto tiempo lleva trabajar la autoestima?',
+    question: '¿La terapia funciona para la depresión?',
     answer:
-      'Depende de cada persona. Los patrones de autocrítica suelen estar muy arraigados, así que el trabajo es gradual. Pero desde las primeras sesiones empezarás a notar cambios en cómo te hablas y te tratas.',
+      'Sí. La psicoterapia tiene amplia evidencia científica para el tratamiento de la depresión. En muchos casos, la terapia sola es suficiente; en otros, puede combinarse con medicación. Lo importante es pedir ayuda.',
   },
   {
-    question: '¿La baja autoestima está relacionada con mi infancia?',
+    question: '¿Cuánto dura el tratamiento de la depresión?',
     answer:
-      'Muchas veces sí. Cómo nos trataron de pequeños y los mensajes que recibimos influyen en cómo nos vemos. Pero también las experiencias adultas pueden afectarla. En terapia exploramos estas raíces para poder transformarlas.',
+      'Depende de cada persona y de la severidad de los síntomas. Generalmente, la mejoría empieza a notarse entre 8-12 sesiones, aunque el trabajo completo puede llevar más tiempo. Vamos a tu ritmo.',
   },
 ]
 
-export default function AutoestimaBarcelonaPage() {
+export default function DepresionBarcelonaPage() {
   return (
     <>
       <script
@@ -73,17 +73,17 @@ export default function AutoestimaBarcelonaPage() {
               </p>
               <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-texto font-light leading-[1.08] mb-6">
                 Psicóloga especializada en{' '}
-                <span className="italic">autoestima</span>
+                <span className="italic">depresión</span> en Barcelona
               </h1>
               <div className="w-16 h-px bg-verde mb-8" />
               <p className="font-body text-texto/65 text-base leading-[1.85] mb-6">
-                &quot;No soy suficiente&quot;, &quot;no valgo&quot;, &quot;los demás lo hacen mejor&quot;...
-                Si te suena esa voz crítica interna que te machaca constantemente,
-                sabes lo agotador que es vivir así.
+                Cuando la tristeza se queda, todo cuesta más. Levantarte, trabajar,
+                relacionarte... incluso las cosas que antes disfrutabas pierden su
+                brillo. Si llevas tiempo sintiéndote así, no estás solo/a.
               </p>
               <p className="font-body text-texto/65 text-base leading-[1.85] mb-8">
-                En mi consulta de Barcelona trabajamos para entender de dónde viene
-                esa voz y construir una relación más compasiva y justa contigo.
+                En mi consulta de Barcelona te acompaño a entender qué está pasando
+                y a encontrar el camino de vuelta hacia ti.
               </p>
               <Link
                 href="/servicios#contacto"
@@ -98,7 +98,7 @@ export default function AutoestimaBarcelonaPage() {
             <ScrollReveal delay={100}>
               <Image
                 src="/images/retrato-profesional-2.jpeg"
-                alt="Aitana Barreda, psicóloga especializada en autoestima en Barcelona"
+                alt="Aitana Barreda, psicóloga especializada en depresión en Barcelona"
                 width={600}
                 height={700}
                 className="w-full h-auto object-cover"
@@ -108,30 +108,30 @@ export default function AutoestimaBarcelonaPage() {
         </div>
       </section>
 
-      {/* Señales */}
+      {/* Síntomas */}
       <section className="py-20 lg:py-28 bg-rosa-light/15">
         <div className="max-w-4xl mx-auto px-6 sm:px-10">
           <ScrollReveal>
             <h2 className="font-heading text-3xl sm:text-4xl text-texto font-light leading-[1.12] mb-10 text-center">
-              ¿Te reconoces en alguna de estas situaciones?
+              Señales de que podrías estar pasando por una depresión
             </h2>
           </ScrollReveal>
           <div className="grid sm:grid-cols-2 gap-6">
             {[
-              'Te comparas constantemente con los demás (y siempre sales perdiendo)',
-              'Tienes una voz interior muy crítica que te juzga todo el tiempo',
-              'Te cuesta aceptar cumplidos o reconocer tus logros',
-              'Sientes que no mereces cosas buenas o el amor de otros',
-              'Evitas situaciones por miedo a no estar a la altura',
-              'Necesitas la aprobación de los demás para sentirte bien',
-              'Te cuesta poner límites o decir que no',
-              'Sientes que eres un fraude y que algún día te descubrirán',
-            ].map((señal, i) => (
+              'Tristeza persistente que no se va',
+              'Has perdido interés en cosas que antes disfrutabas',
+              'Cambios en el sueño: duermes mucho o muy poco',
+              'Cambios en el apetito o el peso',
+              'Te sientes agotado/a aunque no hagas mucho',
+              'Dificultad para concentrarte o tomar decisiones',
+              'Pensamientos de culpa o inutilidad',
+              'Sensación de vacío o desesperanza',
+            ].map((sintoma, i) => (
               <ScrollReveal key={i} delay={i * 50}>
                 <div className="flex items-start gap-4 p-5 bg-fondo rounded-sm">
                   <span className="w-2 h-2 rounded-full bg-verde mt-2 shrink-0" />
                   <p className="font-body text-texto/75 text-[15px] leading-relaxed">
-                    {señal}
+                    {sintoma}
                   </p>
                 </div>
               </ScrollReveal>
@@ -145,25 +145,24 @@ export default function AutoestimaBarcelonaPage() {
         <div className="max-w-3xl mx-auto px-6 sm:px-10">
           <ScrollReveal>
             <h2 className="font-heading text-3xl sm:text-4xl text-texto font-light leading-[1.12] mb-8">
-              Trabajar la autoestima desde la raíz
+              Mi enfoque para trabajar la depresión
             </h2>
             <div className="space-y-6 font-body text-texto/65 text-base leading-[1.85]">
               <p>
-                La baja autoestima no se arregla con frases motivacionales frente
-                al espejo. Es un trabajo más profundo que implica entender de dónde
-                vienen esas creencias sobre ti, cuestionarlas y construir otras
-                nuevas más realistas y compasivas.
+                La depresión no es &quot;estar triste&quot; ni &quot;falta de voluntad&quot;. Es una
+                condición real que afecta a tu cuerpo, tus pensamientos y tu forma
+                de relacionarte con el mundo. Y tiene tratamiento.
               </p>
               <p>
-                En terapia exploramos tu historia: cómo te trataron, qué mensajes
-                recibiste, qué experiencias marcaron tu forma de verte. Desde ahí,
-                trabajamos para que puedas mirarte con otros ojos.
+                En terapia trabajamos para entender qué te ha llevado hasta aquí,
+                identificar los patrones de pensamiento que mantienen la depresión,
+                y construir poco a poco actividades y conexiones que te devuelvan
+                la energía y el sentido.
               </p>
               <p>
-                No se trata de &quot;quererte mucho&quot; ni de creerte mejor que nadie.
-                Se trata de tratarte con la misma amabilidad con la que tratarías
-                a alguien a quien quieres, y de reconocer tu valor incluso con
-                tus imperfecciones.
+                No voy a pedirte que &quot;le pongas ganas&quot; ni que &quot;pienses en positivo&quot;.
+                Voy a acompañarte a tu ritmo, con paciencia y sin juicio, porque sé
+                que cuando estás en ese lugar oscuro, cualquier paso es un logro.
               </p>
             </div>
           </ScrollReveal>
@@ -200,11 +199,11 @@ export default function AutoestimaBarcelonaPage() {
         <div className="max-w-3xl mx-auto px-6 text-center">
           <ScrollReveal>
             <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-light leading-[1.12] mb-6">
-              Mereces tratarte mejor
+              Pedir ayuda es el primer paso
             </h2>
             <p className="font-body text-fondo/70 text-base mb-10 max-w-lg mx-auto leading-relaxed">
-              Si estás cansado/a de esa voz crítica que no te deja en paz,
-              podemos trabajar juntas para silenciarla.
+              Si te reconoces en lo que has leído, no esperes más. La depresión
+              tiene tratamiento y se puede salir.
             </p>
             <Link
               href="/servicios#contacto"

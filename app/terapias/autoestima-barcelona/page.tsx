@@ -4,45 +4,45 @@ import Image from 'next/image'
 import ScrollReveal from '@/components/ScrollReveal'
 
 export const metadata: Metadata = {
-  title: 'Psicóloga Crecimiento Personal Barcelona | Gràcia',
+  title: 'Psicóloga Autoestima Barcelona | Terapia en Gràcia',
   description:
-    'Psicóloga especializada en crecimiento personal en Barcelona. Autoconocimiento, desarrollo personal y acompañamiento en momentos de cambio. Consulta en Gràcia.',
+    'Psicóloga especializada en autoestima en Barcelona. Trabajo con inseguridad, autocrítica y problemas de autoimagen. Consulta en Gràcia y terapia online.',
   keywords: [
-    'psicóloga crecimiento personal barcelona',
-    'desarrollo personal barcelona',
-    'autoconocimiento psicóloga',
-    'terapia crecimiento personal gràcia',
-    'coaching psicológico barcelona',
+    'psicóloga autoestima barcelona',
+    'terapia autoestima barcelona',
+    'inseguridad psicólogo barcelona',
+    'autoestima baja terapia',
+    'autocrítica psicóloga gràcia',
   ],
   alternates: {
-    canonical: 'https://aitanabarredapsicologia.com/problemas/crecimiento-personal-barcelona',
+    canonical: 'https://aitanabarredapsicologia.com/terapias/autoestima-barcelona',
   },
   openGraph: {
-    title: 'Psicóloga Crecimiento Personal Barcelona | Aitana Barreda',
-    description: 'Acompañamiento en procesos de crecimiento y desarrollo personal.',
+    title: 'Psicóloga Autoestima Barcelona | Aitana Barreda',
+    description: 'Trabajo especializado en autoestima e inseguridad en Barcelona.',
     images: [{ url: '/images/og.png', width: 1200, height: 630 }],
   },
 }
 
 const faqs = [
   {
-    question: '¿Puedo ir al psicólogo aunque no tenga un problema grave?',
+    question: '¿Se puede mejorar la autoestima en terapia?',
     answer:
-      'Por supuesto. No hace falta estar mal para ir a terapia. Muchas personas vienen porque quieren conocerse mejor, trabajar aspectos de sí mismas que les limitan, o simplemente tener un espacio de reflexión y crecimiento.',
+      'Absolutamente. La autoestima no es algo fijo con lo que nacemos; se construye a lo largo de nuestra vida. En terapia trabajamos para identificar de dónde vienen tus creencias negativas sobre ti y construir una relación más amable contigo mismo/a.',
   },
   {
-    question: '¿Qué diferencia hay entre coaching y terapia?',
+    question: '¿Cuánto tiempo lleva trabajar la autoestima?',
     answer:
-      'El coaching se enfoca en objetivos concretos y el futuro. La terapia va más allá: explora tu historia, tus patrones emocionales y las raíces de lo que te limita. En mi consulta trabajo desde la psicología, lo que permite un abordaje más profundo y duradero.',
+      'Depende de cada persona. Los patrones de autocrítica suelen estar muy arraigados, así que el trabajo es gradual. Pero desde las primeras sesiones empezarás a notar cambios en cómo te hablas y te tratas.',
   },
   {
-    question: '¿Cómo sé si necesito terapia o solo estoy en un momento de cambio?',
+    question: '¿La baja autoestima está relacionada con mi infancia?',
     answer:
-      'Los momentos de cambio son precisamente buenos momentos para hacer terapia. Tener acompañamiento profesional cuando estás en una encrucijada puede ayudarte a tomar decisiones más alineadas contigo y a transitar el cambio de forma más consciente.',
+      'Muchas veces sí. Cómo nos trataron de pequeños y los mensajes que recibimos influyen en cómo nos vemos. Pero también las experiencias adultas pueden afectarla. En terapia exploramos estas raíces para poder transformarlas.',
   },
 ]
 
-export default function CrecimientoPersonalBarcelonaPage() {
+export default function AutoestimaBarcelonaPage() {
   return (
     <>
       <script
@@ -72,17 +72,18 @@ export default function CrecimientoPersonalBarcelonaPage() {
                 Especialidad
               </p>
               <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-texto font-light leading-[1.08] mb-6">
-                <span className="italic">Crecimiento personal</span> y autoconocimiento
+                Psicóloga especializada en{' '}
+                <span className="italic">autoestima</span>
               </h1>
               <div className="w-16 h-px bg-verde mb-8" />
               <p className="font-body text-texto/65 text-base leading-[1.85] mb-6">
-                A veces no hace falta tener un problema concreto para buscar ayuda.
-                Puede que simplemente sientas que hay algo que te frena, que no estás
-                viviendo la vida que quieres, o que quieres conocerte mejor.
+                &quot;No soy suficiente&quot;, &quot;no valgo&quot;, &quot;los demás lo hacen mejor&quot;...
+                Si te suena esa voz crítica interna que te machaca constantemente,
+                sabes lo agotador que es vivir así.
               </p>
               <p className="font-body text-texto/65 text-base leading-[1.85] mb-8">
-                En mi consulta de Barcelona te acompaño en procesos de autoconocimiento
-                y crecimiento: descubrir quién eres, qué quieres y cómo llegar allí.
+                En mi consulta de Barcelona trabajamos para entender de dónde viene
+                esa voz y construir una relación más compasiva y justa contigo.
               </p>
               <Link
                 href="/servicios#contacto"
@@ -97,7 +98,7 @@ export default function CrecimientoPersonalBarcelonaPage() {
             <ScrollReveal delay={100}>
               <Image
                 src="/images/retrato-profesional-2.jpeg"
-                alt="Aitana Barreda, psicóloga especializada en crecimiento personal en Barcelona"
+                alt="Aitana Barreda, psicóloga especializada en autoestima en Barcelona"
                 width={600}
                 height={700}
                 className="w-full h-auto object-cover"
@@ -107,30 +108,30 @@ export default function CrecimientoPersonalBarcelonaPage() {
         </div>
       </section>
 
-      {/* Motivaciones */}
+      {/* Señales */}
       <section className="py-20 lg:py-28 bg-rosa-light/15">
         <div className="max-w-4xl mx-auto px-6 sm:px-10">
           <ScrollReveal>
             <h2 className="font-heading text-3xl sm:text-4xl text-texto font-light leading-[1.12] mb-10 text-center">
-              ¿Por qué venir a terapia de crecimiento personal?
+              ¿Te reconoces en alguna de estas situaciones?
             </h2>
           </ScrollReveal>
           <div className="grid sm:grid-cols-2 gap-6">
             {[
-              'Quieres conocerte mejor y entender por qué haces lo que haces',
-              'Sientes que hay patrones que se repiten en tu vida',
-              'Estás en un momento de cambio o encrucijada vital',
-              'Quieres trabajar aspectos de ti que te limitan',
-              'Buscas más claridad sobre qué quieres en la vida',
-              'Quieres mejorar tu relación contigo mismo/a',
-              'Sientes que no estás viviendo alineado/a con tus valores',
-              'Simplemente quieres un espacio de reflexión y crecimiento',
-            ].map((motivo, i) => (
+              'Te comparas constantemente con los demás (y siempre sales perdiendo)',
+              'Tienes una voz interior muy crítica que te juzga todo el tiempo',
+              'Te cuesta aceptar cumplidos o reconocer tus logros',
+              'Sientes que no mereces cosas buenas o el amor de otros',
+              'Evitas situaciones por miedo a no estar a la altura',
+              'Necesitas la aprobación de los demás para sentirte bien',
+              'Te cuesta poner límites o decir que no',
+              'Sientes que eres un fraude y que algún día te descubrirán',
+            ].map((señal, i) => (
               <ScrollReveal key={i} delay={i * 50}>
                 <div className="flex items-start gap-4 p-5 bg-fondo rounded-sm">
                   <span className="w-2 h-2 rounded-full bg-verde mt-2 shrink-0" />
                   <p className="font-body text-texto/75 text-[15px] leading-relaxed">
-                    {motivo}
+                    {señal}
                   </p>
                 </div>
               </ScrollReveal>
@@ -144,24 +145,25 @@ export default function CrecimientoPersonalBarcelonaPage() {
         <div className="max-w-3xl mx-auto px-6 sm:px-10">
           <ScrollReveal>
             <h2 className="font-heading text-3xl sm:text-4xl text-texto font-light leading-[1.12] mb-8">
-              Un espacio para ti
+              Trabajar la autoestima desde la raíz
             </h2>
             <div className="space-y-6 font-body text-texto/65 text-base leading-[1.85]">
               <p>
-                El trabajo de crecimiento personal en terapia va más allá de
-                &quot;mejorar&quot; o &quot;ser más productivo&quot;. Se trata de conocerte en
-                profundidad: tus necesidades, tus miedos, tus deseos, tu forma de
-                relacionarte con el mundo.
+                La baja autoestima no se arregla con frases motivacionales frente
+                al espejo. Es un trabajo más profundo que implica entender de dónde
+                vienen esas creencias sobre ti, cuestionarlas y construir otras
+                nuevas más realistas y compasivas.
               </p>
               <p>
-                A veces descubrimos que lo que creíamos que queríamos no era realmente
-                nuestro, sino expectativas de otros. Otras veces encontramos recursos
-                que no sabíamos que teníamos. El proceso es único para cada persona.
+                En terapia exploramos tu historia: cómo te trataron, qué mensajes
+                recibiste, qué experiencias marcaron tu forma de verte. Desde ahí,
+                trabajamos para que puedas mirarte con otros ojos.
               </p>
               <p>
-                Mi rol es acompañarte con curiosidad y sin juicio, hacerte las preguntas
-                que quizás no te has hecho, y ofrecerte una mirada externa que te
-                ayude a ver lo que desde dentro cuesta ver.
+                No se trata de &quot;quererte mucho&quot; ni de creerte mejor que nadie.
+                Se trata de tratarte con la misma amabilidad con la que tratarías
+                a alguien a quien quieres, y de reconocer tu valor incluso con
+                tus imperfecciones.
               </p>
             </div>
           </ScrollReveal>
@@ -198,11 +200,11 @@ export default function CrecimientoPersonalBarcelonaPage() {
         <div className="max-w-3xl mx-auto px-6 text-center">
           <ScrollReveal>
             <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-light leading-[1.12] mb-6">
-              Invierte en ti
+              Mereces tratarte mejor
             </h2>
             <p className="font-body text-fondo/70 text-base mb-10 max-w-lg mx-auto leading-relaxed">
-              Si sientes que es momento de dedicarte tiempo y atención,
-              estaré encantada de acompañarte en el proceso.
+              Si estás cansado/a de esa voz crítica que no te deja en paz,
+              podemos trabajar juntas para silenciarla.
             </p>
             <Link
               href="/servicios#contacto"

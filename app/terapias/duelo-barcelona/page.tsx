@@ -4,45 +4,45 @@ import Image from 'next/image'
 import ScrollReveal from '@/components/ScrollReveal'
 
 export const metadata: Metadata = {
-  title: 'Psicóloga Relaciones y Pareja Barcelona | Gràcia',
+  title: 'Psicóloga Duelo Barcelona | Acompañamiento en Pérdidas',
   description:
-    'Psicóloga especializada en relaciones de pareja en Barcelona. Terapia individual y de pareja para problemas de comunicación, conflictos y dependencia emocional.',
+    'Psicóloga especializada en duelo en Barcelona. Acompañamiento en pérdidas de seres queridos, rupturas, pérdidas laborales y otros duelos vitales. Consulta en Gràcia.',
   keywords: [
-    'psicóloga pareja barcelona',
-    'terapia de pareja barcelona',
-    'problemas de relación barcelona',
-    'dependencia emocional psicólogo',
-    'terapia relaciones gràcia',
+    'psicóloga duelo barcelona',
+    'terapia duelo barcelona',
+    'acompañamiento pérdida barcelona',
+    'psicólogo muerte familiar gràcia',
+    'duelo complicado terapia',
   ],
   alternates: {
-    canonical: 'https://aitanabarredapsicologia.com/problemas/relaciones-pareja-barcelona',
+    canonical: 'https://aitanabarredapsicologia.com/terapias/duelo-barcelona',
   },
   openGraph: {
-    title: 'Psicóloga Relaciones y Pareja Barcelona | Aitana Barreda',
-    description: 'Terapia especializada en relaciones de pareja en Barcelona.',
+    title: 'Psicóloga Duelo Barcelona | Aitana Barreda',
+    description: 'Acompañamiento especializado en procesos de duelo en Barcelona.',
     images: [{ url: '/images/og.png', width: 1200, height: 630 }],
   },
 }
 
 const faqs = [
   {
-    question: '¿La terapia es individual o de pareja?',
+    question: '¿Cuándo debería buscar ayuda profesional para mi duelo?',
     answer:
-      'Ofrezco ambas modalidades. A veces es útil trabajar primero de forma individual para entender tus patrones relacionales antes de hacer terapia de pareja. Otras veces, la pareja viene junta desde el inicio. Valoramos juntos qué es lo mejor para tu caso.',
+      'Si sientes que el dolor no disminuye con el tiempo, te cuesta funcionar en tu día a día, tienes pensamientos de hacerte daño, o sientes que estás "atascado/a" en el proceso, puede ser buen momento para buscar ayuda. Pero no tienes que esperar a estar muy mal; también puedes venir simplemente porque necesitas un espacio para procesar.',
   },
   {
-    question: '¿Podemos salvar nuestra relación con terapia?',
+    question: '¿Qué tipos de duelo trabajas?',
     answer:
-      'La terapia de pareja puede ayudar mucho, pero requiere compromiso de ambas partes. A veces el objetivo es mejorar la relación; otras veces, es acompañar una separación sana. Lo importante es que ambos estéis dispuestos a trabajar.',
+      'Acompaño todo tipo de pérdidas: muerte de seres queridos, rupturas de pareja, pérdidas de empleo, cambios vitales importantes, pérdidas de salud o capacidades, incluso duelos "invisibles" como la pérdida de un proyecto de vida o una ilusión.',
   },
   {
-    question: '¿Qué pasa si mi pareja no quiere venir a terapia?',
+    question: '¿Hay una forma "correcta" de hacer el duelo?',
     answer:
-      'Puedes venir solo/a. Trabajar tus patrones de relación, tus necesidades y tus límites puede transformar la dinámica de la pareja, aunque solo venga uno de los dos. Y también te ayuda a ti independientemente del resultado.',
+      'No. Cada persona vive el duelo de forma diferente. No hay etapas fijas que debas cumplir ni un tiempo determinado para "superarlo". En terapia respetamos tu proceso único y te acompañamos donde estés.',
   },
 ]
 
-export default function RelacionesParejaBarcelonaPage() {
+export default function DueloBarcelonaPage() {
   return (
     <>
       <script
@@ -72,19 +72,20 @@ export default function RelacionesParejaBarcelonaPage() {
                 Especialidad
               </p>
               <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-texto font-light leading-[1.08] mb-6">
-                Terapia de{' '}
-                <span className="italic">pareja y relaciones</span> en Barcelona
+                Acompañamiento en{' '}
+                <span className="italic">duelo y pérdidas</span>
               </h1>
               <div className="w-16 h-px bg-verde mb-8" />
               <p className="font-body text-texto/65 text-base leading-[1.85] mb-6">
-                Las relaciones son una de las fuentes más importantes de bienestar...
-                y también de sufrimiento. Problemas de comunicación, conflictos
-                repetitivos, celos, dependencia emocional o la sensación de que
-                &quot;siempre me pasa lo mismo&quot;.
+                Perder a alguien o algo importante duele. Y a menudo el mundo sigue
+                girando como si nada hubiera pasado, mientras tú sientes que se te
+                ha roto algo por dentro. Necesitas un espacio donde ese dolor tenga
+                cabida.
               </p>
               <p className="font-body text-texto/65 text-base leading-[1.85] mb-8">
-                En mi consulta de Barcelona te ayudo a entender tus patrones
-                relacionales y a construir vínculos más sanos y satisfactorios.
+                En mi consulta de Barcelona te acompaño a transitar el duelo a tu
+                ritmo, sin prisas ni juicios, respetando tu forma única de procesar
+                la pérdida.
               </p>
               <Link
                 href="/servicios#contacto"
@@ -99,7 +100,7 @@ export default function RelacionesParejaBarcelonaPage() {
             <ScrollReveal delay={100}>
               <Image
                 src="/images/retrato-profesional-2.jpeg"
-                alt="Aitana Barreda, psicóloga especializada en relaciones de pareja en Barcelona"
+                alt="Aitana Barreda, psicóloga especializada en duelo en Barcelona"
                 width={600}
                 height={700}
                 className="w-full h-auto object-cover"
@@ -109,30 +110,30 @@ export default function RelacionesParejaBarcelonaPage() {
         </div>
       </section>
 
-      {/* Situaciones */}
+      {/* Tipos de pérdida */}
       <section className="py-20 lg:py-28 bg-rosa-light/15">
         <div className="max-w-4xl mx-auto px-6 sm:px-10">
           <ScrollReveal>
             <h2 className="font-heading text-3xl sm:text-4xl text-texto font-light leading-[1.12] mb-10 text-center">
-              ¿Te identificas con alguna de estas situaciones?
+              Tipos de pérdida que acompaño
             </h2>
           </ScrollReveal>
           <div className="grid sm:grid-cols-2 gap-6">
             {[
-              'Sientes que siempre acabas en el mismo tipo de relación',
-              'Os cuesta comunicaros sin acabar discutiendo',
-              'Hay conflictos que se repiten una y otra vez',
-              'Sientes celos o inseguridad en tu relación',
-              'Te cuesta estar solo/a o tienes miedo al abandono',
-              'Sientes que das más de lo que recibes',
-              'Has perdido la conexión emocional o física con tu pareja',
-              'No sabes si seguir o terminar la relación',
-            ].map((situacion, i) => (
+              'Muerte de familiares, amigos o personas significativas',
+              'Rupturas de pareja y separaciones',
+              'Pérdida de empleo o de un proyecto profesional',
+              'Cambios vitales importantes (mudanzas, jubilación...)',
+              'Pérdida de salud o de capacidades',
+              'Abortos o pérdidas perinatales',
+              'Pérdida de un proyecto de vida o de una ilusión',
+              'Duelos complicados o no resueltos del pasado',
+            ].map((tipo, i) => (
               <ScrollReveal key={i} delay={i * 50}>
                 <div className="flex items-start gap-4 p-5 bg-fondo rounded-sm">
                   <span className="w-2 h-2 rounded-full bg-verde mt-2 shrink-0" />
                   <p className="font-body text-texto/75 text-[15px] leading-relaxed">
-                    {situacion}
+                    {tipo}
                   </p>
                 </div>
               </ScrollReveal>
@@ -146,25 +147,24 @@ export default function RelacionesParejaBarcelonaPage() {
         <div className="max-w-3xl mx-auto px-6 sm:px-10">
           <ScrollReveal>
             <h2 className="font-heading text-3xl sm:text-4xl text-texto font-light leading-[1.12] mb-8">
-              Cómo trabajo las relaciones
+              Cómo acompaño el duelo
             </h2>
             <div className="space-y-6 font-body text-texto/65 text-base leading-[1.85]">
               <p>
-                Muchos de nuestros patrones en las relaciones vienen de nuestra
-                historia: cómo aprendimos a vincularnos en nuestra familia, qué
-                modelos de relación vimos, qué heridas traemos. Entender esto es
-                el primer paso para poder elegir de forma diferente.
+                El duelo no es algo que &quot;superar&quot; o &quot;pasar página&quot;. Es un proceso
+                de adaptación a una nueva realidad donde alguien o algo importante
+                ya no está. Y lleva tiempo.
               </p>
               <p>
-                En la terapia de pareja, trabajo con un enfoque sistémico: miro la
-                relación como un sistema donde ambos influyen. No busco culpables,
-                sino entender la dinámica y encontrar formas más sanas de relacionarse.
+                En terapia te ofrezco un espacio seguro donde puedas expresar todo
+                lo que sientes: tristeza, rabia, culpa, alivio, confusión... todas
+                las emociones son válidas. No voy a decirte cómo deberías sentirte
+                ni cuánto debería durar tu dolor.
               </p>
               <p>
-                Si vienes solo/a, trabajamos tus patrones de apego, tus necesidades,
-                tus límites y la forma en que eliges y te relacionas con tus parejas.
-                El objetivo es que puedas construir relaciones que te nutran en
-                lugar de desgastarte.
+                Trabajamos para que puedas integrar la pérdida en tu vida, honrar
+                lo que perdiste, y poco a poco encontrar formas de seguir adelante
+                llevando contigo lo que esa persona o esa etapa significó para ti.
               </p>
             </div>
           </ScrollReveal>
@@ -201,11 +201,11 @@ export default function RelacionesParejaBarcelonaPage() {
         <div className="max-w-3xl mx-auto px-6 text-center">
           <ScrollReveal>
             <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-light leading-[1.12] mb-6">
-              Las relaciones se pueden trabajar
+              No tienes que pasar por esto solo/a
             </h2>
             <p className="font-body text-fondo/70 text-base mb-10 max-w-lg mx-auto leading-relaxed">
-              Si sientes que tus relaciones te generan más sufrimiento que
-              bienestar, podemos trabajar para cambiarlo.
+              Si estás atravesando una pérdida y necesitas un espacio donde
+              poder expresar tu dolor, estoy aquí.
             </p>
             <Link
               href="/servicios#contacto"

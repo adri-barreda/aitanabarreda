@@ -4,45 +4,45 @@ import Image from 'next/image'
 import ScrollReveal from '@/components/ScrollReveal'
 
 export const metadata: Metadata = {
-  title: 'Psicóloga Duelo Barcelona | Acompañamiento en Pérdidas',
+  title: 'Psicóloga Trauma Barcelona | Terapia EMDR en Gràcia',
   description:
-    'Psicóloga especializada en duelo en Barcelona. Acompañamiento en pérdidas de seres queridos, rupturas, pérdidas laborales y otros duelos vitales. Consulta en Gràcia.',
+    'Psicóloga especializada en trauma en Barcelona. Terapia EMDR para estrés postraumático, experiencias difíciles y heridas emocionales. Consulta en Gràcia.',
   keywords: [
-    'psicóloga duelo barcelona',
-    'terapia duelo barcelona',
-    'acompañamiento pérdida barcelona',
-    'psicólogo muerte familiar gràcia',
-    'duelo complicado terapia',
+    'psicóloga trauma barcelona',
+    'terapia EMDR barcelona',
+    'estrés postraumático barcelona',
+    'psicólogo trauma gràcia',
+    'trauma emocional barcelona',
   ],
   alternates: {
-    canonical: 'https://aitanabarredapsicologia.com/problemas/duelo-barcelona',
+    canonical: 'https://aitanabarredapsicologia.com/terapias/trauma-barcelona',
   },
   openGraph: {
-    title: 'Psicóloga Duelo Barcelona | Aitana Barreda',
-    description: 'Acompañamiento especializado en procesos de duelo en Barcelona.',
+    title: 'Psicóloga Trauma Barcelona | EMDR | Aitana Barreda',
+    description: 'Tratamiento especializado de trauma con EMDR en Barcelona.',
     images: [{ url: '/images/og.png', width: 1200, height: 630 }],
   },
 }
 
 const faqs = [
   {
-    question: '¿Cuándo debería buscar ayuda profesional para mi duelo?',
+    question: '¿Qué es el EMDR y cómo funciona?',
     answer:
-      'Si sientes que el dolor no disminuye con el tiempo, te cuesta funcionar en tu día a día, tienes pensamientos de hacerte daño, o sientes que estás "atascado/a" en el proceso, puede ser buen momento para buscar ayuda. Pero no tienes que esperar a estar muy mal; también puedes venir simplemente porque necesitas un espacio para procesar.',
+      'EMDR (Eye Movement Desensitization and Reprocessing) es una terapia que ayuda a procesar recuerdos traumáticos. Mediante estimulación bilateral, el cerebro puede integrar experiencias que quedaron "atascadas", reduciendo su carga emocional.',
   },
   {
-    question: '¿Qué tipos de duelo trabajas?',
+    question: '¿Qué tipo de traumas puedes tratar?',
     answer:
-      'Acompaño todo tipo de pérdidas: muerte de seres queridos, rupturas de pareja, pérdidas de empleo, cambios vitales importantes, pérdidas de salud o capacidades, incluso duelos "invisibles" como la pérdida de un proyecto de vida o una ilusión.',
+      'Trabajo con diferentes tipos de trauma: accidentes, pérdidas, experiencias de la infancia, relaciones dañinas, situaciones de abuso o negligencia, y también el llamado "trauma complejo" que se acumula con el tiempo.',
   },
   {
-    question: '¿Hay una forma "correcta" de hacer el duelo?',
+    question: '¿Es doloroso revivir el trauma en terapia?',
     answer:
-      'No. Cada persona vive el duelo de forma diferente. No hay etapas fijas que debas cumplir ni un tiempo determinado para "superarlo". En terapia respetamos tu proceso único y te acompañamos donde estés.',
+      'La terapia de trauma se hace de forma gradual y segura. No te pido que revivas el trauma de forma intensa. Trabajamos a tu ritmo, con técnicas de estabilización, y siempre priorizando tu bienestar emocional.',
   },
 ]
 
-export default function DueloBarcelonaPage() {
+export default function TraumaBarcelonaPage() {
   return (
     <>
       <script
@@ -72,20 +72,19 @@ export default function DueloBarcelonaPage() {
                 Especialidad
               </p>
               <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-texto font-light leading-[1.08] mb-6">
-                Acompañamiento en{' '}
-                <span className="italic">duelo y pérdidas</span>
+                Psicóloga especializada en{' '}
+                <span className="italic">trauma</span> en Barcelona
               </h1>
               <div className="w-16 h-px bg-verde mb-8" />
               <p className="font-body text-texto/65 text-base leading-[1.85] mb-6">
-                Perder a alguien o algo importante duele. Y a menudo el mundo sigue
-                girando como si nada hubiera pasado, mientras tú sientes que se te
-                ha roto algo por dentro. Necesitas un espacio donde ese dolor tenga
-                cabida.
+                El trauma deja huellas en el cuerpo y la mente. Puede manifestarse como
+                flashbacks, pesadillas, hipervigilancia, dificultad para confiar o una
+                sensación constante de amenaza. No tienes que seguir cargando con ese peso.
               </p>
               <p className="font-body text-texto/65 text-base leading-[1.85] mb-8">
-                En mi consulta de Barcelona te acompaño a transitar el duelo a tu
-                ritmo, sin prisas ni juicios, respetando tu forma única de procesar
-                la pérdida.
+                En mi consulta de Gràcia utilizo EMDR y otras técnicas especializadas
+                para ayudarte a procesar lo que viviste y recuperar la sensación de
+                seguridad.
               </p>
               <Link
                 href="/servicios#contacto"
@@ -100,7 +99,7 @@ export default function DueloBarcelonaPage() {
             <ScrollReveal delay={100}>
               <Image
                 src="/images/retrato-profesional-2.jpeg"
-                alt="Aitana Barreda, psicóloga especializada en duelo en Barcelona"
+                alt="Aitana Barreda, psicóloga especializada en trauma en Barcelona"
                 width={600}
                 height={700}
                 className="w-full h-auto object-cover"
@@ -110,30 +109,30 @@ export default function DueloBarcelonaPage() {
         </div>
       </section>
 
-      {/* Tipos de pérdida */}
+      {/* Señales */}
       <section className="py-20 lg:py-28 bg-rosa-light/15">
         <div className="max-w-4xl mx-auto px-6 sm:px-10">
           <ScrollReveal>
             <h2 className="font-heading text-3xl sm:text-4xl text-texto font-light leading-[1.12] mb-10 text-center">
-              Tipos de pérdida que acompaño
+              Señales de que podrías estar viviendo con trauma
             </h2>
           </ScrollReveal>
           <div className="grid sm:grid-cols-2 gap-6">
             {[
-              'Muerte de familiares, amigos o personas significativas',
-              'Rupturas de pareja y separaciones',
-              'Pérdida de empleo o de un proyecto profesional',
-              'Cambios vitales importantes (mudanzas, jubilación...)',
-              'Pérdida de salud o de capacidades',
-              'Abortos o pérdidas perinatales',
-              'Pérdida de un proyecto de vida o de una ilusión',
-              'Duelos complicados o no resueltos del pasado',
-            ].map((tipo, i) => (
+              'Recuerdos intrusivos o flashbacks de lo que pasó',
+              'Pesadillas recurrentes relacionadas con la experiencia',
+              'Evitas lugares, personas o situaciones que te lo recuerdan',
+              'Te sientes en alerta constante o hipervigilante',
+              'Dificultad para confiar en los demás',
+              'Sensación de desconexión de ti mismo/a o de la realidad',
+              'Reacciones emocionales intensas ante estímulos pequeños',
+              'Culpa o vergüenza relacionada con lo que viviste',
+            ].map((señal, i) => (
               <ScrollReveal key={i} delay={i * 50}>
                 <div className="flex items-start gap-4 p-5 bg-fondo rounded-sm">
                   <span className="w-2 h-2 rounded-full bg-verde mt-2 shrink-0" />
                   <p className="font-body text-texto/75 text-[15px] leading-relaxed">
-                    {tipo}
+                    {señal}
                   </p>
                 </div>
               </ScrollReveal>
@@ -147,24 +146,25 @@ export default function DueloBarcelonaPage() {
         <div className="max-w-3xl mx-auto px-6 sm:px-10">
           <ScrollReveal>
             <h2 className="font-heading text-3xl sm:text-4xl text-texto font-light leading-[1.12] mb-8">
-              Cómo acompaño el duelo
+              Terapia EMDR y trabajo con trauma
             </h2>
             <div className="space-y-6 font-body text-texto/65 text-base leading-[1.85]">
               <p>
-                El duelo no es algo que &quot;superar&quot; o &quot;pasar página&quot;. Es un proceso
-                de adaptación a una nueva realidad donde alguien o algo importante
-                ya no está. Y lleva tiempo.
+                Estoy formada en EMDR (Nivel I y II), una de las terapias con más
+                evidencia científica para el tratamiento del trauma. Pero la técnica
+                es solo una parte: lo más importante es crear un espacio seguro donde
+                puedas sentirte acompañado/a.
               </p>
               <p>
-                En terapia te ofrezco un espacio seguro donde puedas expresar todo
-                lo que sientes: tristeza, rabia, culpa, alivio, confusión... todas
-                las emociones son válidas. No voy a decirte cómo deberías sentirte
-                ni cuánto debería durar tu dolor.
+                El trabajo con trauma requiere ir a tu ritmo. Primero nos aseguramos de
+                que tienes recursos de estabilización, herramientas para regular tu
+                sistema nervioso, antes de abordar los recuerdos difíciles. No hay prisa.
               </p>
               <p>
-                Trabajamos para que puedas integrar la pérdida en tu vida, honrar
-                lo que perdiste, y poco a poco encontrar formas de seguir adelante
-                llevando contigo lo que esa persona o esa etapa significó para ti.
+                Mi enfoque es integrativo: combino EMDR con técnicas de regulación
+                emocional, mindfulness y trabajo corporal cuando es necesario. El
+                objetivo es que puedas integrar lo que viviste sin que siga
+                controlando tu presente.
               </p>
             </div>
           </ScrollReveal>
@@ -201,11 +201,11 @@ export default function DueloBarcelonaPage() {
         <div className="max-w-3xl mx-auto px-6 text-center">
           <ScrollReveal>
             <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-light leading-[1.12] mb-6">
-              No tienes que pasar por esto solo/a
+              No tienes que cargar con esto solo/a
             </h2>
             <p className="font-body text-fondo/70 text-base mb-10 max-w-lg mx-auto leading-relaxed">
-              Si estás atravesando una pérdida y necesitas un espacio donde
-              poder expresar tu dolor, estoy aquí.
+              El trauma se puede trabajar. Si estás listo/a para dar el paso,
+              estoy aquí para acompañarte.
             </p>
             <Link
               href="/servicios#contacto"

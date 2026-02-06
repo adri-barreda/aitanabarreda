@@ -1,6 +1,6 @@
 import ScrollReveal from './ScrollReveal'
 
-const problemas = [
+const terapias = [
   {
     num: '01',
     title: 'Ansiedad y estrés',
@@ -43,7 +43,7 @@ const problemas = [
   },
 ]
 
-function ProblemaItem({ item, isRight, delay }: { item: typeof problemas[number]; isRight: boolean; delay: number }) {
+function TerapiaItem({ item, isRight, delay }: { item: typeof terapias[number]; isRight: boolean; delay: number }) {
   return (
     <ScrollReveal delay={delay}>
       <div className="group py-8 border-b border-texto/8">
@@ -65,9 +65,9 @@ function ProblemaItem({ item, isRight, delay }: { item: typeof problemas[number]
   )
 }
 
-export default function ProblemasGrid() {
-  const left = problemas.filter((_, i) => i % 2 === 0)
-  const right = problemas.filter((_, i) => i % 2 === 1)
+export default function TerapiasGrid() {
+  const left = terapias.filter((_, i) => i % 2 === 0)
+  const right = terapias.filter((_, i) => i % 2 === 1)
 
   return (
     <section className="py-24 lg:py-36 bg-fondo">
@@ -81,8 +81,8 @@ export default function ProblemasGrid() {
 
         {/* Mobile: sequential order 1-8 */}
         <div className="md:hidden space-y-0">
-          {problemas.map((item, i) => (
-            <ProblemaItem key={item.num} item={item} isRight={i % 2 === 1} delay={i * 60} />
+          {terapias.map((item, i) => (
+            <TerapiaItem key={item.num} item={item} isRight={i % 2 === 1} delay={i * 60} />
           ))}
         </div>
 
@@ -90,12 +90,12 @@ export default function ProblemasGrid() {
         <div className="hidden md:grid md:grid-cols-2 gap-x-16 lg:gap-x-24">
           <div className="space-y-0">
             {left.map((item, i) => (
-              <ProblemaItem key={item.num} item={item} isRight={false} delay={i * 80} />
+              <TerapiaItem key={item.num} item={item} isRight={false} delay={i * 80} />
             ))}
           </div>
           <div className="space-y-0 mt-16">
             {right.map((item, i) => (
-              <ProblemaItem key={item.num} item={item} isRight={true} delay={i * 80 + 120} />
+              <TerapiaItem key={item.num} item={item} isRight={true} delay={i * 80 + 120} />
             ))}
           </div>
         </div>
