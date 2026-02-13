@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     'trauma emocional barcelona',
   ],
   alternates: {
-    canonical: 'https://aitanabarredapsicologia.com/terapias/trauma-barcelona',
+    canonical: 'https://www.aitanabarredapsicologia.com/terapias/trauma-barcelona',
   },
   openGraph: {
     title: 'Psicóloga Trauma Barcelona | EMDR | Aitana Barreda',

@@ -8,7 +8,7 @@ import ScrollReveal from '@/components/ScrollReveal'
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: 'https://aitanabarredapsicologia.com',
+    canonical: 'https://www.aitanabarredapsicologia.com',
   },
 }
 

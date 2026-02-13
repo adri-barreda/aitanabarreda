@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     'psicóloga online barcelona',
   ],
   alternates: {
-    canonical: 'https://aitanabarredapsicologia.com/psicologa-barcelona',
+    canonical: 'https://www.aitanabarredapsicologia.com/psicologa-barcelona',
   },
   openGraph: {
     title: 'Psicóloga Barcelona | Aitana Barreda',

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     'duelo complicado terapia',
   ],
   alternates: {
-    canonical: 'https://aitanabarredapsicologia.com/terapias/duelo-barcelona',
+    canonical: 'https://www.aitanabarredapsicologia.com/terapias/duelo-barcelona',
   },
   openGraph: {
     title: 'Psicóloga Duelo Barcelona | Aitana Barreda',

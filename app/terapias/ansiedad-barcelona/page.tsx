@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     'ansiedad generalizada barcelona',
   ],
   alternates: {
-    canonical: 'https://aitanabarredapsicologia.com/terapias/ansiedad-barcelona',
+    canonical: 'https://www.aitanabarredapsicologia.com/terapias/ansiedad-barcelona',
   },
   openGraph: {
     title: 'Psicóloga Ansiedad Barcelona | Aitana Barreda',

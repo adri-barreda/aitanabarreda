@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     'alta sensibilidad terapia',
   ],
   alternates: {
-    canonical: 'https://aitanabarredapsicologia.com/terapias/alta-sensibilidad-barcelona',
+    canonical: 'https://www.aitanabarredapsicologia.com/terapias/alta-sensibilidad-barcelona',
   },
   openGraph: {
     title: 'Psicóloga Alta Sensibilidad Barcelona | Aitana Barreda',

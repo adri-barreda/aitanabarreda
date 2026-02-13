@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     'autocrítica psicóloga gràcia',
   ],
   alternates: {
-    canonical: 'https://aitanabarredapsicologia.com/terapias/autoestima-barcelona',
+    canonical: 'https://www.aitanabarredapsicologia.com/terapias/autoestima-barcelona',
   },
   openGraph: {
     title: 'Psicóloga Autoestima Barcelona | Aitana Barreda',

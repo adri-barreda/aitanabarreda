@@ -1,8 +1,8 @@
 import type { NextRequest } from 'next/server'
 import { NextResponse } from 'next/server'
 
-const CANONICAL_HOST = 'aitanabarredapsicologia.com'
-const WWW_HOST = `www.${CANONICAL_HOST}`
+const APEX_HOST = 'aitanabarredapsicologia.com'
+const CANONICAL_HOST = `www.${APEX_HOST}`
 
 export function middleware(request: NextRequest) {
   const forwardedHost = request.headers.get('x-forwarded-host')
@@ -10,8 +10,8 @@ export function middleware(request: NextRequest) {
   const requestHost = (forwardedHost ?? hostHeader ?? request.nextUrl.hostname).split(':')[0]
   const requestProto = request.headers.get('x-forwarded-proto') ?? request.nextUrl.protocol.replace(':', '')
 
-  const needsHostRedirect = requestHost === WWW_HOST
-  const needsProtocolRedirect = requestHost === CANONICAL_HOST && requestProto !== 'https'
+  const needsHostRedirect = requestHost === APEX_HOST
+  const needsProtocolRedirect = requestProto !== 'https'
 
   if (!needsHostRedirect && !needsProtocolRedirect) {
     return NextResponse.next()
@@ -19,7 +19,9 @@ export function middleware(request: NextRequest) {
 
   const url = request.nextUrl.clone()
   url.protocol = 'https'
-  url.hostname = CANONICAL_HOST
+  if (needsHostRedirect) {
+    url.hostname = CANONICAL_HOST
+  }
 
   return NextResponse.redirect(url, 308)
 }

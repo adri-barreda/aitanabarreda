@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/_next/'],
     },
-    sitemap: 'https://aitanabarredapsicologia.com/sitemap.xml',
+    sitemap: 'https://www.aitanabarredapsicologia.com/sitemap.xml',
   }
 }

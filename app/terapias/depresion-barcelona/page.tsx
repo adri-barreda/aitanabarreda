@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     'apatía terapia barcelona',
   ],
   alternates: {
-    canonical: 'https://aitanabarredapsicologia.com/terapias/depresion-barcelona',
+    canonical: 'https://www.aitanabarredapsicologia.com/terapias/depresion-barcelona',
   },
   openGraph: {
     title: 'Psicóloga Depresión Barcelona | Aitana Barreda',

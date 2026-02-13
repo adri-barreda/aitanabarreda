@@ -24,7 +24,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://aitanabarredapsicologia.com'),
+  metadataBase: new URL('https://www.aitanabarredapsicologia.com'),
   title: {
     default: 'Aitana Barreda · Psicóloga en Barcelona',
     template: '%s · Aitana Barreda Psicología',
@@ -64,15 +64,15 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Psychologist',
-              '@id': 'https://aitanabarredapsicologia.com/#psychologist',
+              '@id': 'https://www.aitanabarredapsicologia.com/#psychologist',
               name: 'Aitana Barreda',
               jobTitle: 'Psicóloga General Sanitaria',
               description:
                 'Psicóloga General Sanitaria en Barcelona especializada en ansiedad, trauma, alta sensibilidad y crecimiento personal. Sesiones presenciales en Gràcia y online.',
-              url: 'https://aitanabarredapsicologia.com',
+              url: 'https://www.aitanabarredapsicologia.com',
               telephone: '+34681328552',
               email: 'aitanapacientes@gmail.com',
-              image: 'https://aitanabarredapsicologia.com/images/retrato-profesional-2.jpeg',
+              image: 'https://www.aitanabarredapsicologia.com/images/retrato-profesional-2.jpeg',
               address: {
                 '@type': 'PostalAddress',
                 streetAddress: "C/ de l'Escorial, 11",

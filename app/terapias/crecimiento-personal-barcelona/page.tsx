@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     'coaching psicológico barcelona',
   ],
   alternates: {
-    canonical: 'https://aitanabarredapsicologia.com/terapias/crecimiento-personal-barcelona',
+    canonical: 'https://www.aitanabarredapsicologia.com/terapias/crecimiento-personal-barcelona',
   },
   openGraph: {
     title: 'Psicóloga Crecimiento Personal Barcelona | Aitana Barreda',

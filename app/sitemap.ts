@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://aitanabarredapsicologia.com'
+  const baseUrl = 'https://www.aitanabarredapsicologia.com'
 
   // Páginas estáticas actuales
   const staticPages: MetadataRoute.Sitemap = [

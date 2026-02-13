@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     'psicóloga barrio gràcia',
   ],
   alternates: {
-    canonical: 'https://aitanabarredapsicologia.com/psicologa-gracia',
+    canonical: 'https://www.aitanabarredapsicologia.com/psicologa-gracia',
   },
   openGraph: {
     title: 'Psicóloga Gràcia Barcelona | Aitana Barreda',
@@ -72,9 +72,9 @@ export default function PsicologaGraciaPage() {
               '@context': 'https://schema.org',
               '@type': 'LocalBusiness',
               name: 'Aitana Barreda - Psicóloga',
-              image: 'https://aitanabarredapsicologia.com/images/retrato-profesional-2.jpeg',
-              '@id': 'https://aitanabarredapsicologia.com',
-              url: 'https://aitanabarredapsicologia.com',
+              image: 'https://www.aitanabarredapsicologia.com/images/retrato-profesional-2.jpeg',
+              '@id': 'https://www.aitanabarredapsicologia.com',
+              url: 'https://www.aitanabarredapsicologia.com',
               telephone: '+34681328552',
               address: {
                 '@type': 'PostalAddress',

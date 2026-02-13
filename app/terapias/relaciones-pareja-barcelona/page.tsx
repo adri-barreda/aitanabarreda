@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     'terapia relaciones gràcia',
   ],
   alternates: {
-    canonical: 'https://aitanabarredapsicologia.com/terapias/relaciones-pareja-barcelona',
+    canonical: 'https://www.aitanabarredapsicologia.com/terapias/relaciones-pareja-barcelona',
   },
   openGraph: {
     title: 'Psicóloga Relaciones y Pareja Barcelona | Aitana Barreda',
