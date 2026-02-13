@@ -42,7 +42,7 @@ export async function POST(request: Request) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Formulario Web <onboarding@resend.dev>', // Cambia a tu dominio verificado
+        from: 'Aitana Barreda <contacto@aitanabarredapsicologia.com>',
         to: ['aitanapacientes@gmail.com'],
         subject: `Nueva consulta de ${nombre}`,
         html: `
