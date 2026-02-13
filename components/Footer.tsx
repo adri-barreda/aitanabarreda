@@ -35,6 +35,12 @@ export default function Footer() {
               <Link href="/servicios" className="font-body text-[13px] text-fondo/60 hover:text-fondo transition-colors duration-200">
                 Servicios
               </Link>
+              <Link href="/psicologa-barcelona" className="font-body text-[13px] text-fondo/60 hover:text-fondo transition-colors duration-200">
+                Psicóloga en Barcelona
+              </Link>
+              <Link href="/psicologa-gracia" className="font-body text-[13px] text-fondo/60 hover:text-fondo transition-colors duration-200">
+                Psicóloga en Gràcia
+              </Link>
               <Link href="/servicios#contacto" className="font-body text-[13px] text-fondo/60 hover:text-fondo transition-colors duration-200">
                 Contacto
               </Link>

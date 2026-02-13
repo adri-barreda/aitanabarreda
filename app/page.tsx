@@ -1,9 +1,16 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import Hero from '@/components/Hero'
 import TerapiasGrid from '@/components/TerapiasGrid'
 import BeneficiosList from '@/components/BeneficiosList'
 import ScrollReveal from '@/components/ScrollReveal'
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: 'https://aitanabarredapsicologia.com',
+  },
+}
 
 function Presentacion() {
   return (

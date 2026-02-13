@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import ScrollReveal from './ScrollReveal'
 
 const terapias = [
@@ -5,48 +6,60 @@ const terapias = [
     num: '01',
     title: 'Ansiedad y estrés',
     description: 'Cuando la preocupación constante no te deja vivir con calma.',
+    link: '/terapias/ansiedad-barcelona',
   },
   {
     num: '02',
     title: 'Depresión y tristeza profunda',
     description: 'Si sientes un peso que no se va y has perdido la ilusión.',
+    link: '/terapias/depresion-barcelona',
   },
   {
     num: '03',
     title: 'Trauma y experiencias difíciles',
     description: 'Para procesar lo que ocurrió y dejar de cargar con ello.',
+    link: '/terapias/trauma-barcelona',
   },
   {
     num: '04',
     title: 'Alta sensibilidad',
     description: 'Entender tu forma de sentir como una fortaleza, no un problema.',
+    link: '/terapias/alta-sensibilidad-barcelona',
   },
   {
     num: '05',
     title: 'Problemas de autoestima',
     description: 'Reconectar con tu valor cuando la autocrítica se vuelve insoportable.',
+    link: '/terapias/autoestima-barcelona',
   },
   {
     num: '06',
     title: 'Relaciones y vínculos',
     description: 'Comprender tus patrones relacionales y construir vínculos más sanos.',
+    link: '/terapias/relaciones-pareja-barcelona',
   },
   {
     num: '07',
     title: 'Duelo y pérdidas',
     description: 'Acompañamiento en los procesos de despedida y transformación.',
+    link: '/terapias/duelo-barcelona',
   },
   {
     num: '08',
     title: 'Crecimiento personal',
     description: 'Conocerte mejor para tomar decisiones más alineadas contigo.',
+    link: '/terapias/crecimiento-personal-barcelona',
   },
 ]
 
 function TerapiaItem({ item, isRight, delay }: { item: typeof terapias[number]; isRight: boolean; delay: number }) {
   return (
     <ScrollReveal delay={delay}>
-      <div className="group py-8 border-b border-texto/8">
+      <Link
+        href={item.link}
+        aria-label={`Ver página sobre ${item.title}`}
+        className="group block py-8 border-b border-texto/8"
+      >
         <div className="flex items-baseline gap-5">
           <span className={`font-heading text-3xl lg:text-4xl font-light leading-none shrink-0 ${isRight ? 'text-verde/40' : 'text-rosa/50'}`}>
             {item.num}
@@ -58,9 +71,12 @@ function TerapiaItem({ item, isRight, delay }: { item: typeof terapias[number]; 
             <p className="font-body text-sm text-texto/55 leading-relaxed">
               {item.description}
             </p>
+            <p className="font-body text-[12px] uppercase tracking-[0.18em] text-texto/45 mt-4 group-hover:text-verde transition-colors duration-300">
+              Ver terapia
+            </p>
           </div>
         </div>
-      </div>
+      </Link>
     </ScrollReveal>
   )
 }

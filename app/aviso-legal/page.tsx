@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: 'Aviso Legal y Política de Privacidad',
   description:
     'Aviso legal, política de privacidad y condiciones de uso del sitio web de Aitana Barreda, Psicóloga General Sanitaria en Barcelona.',
+  alternates: {
+    canonical: 'https://aitanabarredapsicologia.com/aviso-legal',
+  },
 }
 
 export default function AvisoLegalPage() {
