@@ -7,7 +7,7 @@ export default function PatientForm() {
     nombre: '',
     email: '',
     telefono: '',
-    edad: '',
+    fechaNacimiento: '',
     dni: '',
     direccion: '',
     motivo: '',
@@ -126,21 +126,18 @@ export default function PatientForm() {
         </div>
         <div>
           <label
-            htmlFor="edad"
+            htmlFor="fechaNacimiento"
             className="block font-body text-[11px] tracking-[0.2em] uppercase text-texto/50 mb-3"
           >
-            Edad
+            Fecha de nacimiento
           </label>
           <input
-            id="edad"
-            type="number"
+            id="fechaNacimiento"
+            type="date"
             required
-            min={1}
-            max={120}
-            value={form.edad}
-            onChange={(e) => setForm({ ...form, edad: e.target.value })}
+            value={form.fechaNacimiento}
+            onChange={(e) => setForm({ ...form, fechaNacimiento: e.target.value })}
             className={inputClasses}
-            placeholder="30"
           />
         </div>
       </div>
