@@ -297,7 +297,7 @@ export default function PatientForm() {
               className="mt-1 accent-texto"
             />
             <span className="font-body text-[13px] text-texto/45 leading-[1.6]">
-              Doy mi consentimiento para recibir informaciones comerciales de Psíleo Psicología.
+              Doy mi consentimiento para recibir informaciones comerciales de Aitana Barreda Psicología.
             </span>
           </label>
         </div>
