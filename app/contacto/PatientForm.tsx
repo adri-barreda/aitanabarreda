@@ -199,7 +199,7 @@ export default function PatientForm() {
                 <p>
                   <strong className="text-texto/65">Responsable:</strong> AITANA BARREDA TENA,
                   dirección: Calle Travessera de Gracia 449, 2-3, 08025, Barcelona,
-                  correo electrónico: aitanapsileopsicologia@gmail.com
+                  correo electrónico: aitanapacientes@gmail.com
                 </p>
                 <p>
                   <strong className="text-texto/65">Finalidades:</strong> Gestionar los servicios
