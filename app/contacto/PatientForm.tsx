@@ -7,7 +7,9 @@ export default function PatientForm() {
     nombre: '',
     email: '',
     telefono: '',
-    edad: '',
+    fechaNacimiento: '',
+    dni: '',
+    direccion: '',
     motivo: '',
     rgpd: false,
     consentimientoComunicacion: false,
@@ -124,23 +126,56 @@ export default function PatientForm() {
         </div>
         <div>
           <label
-            htmlFor="edad"
+            htmlFor="fechaNacimiento"
             className="block font-body text-[11px] tracking-[0.2em] uppercase text-texto/50 mb-3"
           >
-            Edad
+            Fecha de nacimiento
           </label>
           <input
-            id="edad"
-            type="number"
+            id="fechaNacimiento"
+            type="date"
             required
-            min={1}
-            max={120}
-            value={form.edad}
-            onChange={(e) => setForm({ ...form, edad: e.target.value })}
+            value={form.fechaNacimiento}
+            onChange={(e) => setForm({ ...form, fechaNacimiento: e.target.value })}
             className={inputClasses}
-            placeholder="30"
           />
         </div>
+      </div>
+
+      <div>
+        <label
+          htmlFor="dni"
+          className="block font-body text-[11px] tracking-[0.2em] uppercase text-texto/50 mb-3"
+        >
+          DNI / NIE
+        </label>
+        <input
+          id="dni"
+          type="text"
+          required
+          value={form.dni}
+          onChange={(e) => setForm({ ...form, dni: e.target.value })}
+          className={inputClasses}
+          placeholder="12345678A"
+        />
+      </div>
+
+      <div>
+        <label
+          htmlFor="direccion"
+          className="block font-body text-[11px] tracking-[0.2em] uppercase text-texto/50 mb-3"
+        >
+          Dirección
+        </label>
+        <input
+          id="direccion"
+          type="text"
+          required
+          value={form.direccion}
+          onChange={(e) => setForm({ ...form, direccion: e.target.value })}
+          className={inputClasses}
+          placeholder="Calle, número, piso — Ciudad, CP"
+        />
       </div>
 
       <div>

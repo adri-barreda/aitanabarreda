@@ -7,7 +7,9 @@ export async function POST(request: Request) {
       nombre,
       email,
       telefono,
-      edad,
+      fechaNacimiento,
+      dni,
+      direccion,
       motivo,
       rgpd,
       consentimientoComunicacion,
@@ -15,7 +17,7 @@ export async function POST(request: Request) {
       consentimientoComercial,
     } = body
 
-    if (!nombre || !email || !telefono || !edad || !motivo || !rgpd) {
+    if (!nombre || !email || !telefono || !fechaNacimiento || !dni || !direccion || !motivo || !rgpd) {
       return NextResponse.json(
         { error: 'Todos los campos obligatorios deben estar completos' },
         { status: 400 }
@@ -65,8 +67,16 @@ export async function POST(request: Request) {
               <td style="padding: 8px 0; font-size: 15px;"><a href="tel:${telefono}" style="color: #2D2D2D;">${telefono}</a></td>
             </tr>
             <tr>
-              <td style="padding: 8px 16px 8px 0; color: #888; font-size: 13px; vertical-align: top;">Edad</td>
-              <td style="padding: 8px 0; font-size: 15px; color: #2D2D2D;">${edad} años</td>
+              <td style="padding: 8px 16px 8px 0; color: #888; font-size: 13px; vertical-align: top;">Fecha de nacimiento</td>
+              <td style="padding: 8px 0; font-size: 15px; color: #2D2D2D;">${new Date(fechaNacimiento).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 16px 8px 0; color: #888; font-size: 13px; vertical-align: top;">DNI/NIE</td>
+              <td style="padding: 8px 0; font-size: 15px; color: #2D2D2D;">${dni}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 16px 8px 0; color: #888; font-size: 13px; vertical-align: top;">Dirección</td>
+              <td style="padding: 8px 0; font-size: 15px; color: #2D2D2D;">${direccion}</td>
             </tr>
           </table>
 
